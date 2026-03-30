@@ -165,7 +165,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A CSS selector targeting HTML elements directly by tag name (e.g., `p`, `h1`, `img`).
 
 **Emphasis** <small>HTML · Chapter 4</small>
-: The `<em>` element that stresses a word or phrase, changing its meaning — the semantic alternative to italic.
+: The `<em>` element that stresses a word or phrase, changing its meaning. It is the semantic alternative to italic.
 
 **Exception Layer** <small>CSS · Chapter 18</small>
 : In CUBE CSS, state variations applied with `data-*` attributes that represent deviations from defaults.
@@ -323,7 +323,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The `loading="lazy"` attribute that tells the browser to defer loading an image until the user scrolls near it.
 
 **Lightness** <small>CSS · Chapter 13</small>
-: How bright a color is — 0% is black, 50% is the pure color, 100% is white.
+: How bright a color is: 0% is black, 50% is the pure color, 100% is white.
 
 **`line-height`** <small>CSS · Chapter 14</small>
 : The vertical spacing between lines of text, typically expressed as a unitless multiplier (e.g., 1.6 means 1.6× the font size).
@@ -428,7 +428,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 ## S
 
 **Saturation** <small>CSS · Chapter 13</small>
-: In HSL, how vivid a color is — 0% is gray, 100% is fully vivid.
+: In HSL, how vivid a color is: 0% is gray, 100% is fully vivid.
 
 **`scale()`** <small>CSS · Chapter 19</small>
 : A CSS transform function that enlarges or shrinks an element.
@@ -458,7 +458,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The ranking system CSS uses to determine which rule wins when multiple rules target the same element.
 
 **Strong Importance** <small>HTML · Chapter 4</small>
-: The `<strong>` element that marks text as having strong importance — the semantic alternative to bold.
+: The `<strong>` element that marks text as having strong importance. It is the semantic alternative to bold.
 
 **Syntax Highlighting** <small>HTML/CSS · Chapter 2</small>
 : Different parts of code appearing in different colors in a text editor, making code easier to read and mistakes easier to spot.
