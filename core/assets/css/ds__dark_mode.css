@@ -45,7 +45,36 @@
         background-color: var(--ita-colors-neutral-200);
     }
     body {
-        background: 0px 0px / 20px 20px radial-gradient(var(--ita-colors-neutral-500) 0.5px,var(--ita-colors-neutral-200) 1px);
+        background-color: var(--ita-colors-neutral-200);
+        background-image:
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 3px,
+                rgba(255, 255, 255, 0.03) 3px,
+                rgba(255, 255, 255, 0.03) 4px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 3px,
+                rgba(255, 255, 255, 0.03) 3px,
+                rgba(255, 255, 255, 0.03) 4px
+            ),
+            repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 7px,
+                rgba(255, 255, 255, 0.02) 7px,
+                rgba(255, 255, 255, 0.02) 8px
+            ),
+            repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 11px,
+                rgba(255, 255, 255, 0.015) 11px,
+                rgba(255, 255, 255, 0.015) 12px
+            );
     }
     html,
     .o-auto {
