@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OKLCH vs HSL Perceptual Uniformity Demo</title>
+    <style>
+      /*
+        Page scaffolding only, not part of the demo.
+      */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        color: #1a1a2e;
+        line-height: 1.6;
+      }
+      h2 { font-size: 1.1rem; margin-block-start: 2rem; }
+      .swatch-row {
+        display: flex;
+        gap: 0.25rem;
+        margin: 1rem 0;
+      }
+      .swatch {
+        flex: 1;
+        aspect-ratio: 1;
+        border-radius: 0.25rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        font-size: 0.6rem;
+        font-family: monospace;
+        padding: 0.25rem;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      }
+      .label-row {
+        display: flex;
+        gap: 0.25rem;
+        font-size: 0.7rem;
+        font-family: monospace;
+        color: #999;
+        text-align: center;
+      }
+      .label-row span { flex: 1; }
+      .demo-note {
+        font-size: 0.875rem;
+        color: #6c757d;
+        font-style: italic;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>OKLCH vs HSL</h1>
+    <p>Both rows below show colors at "the same lightness" across different hues. Look at which row appears more visually even:</p>
+
+    <h2>HSL at lightness 50%</h2>
+    <div class="swatch-row">
+      <div class="swatch" style="background: hsl(0, 80%, 50%)">0</div>
+      <div class="swatch" style="background: hsl(40, 80%, 50%)">40</div>
+      <div class="swatch" style="background: hsl(60, 80%, 50%)">60</div>
+      <div class="swatch" style="background: hsl(120, 80%, 50%)">120</div>
+      <div class="swatch" style="background: hsl(180, 80%, 50%)">180</div>
+      <div class="swatch" style="background: hsl(240, 80%, 50%)">240</div>
+      <div class="swatch" style="background: hsl(280, 80%, 50%)">280</div>
+      <div class="swatch" style="background: hsl(320, 80%, 50%)">320</div>
+    </div>
+    <div class="label-row">
+      <span>red</span><span>orange</span><span>yellow</span><span>green</span><span>cyan</span><span>blue</span><span>purple</span><span>pink</span>
+    </div>
+    <p class="demo-note">Notice how colors with the same HSL lightness can still appear uneven in brightness across hues. HSL lightness is mathematically uniform but not perceptually uniform.</p>
+
+    <h2>OKLCH at lightness 60%</h2>
+    <div class="swatch-row">
+      <div class="swatch" style="background: oklch(60% 0.18 25)">25</div>
+      <div class="swatch" style="background: oklch(60% 0.18 70)">70</div>
+      <div class="swatch" style="background: oklch(60% 0.18 90)">90</div>
+      <div class="swatch" style="background: oklch(60% 0.18 145)">145</div>
+      <div class="swatch" style="background: oklch(60% 0.18 195)">195</div>
+      <div class="swatch" style="background: oklch(60% 0.18 265)">265</div>
+      <div class="swatch" style="background: oklch(60% 0.18 300)">300</div>
+      <div class="swatch" style="background: oklch(60% 0.18 340)">340</div>
+    </div>
+    <div class="label-row">
+      <span>red</span><span>orange</span><span>yellow</span><span>green</span><span>cyan</span><span>blue</span><span>purple</span><span>pink</span>
+    </div>
+    <p class="demo-note">In OKLCH, when two colors share the same lightness value, they genuinely appear equally bright to the human eye. This makes building harmonious palettes much more intuitive.</p>
+  </body>
+</html>

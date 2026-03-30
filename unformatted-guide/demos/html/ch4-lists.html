@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists Comparison Demo</title>
+    <style>
+      /*
+        Only .demo-note and .list-label are styled.
+        The lists themselves use pure browser defaults.
+      */
+      .demo-note {
+        font: italic 0.875rem/1.4 system-ui, sans-serif;
+        color: #6c757d;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      .list-label {
+        font: bold 0.8rem monospace;
+        color: #6c5ce7;
+        display: block;
+        margin-top: 1.5em;
+        margin-bottom: 0.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="demo-note">All three list types below use pure browser default styling. No CSS has been applied to the lists. The labels are just for reference.</p>
+
+    <span class="list-label">&lt;ul&gt; - Unordered list (order doesn't matter):</span>
+    <ul>
+      <li>Oil on canvas</li>
+      <li>Charcoal on paper</li>
+      <li>Digital (Procreate)</li>
+      <li>Watercolor</li>
+    </ul>
+
+    <span class="list-label">&lt;ol&gt; - Ordered list (order matters):</span>
+    <ol>
+      <li>Apply the base wash</li>
+      <li>Block in the major shapes</li>
+      <li>Refine edges and details</li>
+      <li>Final glaze</li>
+    </ol>
+
+    <span class="list-label">&lt;dl&gt; - Description list (key-value pairs):</span>
+    <dl>
+      <dt>Medium</dt>
+      <dd>Oil on canvas</dd>
+      <dt>Dimensions</dt>
+      <dd>120 &times; 80 cm</dd>
+      <dt>Year</dt>
+      <dd>2025</dd>
+    </dl>
+  </body>
+</html>

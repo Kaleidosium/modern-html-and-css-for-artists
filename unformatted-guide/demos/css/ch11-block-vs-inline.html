@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block vs Inline Elements Demo</title>
+    <style>
+      /*
+        Page scaffolding only, not part of the demo.
+      */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        max-width: 40rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        color: #1a1a2e;
+        line-height: 1.6;
+      }
+      .demo-area {
+        background: #f8f9fa;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+      }
+      .demo-area h2 {
+        font-size: 1rem;
+        color: #6c5ce7;
+        font-family: monospace;
+        margin: 0 0 1rem;
+      }
+      
+      .block-demo > * {
+        background: #dfe6e9;
+        border: 2px solid #6c5ce7;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+      }
+      .inline-demo {
+        font-size: 1.1rem;
+        line-height: 2;
+      }
+      .inline-demo a,
+      .inline-demo strong,
+      .inline-demo em,
+      .inline-demo span {
+        background: #dfe6e9;
+        border: 2px solid #e17055;
+        padding: 0.15rem 0.3rem;
+      }
+      .toggle-area { margin: 1.5rem 0; }
+      button {
+        padding: 0.5rem 1rem;
+        border: 2px solid #6c5ce7;
+        background: white;
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 600;
+      }
+      button:hover { background: #f0efff; }
+      #switchable > * {
+        padding: 0.5rem 1rem;
+        border: 2px solid #00b894;
+        background: #d5f5e3;
+        margin: 0.25rem 0;
+      }
+      .demo-note {
+        font-size: 0.875rem;
+        color: #6c757d;
+        font-style: italic;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Block vs. Inline</h1>
+
+    <div class="demo-area">
+      <h2>Block elements stack vertically:</h2>
+      <div class="block-demo">
+        <div>&lt;div&gt; block element</div>
+        <p>&lt;p&gt; block element</p>
+        <h3>&lt;h3&gt; block element</h3>
+      </div>
+    </div>
+
+    <div class="demo-area">
+      <h2>Inline elements sit side by side:</h2>
+      <p class="inline-demo">
+        This paragraph has <a href="#">a link</a> and some <strong>bold text</strong> and <em>emphasis</em> and a <span>span</span> all flowing inline.
+      </p>
+    </div>
+
+    <div class="demo-area">
+      <h2>Toggle display to see the switch:</h2>
+      <button type="button" onclick="toggleDisplay()">Toggle display: block / inline</button>
+      <div id="switchable" style="margin-top: 1rem;">
+        <span>Item 1</span>
+        <span>Item 2</span>
+        <span>Item 3</span>
+      </div>
+      <p id="displayLabel" style="font-family: monospace; font-size: 0.85rem; color: #6c757d; margin-top: 0.5rem;">Current: display: inline</p>
+    </div>
+
+    <script>
+      let isBlock = false;
+      function toggleDisplay() {
+        isBlock = !isBlock;
+        const items = document.querySelectorAll('#switchable span');
+        items.forEach(item => {
+          item.style.display = isBlock ? 'block' : 'inline';
+        });
+        document.getElementById('displayLabel').textContent =
+          'Current: display: ' + (isBlock ? 'block' : 'inline');
+      }
+    </script>
+
+    <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't require JavaScript.</p>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockquote Demo</title>
+    <style>
+      /*
+        Only .demo-note is styled.
+        The blockquotes use pure browser defaults.
+      */
+      .demo-note {
+        font: italic 0.875rem/1.4 system-ui, sans-serif;
+        color: #6c757d;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 0.75rem;
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="demo-note">The blockquotes below use pure browser default styling. Notice the indentation the browser adds automatically.</p>
+
+    <blockquote cite="https://en.wikiquote.org/wiki/Claude_Monet">
+      <p>Color is my day-long obsession, joy and torment.</p>
+      <footer>&mdash;Claude Monet</footer>
+    </blockquote>
+
+    <blockquote cite="https://en.wikiquote.org/wiki/Salvador_Dalí">
+      <p>Don't be afraid of perfection. You will never attain it!</p>
+      <footer>&mdash;Salvador Dalí, <cite>Diary of a Genius</cite></footer>
+    </blockquote>
+
+    <p>The browser's default blockquote styling applies a left margin to visually set the quoted text apart from surrounding content.</p>
+  </body>
+</html>
