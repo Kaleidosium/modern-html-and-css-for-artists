@@ -1,14 +1,20 @@
+import puppeteer from 'puppeteer';
+
 // START 11TY imports
-import eleventyNavigationPlugin             from "@11ty/eleventy-navigation";
-import { InputPathToUrlTransformPlugin }    from "@11ty/eleventy";
-import { eleventyImageTransformPlugin }     from "@11ty/eleventy-img";
-import { EleventyHtmlBasePlugin }           from "@11ty/eleventy";
-import pluginRss                            from "@11ty/eleventy-plugin-rss";
+import {
+  EleventyHtmlBasePlugin,
+  InputPathToUrlTransformPlugin,
+} from '@11ty/eleventy';
+import { eleventyImageTransformPlugin } from '@11ty/eleventy-img';
+import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
+import pluginRss from '@11ty/eleventy-plugin-rss';
 // END 11TY imports
+import { renderMermaid } from '@mermaid-js/mermaid-cli';
 
 // START LibDoc imports
-import libdocConfig                         from "./_data/libdocConfig.js";
-import libdocFunctions                      from "./_data/libdocFunctions.js";
+import libdocConfig from './_data/libdocConfig.js';
+import libdocFunctions from './_data/libdocFunctions.js';
+
 // END LibDoc imports
 
 export default function(eleventyConfig) {
@@ -26,11 +32,32 @@ export default function(eleventyConfig) {
             if (token.info.trim() === "mermaid") {
                 return `<div class="mermaid">${token.content}</div>`;
             }
-            return defaultFence(tokens, idx, options, env, self);
+            return defaultFence
+                ? defaultFence(tokens, idx, options, env, self)
+                : self.renderToken(tokens, idx, options);
         };
     });
-    eleventyConfig.addShortcode("mermaid_js", () => {
-        return `<script type="module">import mermaid from "https://unpkg.com/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true});</script>`;
+    // Build-time mermaid rendering: replace <div class="mermaid"> with rendered SVGs
+    let mermaidBrowser = null;
+    eleventyConfig.on("eleventy.before", async () => {
+        mermaidBrowser = await puppeteer.launch({ headless: true });
+    });
+    eleventyConfig.on("eleventy.after", async () => {
+        if (mermaidBrowser) { await mermaidBrowser.close(); mermaidBrowser = null; }
+    });
+    eleventyConfig.addTransform("mermaid", async function(content) {
+        if (!this.page.outputPath?.endsWith(".html")) return content;
+        const regex = /<div class="mermaid">([\s\S]*?)<\/div>/g;
+        const matches = [...content.matchAll(regex)];
+        if (matches.length === 0) return content;
+        for (const match of matches) {
+            const { data } = await renderMermaid(mermaidBrowser, match[1], "svg", {
+                backgroundColor: "transparent",
+            });
+            const svg = new TextDecoder().decode(data);
+            content = content.replace(match[0], svg);
+        }
+        return content;
     });
     // END PLUGINS
 
