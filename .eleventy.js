@@ -18,6 +18,20 @@ export default function(eleventyConfig) {
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(eleventyImageTransformPlugin, libdocFunctions.pluginsParameters.eleventyImageTransform());
     eleventyConfig.addPlugin(pluginRss);
+    // Mermaid support: render mermaid code blocks as diagrams
+    eleventyConfig.amendLibrary("md", (mdLib) => {
+        const defaultFence = mdLib.renderer.rules.fence;
+        mdLib.renderer.rules.fence = function(tokens, idx, options, env, self) {
+            const token = tokens[idx];
+            if (token.info.trim() === "mermaid") {
+                return `<div class="mermaid">${token.content}</div>`;
+            }
+            return defaultFence(tokens, idx, options, env, self);
+        };
+    });
+    eleventyConfig.addShortcode("mermaid_js", () => {
+        return `<script type="module">import mermaid from "https://unpkg.com/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:true});</script>`;
+    });
     // END PLUGINS
 
     // START FILTERS

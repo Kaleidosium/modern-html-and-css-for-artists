@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Gallery Pattern Demo</title>
+    <style>
+      /*
+        Page scaffolding only, not part of the demo.
+      */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        padding: 1rem;
+        color: #1a1a2e;
+        line-height: 1.6;
+      }
+      h1 { text-align: center; }
+      p.intro { text-align: center; max-width: 40rem; margin: 0 auto 1.5rem; }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+        gap: 1rem;
+        max-width: 70rem;
+        margin: 0 auto;
+      }
+      .gallery figure {
+        margin: 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background: #f8f9fa;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      }
+      .gallery img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+      .gallery figcaption {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+      }
+      .gallery figcaption strong { display: block; }
+      .gallery figcaption span { color: #6c757d; font-size: 0.8rem; }
+      .code {
+        background: #1a1a2e;
+        color: #e0e0e0;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-family: monospace;
+        font-size: 0.8rem;
+        max-width: 40rem;
+        margin: 1.5rem auto;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The Fluid Gallery</h1>
+    <p class="intro">Resize your browser window and watch the grid reflow. Columns appear and disappear based on available space. No breakpoints.</p>
+
+    <div class="code">grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));</div>
+
+    <div class="gallery">
+      <figure>
+        <img src="https://placehold.co/800x600/3a506b/ffffff?text=Harbor+Study" alt="Oil study of fishing boats in a harbor at dawn, warm light on calm water" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Harbor Study No. 3</strong><span>Oil on panel, 2025</span></figcaption>
+      </figure>
+      <figure>
+        <img src="https://placehold.co/800x600/1c2541/ffffff?text=Night+Garden" alt="Dense garden foliage rendered in deep blues and violets with specks of white" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Night Garden</strong><span>Acrylic on canvas, 2024</span></figcaption>
+      </figure>
+      <figure>
+        <img src="https://placehold.co/800x600/5c4d7d/ffffff?text=Morning+Light" alt="Soft morning light filtering through sheer curtains onto a wooden table" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Morning Light</strong><span>Oil on linen, 2024</span></figcaption>
+      </figure>
+      <figure>
+        <img src="https://placehold.co/800x600/8e7cc3/ffffff?text=Coastal+Path" alt="Narrow dirt path winding along grassy coastal cliffs above a grey sea" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Coastal Path</strong><span>Watercolor, 2023</span></figcaption>
+      </figure>
+      <figure>
+        <img src="https://placehold.co/800x600/6c5ce7/ffffff?text=Still+Life" alt="Arrangement of lemons and a ceramic jug on a linen cloth, warm afternoon light" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Still Life with Lemons</strong><span>Oil on panel, 2023</span></figcaption>
+      </figure>
+      <figure>
+        <img src="https://placehold.co/800x600/2d3436/ffffff?text=Winter+Trees" alt="Bare winter trees silhouetted against an overcast sky, charcoal on textured paper" width="800" height="600" loading="lazy" decoding="async">
+        <figcaption><strong>Winter Trees</strong><span>Charcoal on paper, 2023</span></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

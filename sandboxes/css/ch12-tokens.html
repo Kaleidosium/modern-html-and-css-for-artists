@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Token System Demo</title>
+    <style>
+      :root {
+        --color-primary: #120A8F;
+        --color-accent: #E97451;
+        --color-bg: #fafafa;
+        --color-text: #1a1a2e;
+        --font-heading: Georgia, serif;
+        --font-body: system-ui, sans-serif;
+      }
+
+      /*
+        max-width, margin, padding, line-height and transition are page scaffolding.
+        The rest of the body rule is part of the demo: it shows how tokens
+        defined in :root get consumed by real CSS properties.
+      */
+      body {
+        font-family: var(--font-body);
+        color: var(--color-text);
+        background: var(--color-bg);
+        max-width: 50rem;
+        margin: 0 auto;
+        padding: 1rem;
+        line-height: 1.6;
+        transition: color 300ms ease, background-color 300ms ease;
+      }
+      .controls {
+        background: #f0f0f0;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        margin-block: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        gap: 1rem;
+      }
+      .control label {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: 600;
+        font-family: monospace;
+        margin-block-end: 0.25rem;
+      }
+      .control input[type="color"] {
+        width: 100%;
+        height: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+      .preview {
+        border: 2px dashed #ddd;
+        border-radius: 0.5rem;
+        padding: 2rem;
+        margin-block: 1rem;
+      }
+      .preview h2 {
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+        margin: 0 0 0.5rem;
+        transition: color 300ms ease;
+      }
+      .preview a {
+        color: var(--color-accent);
+        transition: color 300ms ease;
+      }
+      .preview .card {
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-block-start: 1rem;
+        background: white;
+      }
+      .demo-note {
+        font-size: 0.875rem;
+        color: #6c757d;
+        font-style: italic;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 0.5rem;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Live Token System</h1>
+    <p>Change the custom property values below and watch the entire page update. This is the power of design tokens: change once, update everywhere.</p>
+
+    <div class="controls">
+      <div class="control">
+        <label for="primary">--color-primary</label>
+        <input type="color" id="primary" value="#120A8F">
+      </div>
+      <div class="control">
+        <label for="accent">--color-accent</label>
+        <input type="color" id="accent" value="#E97451">
+      </div>
+      <div class="control">
+        <label for="bg">--color-bg</label>
+        <input type="color" id="bg" value="#fafafa">
+      </div>
+      <div class="control">
+        <label for="text">--color-text</label>
+        <input type="color" id="text" value="#1a1a2e">
+      </div>
+    </div>
+
+    <div class="preview">
+      <h2>Selected Works</h2>
+      <p>A collection of recent paintings. <a href="#">View the full gallery</a> for more.</p>
+      <div class="card">
+        <h3 style="color: var(--color-primary); font-family: var(--font-heading); margin: 0 0 0.25rem;">Harbor Study No. 3</h3>
+        <p style="margin: 0;">Oil on panel, 30 x 40 cm. <a href="#">View details</a></p>
+      </div>
+    </div>
+
+    <script>
+      const root = document.documentElement;
+      document.getElementById('primary').addEventListener('input', e => root.style.setProperty('--color-primary', e.target.value));
+      document.getElementById('accent').addEventListener('input', e => root.style.setProperty('--color-accent', e.target.value));
+      document.getElementById('bg').addEventListener('input', e => root.style.setProperty('--color-bg', e.target.value));
+      document.getElementById('text').addEventListener('input', e => root.style.setProperty('--color-text', e.target.value));
+    </script>
+
+    <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't require JavaScript.</p>
+  </body>
+</html>
