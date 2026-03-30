@@ -1,24 +1,24 @@
 
 :root {
   /* BRiCSS CSS variables start with --ita- */
-  --ita-colors-neutral-100: #FFFFFF;
-  --ita-colors-neutral-200: #F6F6F6;
-  --ita-colors-neutral-300: #EEEEEE;
-  --ita-colors-neutral-400: #E5E5E5;
-  --ita-colors-neutral-500: #BFBFBF;
-  --ita-colors-neutral-600: #999999;
-  --ita-colors-neutral-700: #444444;
-  --ita-colors-neutral-800: #252525;
+  --ita-colors-neutral-100: #FFFFFE;
+  --ita-colors-neutral-200: #F7F6F4;
+  --ita-colors-neutral-300: #EEEDEB;
+  --ita-colors-neutral-400: #E5E4E1;
+  --ita-colors-neutral-500: #BFBDBA;
+  --ita-colors-neutral-600: #999896;
+  --ita-colors-neutral-700: #464442;
+  --ita-colors-neutral-800: #272624;
   --ita-colors-neutral-900: #000000;
-  --ita-colors-primary-100: #fafcff;
-  --ita-colors-primary-200: #daeafb;
-  --ita-colors-primary-300: #a5d0fd;
-  --ita-colors-primary-400: #5dabfe;
-  --ita-colors-primary-500: #0165d0;
-  --ita-colors-primary-600: #0156b2;
-  --ita-colors-primary-700: #03458c;
-  --ita-colors-primary-800: #02366f;
-  --ita-colors-primary-900: #01254b;
+  --ita-colors-primary-100: #fafaff;
+  --ita-colors-primary-200: #dedaf8;
+  --ita-colors-primary-300: #b0a8f0;
+  --ita-colors-primary-400: #7b6de6;
+  --ita-colors-primary-500: #3a2dba;
+  --ita-colors-primary-600: #31269e;
+  --ita-colors-primary-700: #2a1f7e;
+  --ita-colors-primary-800: #221964;
+  --ita-colors-primary-900: #1a1244;
   --ita-colors-success-100: #f2fbec;
   --ita-colors-success-500: #5cab33;
   --ita-colors-success-900: #2b650c;
@@ -1080,58 +1080,58 @@
   letter-spacing: -0.1em;
 }
 .c-neutral-100 {
-  color: var(--ita-colors-neutral-100, #FFFFFF);
+  color: var(--ita-colors-neutral-100, #FFFFFE);
 }
 .c-neutral-200 {
-  color: var(--ita-colors-neutral-200, #F6F6F6);
+  color: var(--ita-colors-neutral-200, #F7F6F4);
 }
 .c-neutral-300 {
-  color: var(--ita-colors-neutral-300, #EEEEEE);
+  color: var(--ita-colors-neutral-300, #EEEDEB);
 }
 .c-neutral-400 {
-  color: var(--ita-colors-neutral-400, #E5E5E5);
+  color: var(--ita-colors-neutral-400, #E5E4E1);
 }
 .c-neutral-500 {
-  color: var(--ita-colors-neutral-500, #BFBFBF);
+  color: var(--ita-colors-neutral-500, #BFBDBA);
 }
 .c-neutral-600 {
-  color: var(--ita-colors-neutral-600, #999999);
+  color: var(--ita-colors-neutral-600, #999896);
 }
 .c-neutral-700 {
-  color: var(--ita-colors-neutral-700, #444444);
+  color: var(--ita-colors-neutral-700, #464442);
 }
 .c-neutral-800 {
-  color: var(--ita-colors-neutral-800, #252525);
+  color: var(--ita-colors-neutral-800, #272624);
 }
 .c-neutral-900 {
   color: var(--ita-colors-neutral-900, #000000);
 }
 .c-primary-100 {
-  color: var(--ita-colors-primary-100, #fafcff);
+  color: var(--ita-colors-primary-100, #fafaff);
 }
 .c-primary-200 {
-  color: var(--ita-colors-primary-200, #daeafb);
+  color: var(--ita-colors-primary-200, #dedaf8);
 }
 .c-primary-300 {
-  color: var(--ita-colors-primary-300, #a5d0fd);
+  color: var(--ita-colors-primary-300, #b0a8f0);
 }
 .c-primary-400 {
-  color: var(--ita-colors-primary-400, #5dabfe);
+  color: var(--ita-colors-primary-400, #7b6de6);
 }
 .c-primary-500 {
-  color: var(--ita-colors-primary-500, #0165d0);
+  color: var(--ita-colors-primary-500, #3a2dba);
 }
 .c-primary-600 {
-  color: var(--ita-colors-primary-600, #0156b2);
+  color: var(--ita-colors-primary-600, #31269e);
 }
 .c-primary-700 {
-  color: var(--ita-colors-primary-700, #03458c);
+  color: var(--ita-colors-primary-700, #2a1f7e);
 }
 .c-primary-800 {
-  color: var(--ita-colors-primary-800, #02366f);
+  color: var(--ita-colors-primary-800, #221964);
 }
 .c-primary-900 {
-  color: var(--ita-colors-primary-900, #01254b);
+  color: var(--ita-colors-primary-900, #1a1244);
 }
 .c-success-100 {
   color: var(--ita-colors-success-100, #f2fbec);
@@ -1167,58 +1167,58 @@
   background-color: transparent;
 }
 .bc-neutral-100 {
-  background-color: var(--ita-colors-neutral-100, #FFFFFF);
+  background-color: var(--ita-colors-neutral-100, #FFFFFE);
 }
 .bc-neutral-200 {
-  background-color: var(--ita-colors-neutral-200, #F6F6F6);
+  background-color: var(--ita-colors-neutral-200, #F7F6F4);
 }
 .bc-neutral-300 {
-  background-color: var(--ita-colors-neutral-300, #EEEEEE);
+  background-color: var(--ita-colors-neutral-300, #EEEDEB);
 }
 .bc-neutral-400 {
-  background-color: var(--ita-colors-neutral-400, #E5E5E5);
+  background-color: var(--ita-colors-neutral-400, #E5E4E1);
 }
 .bc-neutral-500 {
-  background-color: var(--ita-colors-neutral-500, #BFBFBF);
+  background-color: var(--ita-colors-neutral-500, #BFBDBA);
 }
 .bc-neutral-600 {
-  background-color: var(--ita-colors-neutral-600, #999999);
+  background-color: var(--ita-colors-neutral-600, #999896);
 }
 .bc-neutral-700 {
-  background-color: var(--ita-colors-neutral-700, #444444);
+  background-color: var(--ita-colors-neutral-700, #464442);
 }
 .bc-neutral-800 {
-  background-color: var(--ita-colors-neutral-800, #252525);
+  background-color: var(--ita-colors-neutral-800, #272624);
 }
 .bc-neutral-900 {
   background-color: var(--ita-colors-neutral-900, #000000);
 }
 .bc-primary-100 {
-  background-color: var(--ita-colors-primary-100, #fafcff);
+  background-color: var(--ita-colors-primary-100, #fafaff);
 }
 .bc-primary-200 {
-  background-color: var(--ita-colors-primary-200, #daeafb);
+  background-color: var(--ita-colors-primary-200, #dedaf8);
 }
 .bc-primary-300 {
-  background-color: var(--ita-colors-primary-300, #a5d0fd);
+  background-color: var(--ita-colors-primary-300, #b0a8f0);
 }
 .bc-primary-400 {
-  background-color: var(--ita-colors-primary-400, #5dabfe);
+  background-color: var(--ita-colors-primary-400, #7b6de6);
 }
 .bc-primary-500 {
-  background-color: var(--ita-colors-primary-500, #0165d0);
+  background-color: var(--ita-colors-primary-500, #3a2dba);
 }
 .bc-primary-600 {
-  background-color: var(--ita-colors-primary-600, #0156b2);
+  background-color: var(--ita-colors-primary-600, #31269e);
 }
 .bc-primary-700 {
-  background-color: var(--ita-colors-primary-700, #03458c);
+  background-color: var(--ita-colors-primary-700, #2a1f7e);
 }
 .bc-primary-800 {
-  background-color: var(--ita-colors-primary-800, #02366f);
+  background-color: var(--ita-colors-primary-800, #221964);
 }
 .bc-primary-900 {
-  background-color: var(--ita-colors-primary-900, #01254b);
+  background-color: var(--ita-colors-primary-900, #1a1244);
 }
 .bc-success-100 {
   background-color: var(--ita-colors-success-100, #f2fbec);
@@ -1257,58 +1257,58 @@
   border-color: transparent;
 }
 .bcolor-neutral-100 {
-  border-color: var(--ita-colors-neutral-100, #FFFFFF);
+  border-color: var(--ita-colors-neutral-100, #FFFFFE);
 }
 .bcolor-neutral-200 {
-  border-color: var(--ita-colors-neutral-200, #F6F6F6);
+  border-color: var(--ita-colors-neutral-200, #F7F6F4);
 }
 .bcolor-neutral-300 {
-  border-color: var(--ita-colors-neutral-300, #EEEEEE);
+  border-color: var(--ita-colors-neutral-300, #EEEDEB);
 }
 .bcolor-neutral-400 {
-  border-color: var(--ita-colors-neutral-400, #E5E5E5);
+  border-color: var(--ita-colors-neutral-400, #E5E4E1);
 }
 .bcolor-neutral-500 {
-  border-color: var(--ita-colors-neutral-500, #BFBFBF);
+  border-color: var(--ita-colors-neutral-500, #BFBDBA);
 }
 .bcolor-neutral-600 {
-  border-color: var(--ita-colors-neutral-600, #999999);
+  border-color: var(--ita-colors-neutral-600, #999896);
 }
 .bcolor-neutral-700 {
-  border-color: var(--ita-colors-neutral-700, #444444);
+  border-color: var(--ita-colors-neutral-700, #464442);
 }
 .bcolor-neutral-800 {
-  border-color: var(--ita-colors-neutral-800, #252525);
+  border-color: var(--ita-colors-neutral-800, #272624);
 }
 .bcolor-neutral-900 {
   border-color: var(--ita-colors-neutral-900, #000000);
 }
 .bcolor-primary-100 {
-  border-color: var(--ita-colors-primary-100, #fafcff);
+  border-color: var(--ita-colors-primary-100, #fafaff);
 }
 .bcolor-primary-200 {
-  border-color: var(--ita-colors-primary-200, #daeafb);
+  border-color: var(--ita-colors-primary-200, #dedaf8);
 }
 .bcolor-primary-300 {
-  border-color: var(--ita-colors-primary-300, #a5d0fd);
+  border-color: var(--ita-colors-primary-300, #b0a8f0);
 }
 .bcolor-primary-400 {
-  border-color: var(--ita-colors-primary-400, #5dabfe);
+  border-color: var(--ita-colors-primary-400, #7b6de6);
 }
 .bcolor-primary-500 {
-  border-color: var(--ita-colors-primary-500, #0165d0);
+  border-color: var(--ita-colors-primary-500, #3a2dba);
 }
 .bcolor-primary-600 {
-  border-color: var(--ita-colors-primary-600, #0156b2);
+  border-color: var(--ita-colors-primary-600, #31269e);
 }
 .bcolor-primary-700 {
-  border-color: var(--ita-colors-primary-700, #03458c);
+  border-color: var(--ita-colors-primary-700, #2a1f7e);
 }
 .bcolor-primary-800 {
-  border-color: var(--ita-colors-primary-800, #02366f);
+  border-color: var(--ita-colors-primary-800, #221964);
 }
 .bcolor-primary-900 {
-  border-color: var(--ita-colors-primary-900, #01254b);
+  border-color: var(--ita-colors-primary-900, #1a1244);
 }
 .bcolor-success-100 {
   border-color: var(--ita-colors-success-100, #f2fbec);
