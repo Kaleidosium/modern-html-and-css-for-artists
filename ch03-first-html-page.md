@@ -31,7 +31,7 @@ This is the first time you're seeing elements nested inside other elements, so i
 ```mermaid
 graph TD
     DOCTYPE["!DOCTYPE html"]
-    HTML["html lang=en"]
+    HTML["html lang="en""]
     HEAD["head"]
     BODY["body"]
     META1["meta charset"]

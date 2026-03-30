@@ -2,6 +2,7 @@
     "siteTitle": "Modern HTML & CSS Guide for Artists",
     "siteDescription": "A two-part guide covering HTML and CSS for artists and creative people",
     "faviconUrl": "/favicon.png",
+    "author": "Dania Rifki",
     "customLinks": [
         {
             "url": "/feed.xml",

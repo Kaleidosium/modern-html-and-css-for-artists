@@ -248,11 +248,11 @@ Within the same layer (or when you're not using layers), specificity determines 
 ```mermaid
 graph LR
     E["Element<br/>p, h1, img"]
-    C["Class / Attribute<br/>.card, :hover"]
+    C["Class / Attribute<br/>.card, [data-*], :hover"]
     I["ID<br/>#main"]
-    IN["Inline style"]
+    IN["Inline style<br/>style='...'"]
 
-    E -->|overridden by| C -->|overridden by| I -->|overridden by| IN
+    E -->|"overridden by"| C -->|"overridden by"| I -->|"overridden by"| IN
 
     style E fill:#d5f5e3,stroke:#27ae60
     style C fill:#fef3e2,stroke:#e67e22
