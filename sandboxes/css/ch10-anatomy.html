@@ -46,11 +46,13 @@
         padding: 2rem;
         margin-block: 1rem;
       }
-      .preview-area > * {
-        transition: opacity 200ms ease;
-      }
       .preview-area > .dimmed {
         opacity: 0.25;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .preview-area > * {
+          transition: opacity 200ms ease;
+        }
       }
       .code-output {
         background: #1a1a2e;

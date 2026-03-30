@@ -27,7 +27,6 @@
         margin: 0 auto;
         padding: 1rem;
         line-height: 1.6;
-        transition: color 300ms ease, background-color 300ms ease;
       }
       .controls {
         background: #f0f0f0;
@@ -62,11 +61,20 @@
         font-family: var(--font-heading);
         color: var(--color-primary);
         margin: 0 0 0.5rem;
-        transition: color 300ms ease;
       }
       .preview a {
         color: var(--color-accent);
-        transition: color 300ms ease;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        body {
+          transition: color 300ms ease, background-color 300ms ease;
+        }
+        .preview h2 {
+          transition: color 300ms ease;
+        }
+        .preview a {
+          transition: color 300ms ease;
+        }
       }
       .preview .card {
         border: 1px solid #ddd;

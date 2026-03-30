@@ -51,7 +51,11 @@
         padding: 2rem;
         border-radius: 0.5rem;
         margin-block-end: 1rem;
-        transition: color 300ms ease, background-color 300ms ease;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        section {
+          transition: color 300ms ease, background-color 300ms ease;
+        }
       }
       section h2 {
         color: var(--color-heading);
