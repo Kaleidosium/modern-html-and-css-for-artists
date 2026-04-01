@@ -176,16 +176,16 @@
                     gap-5="md"
                     bradtl-3="md"
                     bradtr-3="md">
-                    <li class="d-flex ai-center">
+                    <li class="d-flex ai-center w-100">
                         {% if libdocConfig.siteLogoUrl != '' %}
                             <a  href="/"
-                                class="pl-5 pt-5 pr-5 | td-none fvs-wght-700 lsp-5 fs-8 tws-balance | c-neutral-900"
+                                class="d-block w-100 pl-5 pt-5 pr-5 | td-none fvs-wght-700 lsp-5 fs-8 tws-balance | c-neutral-900"
                                 title="{{ libdocConfig.siteDescription }}">
                                 <img src="{{ libdocConfig.siteLogoUrl }}"
                                     alt="{{ libdocConfig.siteTitle }}"
                                     eleventy:widths="{{ libdocSystem.widthSidebar | minus: 40 | times: 2 }}"
-                                    class="maxw-100 w-auto"
-                                    style="max-height: {{ libdocConfig.siteLogoMaxHeight }}px">
+                                    class="maxw-100 w-100"
+                                    style="height: auto;">
                             </a>
                         {% else %}
                             <a  href="/"
@@ -373,7 +373,11 @@
                         {% if author != false and pageAuthor != false %}
                             <div class="d-flex ai-center gap-3">
                                 <div class="pos-relative | p-5 | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500">
-                                    <div class="icon-user | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-6"></div>
+                                    {% if libdocConfig.authorAvatarUrl != '' %}
+                                        <img src="{{ libdocConfig.authorAvatarUrl }}" alt="{{ pageAuthor }}" class="pos-absolute top-50 left-50 t-tY-50 t-tX-50 brad-4" style="width: 28px; height: 28px; object-fit: cover;">
+                                    {% else %}
+                                        <div class="icon-user | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-6"></div>
+                                    {% endif %}
                                 </div>
                                 <p  class="d-flex fd-column | m-0 | fvs-wght-400 fs-3 lsp-3 lh-3 | c-neutral-700 bc-primary-100"
                                     fs-2="xs"

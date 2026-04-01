@@ -17,6 +17,7 @@ export default {
     siteLogoUrl: userConfig.siteLogoUrl ?? "",
     siteLogoMaxHeight: userConfig.siteLogoMaxHeight ?? 60,
     author: userConfig.author ?? false,
+    authorAvatarUrl: userConfig.authorAvatarUrl ?? "",
     faviconUrl: userConfig.faviconUrl ?? "/favicon.png",
     ogImageUrl: userConfig.ogImageUrl ?? "https://raw.githubusercontent.com/ita-design-system/ita-medias/refs/heads/main/ogimage-11ty-libdoc.png",
     customLinks: userConfig.customLinks ?? [],
