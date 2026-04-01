@@ -8,7 +8,7 @@ eleventyNavigation:
     order: 3
 ---
 
-A reference of key terms used throughout this guide, organized alphabetically. Each entry notes whether it relates to <strong>HTML</strong>, <strong>CSS</strong>, or both, and which chapter introduces it.
+A reference of key terms used throughout this guide, organized alphabetically. Each entry notes whether it relates to **HTML**, **CSS**, or both, and which chapter introduces it.
 
 ## A
 
