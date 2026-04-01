@@ -12,6 +12,9 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 
 ## A
 
+**`align-items`** <small>CSS · Chapter 16</small>
+: A CSS property that aligns flex or grid items along the cross axis (e.g., `stretch`, `center`, `baseline`).
+
 **Alpha (Transparency)** <small>CSS · Chapter 13</small>
 : A fourth value in color functions (e.g., `oklch(30% 0.19 268 / 0.5)`) that controls opacity from 0 (fully transparent) to 1 (fully opaque).
 
@@ -298,7 +301,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 ## J
 
 **`justify-content`** <small>CSS · Chapter 16</small>
-: A CSS property that aligns flex or grid items along the main axis (e.g., `center`, `space-between`).
+: A CSS property that aligns flex or grid items along the main axis (e.g., `center`, `space-between`, `space-evenly`).
 
 ## K
 
@@ -330,6 +333,9 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 
 **Link** <small>HTML · Chapter 7</small>
 : An element that navigates to another URL, marked with the `<a>` tag and `href` attribute.
+
+**Lobotomized Owl (`* + *`)** <small>CSS · Chapter 11</small>
+: An adjacent sibling selector pattern that targets all elements except the first child. It is the underlying selector for the `.flow` utility.
 
 **Logical Properties** <small>CSS · Chapter 11</small>
 : CSS properties that adapt to writing direction using `block` (vertical) and `inline` (horizontal) instead of `top`, `right`, `bottom`, `left`.
@@ -476,6 +482,9 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 
 **Theming** <small>CSS · Chapter 12</small>
 : Using scoped custom properties to create different visual treatments of the same component, like light and dark modes.
+
+**`<time>` Element** <small>HTML · Chapter 4</small>
+: An inline element that marks up a date, time, or duration in a machine-readable way using the `datetime` attribute.
 
 **Transform** <small>CSS · Chapter 19</small>
 : A CSS property that moves, scales, rotates, or skews elements without affecting document flow.
