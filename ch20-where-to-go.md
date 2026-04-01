@@ -72,6 +72,7 @@ For deeper learning:
 - **[The A11Y Project](https://www.a11yproject.com/)**: A community-driven resource with practical accessibility advice.
 - **[Inclusive Components](https://inclusive-components.design/)** by Heydon Pickering: How to build common UI patterns accessibly.
 - **[WebAIM](https://webaim.org/)**: Tools and resources for web accessibility evaluation and education.
+- **[Adrian Roselli](https://adrianroselli.com/)**: Deep dives into web accessibility and HTML semantics.
 
 ## Learning JavaScript
 
