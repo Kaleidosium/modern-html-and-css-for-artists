@@ -1,47 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Details and Summary Demo</title>
-    <style>
-      /*
-        Only .demo-note is styled.
-        The details/summary elements use pure browser defaults.
-      */
-      .demo-note {
-        font: italic 0.875rem/1.4 system-ui, sans-serif;
-        color: #6c757d;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 0.75rem;
-        margin-bottom: 1rem;
-      }
-    </style>
-  </head>
-  <body>
-    <p class="demo-note">Click any summary below to expand or collapse. These use pure browser default styling, with no JavaScript required.</p>
-    <main>
 
-      <details>
-        <summary>Exhibition history</summary>
-        <ul>
-          <li>2025 - Galleri Nord, Stockholm</li>
-          <li>2024 - Open Studio, Malmo</li>
-          <li>2023 - Group show, Konstakademien</li>
-        </ul>
-      </details>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details and Summary Demo</title>
+  <style>
+    /*
+      Only .demo-note is styled.
+      The details/summary elements use pure browser defaults.
+    */
+    .demo-note {
+      font: italic 0.875rem/1.4 system-ui, sans-serif;
+      color: #6c757d;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
 
-      <details>
-        <summary>Materials and process</summary>
-        <p>This piece was created using oil on linen, beginning with a burnt sienna underpainting. The palette was limited to ultramarine, yellow ochre, burnt sienna, and titanium white. Total working time was approximately 40 hours across three weeks.</p>
-      </details>
+<body>
+  <p class="demo-note">Click any summary below to expand or collapse. These use pure browser default styling, with no
+    JavaScript required.</p>
+  <main>
 
-      <details open>
-        <summary>Artist statement</summary>
-        <p>My work explores the boundary between observation and memory. Each painting begins outdoors, en plein air, before being reinterpreted in the studio over weeks or months. The final piece is neither a faithful record nor a pure invention, but something in between.</p>
-      </details>
+    <details>
+      <summary>Exhibition history</summary>
+      <ul>
+        <li>2025 - Galleri Nord, Stockholm</li>
+        <li>2024 - Open Studio, Malmo</li>
+        <li>2023 - Group show, Konstakademien</li>
+      </ul>
+    </details>
 
-      <p>The third item above has the <code>open</code> attribute, which makes it expanded by default.</p>
-    </main>
-  </body>
+    <details>
+      <summary>Materials and process</summary>
+      <p>This piece was created using oil on linen, beginning with a burnt sienna underpainting. The palette was limited
+        to ultramarine, yellow ochre, burnt sienna, and titanium white. Total working time was approximately 40 hours
+        across three weeks.</p>
+    </details>
+
+    <details open>
+      <summary>Artist statement</summary>
+      <p>My work explores the boundary between observation and memory. Each painting begins outdoors, en plein air,
+        before being reinterpreted in the studio over weeks or months. The final piece is neither a faithful record nor
+        a pure invention, but something in between.</p>
+    </details>
+
+    <p>The third item above has the <code>open</code> attribute, which makes it expanded by default.</p>
+  </main>
+</body>
+
 </html>

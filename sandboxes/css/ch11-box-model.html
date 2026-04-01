@@ -1,97 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Box Model and border-box Demo</title>
-    <style>
-      /*
-        Page scaffolding only, not part of the demo.
-      */
-      body {
-        font-family: system-ui, sans-serif;
-        max-width: 50rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        color: #1a1a2e;
-        line-height: 1.6;
-      }
-      h2 { font-size: 1.1rem; margin-block-start: 2rem; }
-      .box-model-diagram {
-        display: flex;
-        justify-content: center;
-        margin: 2rem 0;
-      }
-      .layer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        font-size: 0.8rem;
-        font-family: monospace;
-        position: relative;
-      }
-      .margin-layer {
-        background: #ffeaa7;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-      }
-      .border-layer {
-        background: #74b9ff;
-        padding: 1rem;
-        border-radius: 0.25rem;
-      }
-      .padding-layer {
-        background: #a29bfe;
-        padding: 1.5rem;
-      }
-      .content-layer {
-        background: #55efc4;
-        padding: 1.5rem 2rem;
-        font-weight: bold;
-        font-size: 0.9rem;
-      }
-      .layer-label {
-        position: absolute;
-        font-size: 0.7rem;
-        font-weight: bold;
-        opacity: 0.7;
-      }
-      .margin-layer > .layer-label { top: 0.25rem; left: 0.5rem; }
-      .border-layer > .layer-label { top: 0.15rem; left: 0.35rem; }
-      .padding-layer > .layer-label { top: 0.15rem; left: 0.35rem; }
 
-      .comparison {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        margin: 1.5rem 0;
-      }
-      .demo-box {
-        width: 300px;
-        padding: 20px;
-        border: 3px solid #6c5ce7;
-        background: #dfe6e9;
-        font-family: monospace;
-        font-size: 0.85rem;
-      }
-      .content-box { box-sizing: content-box; }
-      .border-box { box-sizing: border-box; }
-      .label {
-        font-family: monospace;
-        font-size: 0.85rem;
-        font-weight: bold;
-        margin-block-end: 0.5rem;
-      }
-      .measurement {
-        font-size: 0.8rem;
-        color: #6c757d;
-        margin-block-start: 0.5rem;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model and border-box Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 50rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-block-start: 2rem;
+    }
+
+    .box-model-diagram {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.8rem;
+      font-family: monospace;
+      position: relative;
+    }
+
+    .margin-layer {
+      background: #ffeaa7;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+
+    .border-layer {
+      background: #74b9ff;
+      padding: 1rem;
+      border-radius: 0.25rem;
+    }
+
+    .padding-layer {
+      background: #a29bfe;
+      padding: 1.5rem;
+    }
+
+    .content-layer {
+      background: #55efc4;
+      padding: 1.5rem 2rem;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .layer-label {
+      position: absolute;
+      font-size: 0.7rem;
+      font-weight: bold;
+      opacity: 0.7;
+    }
+
+    .margin-layer>.layer-label {
+      top: 0.25rem;
+      left: 0.5rem;
+    }
+
+    .border-layer>.layer-label {
+      top: 0.15rem;
+      left: 0.35rem;
+    }
+
+    .padding-layer>.layer-label {
+      top: 0.15rem;
+      left: 0.35rem;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+
+    .demo-box {
+      width: 300px;
+      padding: 20px;
+      border: 3px solid #6c5ce7;
+      background: #dfe6e9;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .content-box {
+      box-sizing: content-box;
+    }
+
+    .border-box {
+      box-sizing: border-box;
+    }
+
+    .label {
+      font-family: monospace;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-block-end: 0.5rem;
+    }
+
+    .measurement {
+      font-size: 0.8rem;
+      color: #6c757d;
+      margin-block-start: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
     <h1>The Box Model</h1>
     <p>Every element on the page is a box with four layers, from inside out:</p>
 
@@ -111,7 +145,8 @@
     </div>
 
     <h2>content-box vs border-box</h2>
-    <p>Both boxes below are set to <code>width: 300px</code> with <code>padding: 20px</code> and a <code>3px</code> border. See the difference:</p>
+    <p>Both boxes below are set to <code>width: 300px</code> with <code>padding: 20px</code> and a <code>3px</code>
+      border. See the difference:</p>
 
     <div class="comparison">
       <div>
@@ -129,6 +164,7 @@
         <div class="measurement">Actual rendered width: 300px</div>
       </div>
     </div>
-    </main>
-  </body>
+  </main>
+</body>
+
 </html>
