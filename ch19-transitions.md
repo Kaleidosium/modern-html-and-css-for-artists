@@ -120,15 +120,18 @@ While transitions animate between two states, `@keyframes` animations let you de
 The `animation` shorthand:
 
 ```css
-animation: name duration easing fill-mode;
+animation: name duration easing delay iteration-count direction fill-mode;
 ```
+
+All values after `name` and `duration` are optional. The most common ones:
 
 - **name**: References the `@keyframes` block
 - **duration**: How long one cycle takes
 - **easing**: The acceleration curve (same options as transitions)
+- **delay**: How long to wait before starting
+- **iteration-count**: How many times to repeat, or `infinite`
+- **direction**: `normal`, `reverse`, or `alternate` (yo-yo back and forth)
 - **fill-mode**: What styles apply before/after the animation (`both` is usually what you want, as it keeps the final state)
-
-You can also specify `iteration-count` (how many times to repeat, or `infinite`) and `direction` (`alternate` to yo-yo back and forth), though for most UI purposes you'll want a single play-through.
 
 For more complex sequences, use percentage keyframes:
 

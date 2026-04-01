@@ -9,7 +9,7 @@
         Page scaffolding only, not part of the demo.
       */
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, sans-serif;
         max-width: 64rem;
         margin: 2rem auto;
         padding: 0 1rem;
@@ -76,7 +76,7 @@
   </head>
   <body>
     <h1>The .flow Utility</h1>
-    <p>Browser default margins go in both directions and collapse into each other unpredictably. A CSS reset strips them all. The <code>.flow</code> class then uses the "lobotomized owl" selector (<code>* + *</code>) to add vertical spacing back in a single direction of margin. The default value of <code>1em</code> scales with each element's font size, so headings get more space than body text.</p>
+    <p>Browser default margins go in both directions and collapse into each other unpredictably. A CSS reset strips them all. The <code>.flow</code> class then uses the "lobotomized owl" selector (<code>* + *</code>) to add vertical spacing back in a single direction of margin. The default value of <code>1em</code> resolves relative to each element's own font size, so a heading following another element gets a larger gap than a paragraph would.</p>
 
     <div class="comparison">
       <div>

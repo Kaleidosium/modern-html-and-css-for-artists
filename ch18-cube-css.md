@@ -70,7 +70,7 @@ Your chosen CSS reset goes here. I'm using Josh Comeau's Custom CSS Reset, which
     margin: 0;
   }
 
-  /* 3. Enable keyword animations */
+  /* 3. Allow animating size keywords like auto and fit-content */
   @media (prefers-reduced-motion: no-preference) {
     html {
       interpolate-size: allow-keywords;

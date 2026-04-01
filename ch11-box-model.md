@@ -87,7 +87,7 @@ There are two fundamental display types:
 └──────────────────────────────┘
 ```
 
-**Inline elements** sit side by side on the same line, like words in a sentence. They only take up as much width as their content needs. Examples: `<a>`, `<strong>`, `<em>`, `<span>`. (`<img>` is technically inline by default but is a *replaced element*, meaning it respects width, height, and vertical margins like a block. Most resets set images to `display: block`.)
+**Inline elements** sit side by side on the same line, like words in a sentence. They only take up as much width as their content needs. Examples: `<a>`, `<strong>`, `<em>`, `<span>`. (`<img>` is technically inline by default but is a *replaced element*, meaning it respects width and height properties unlike other inline elements. However, it still sits on the text baseline, which causes a small gap below the image. Most resets set images to `display: block` to eliminate this gap.)
 
 ```txt
 This is a paragraph with a [link] and some [bold text] inline.
@@ -119,7 +119,7 @@ There's one quirk of normal flow worth knowing: **vertical margins collapse**. I
 
 This is actually helpful behavior most of the time. It prevents double-spacing between elements. But it can be confusing if you don't know it's happening.
 
-A better approach to vertical spacing is the "flow" utility (the selector pattern is sometimes called the "lobotomized owl," coined by Heydon Pickering):
+A better approach to vertical spacing is the "flow" utility. The `* + *` selector pattern is sometimes called the "lobotomized owl" (a name coined by Heydon Pickering). The `.flow` utility builds on this idea with a scoped version and a custom property for the spacing value:
 
 ```css
 .flow > * + * {
@@ -137,7 +137,7 @@ This selector is dense, so let's unpack it piece by piece:
 - **`+`** is the **adjacent sibling combinator**: it selects an element that immediately follows another element.
 - So **`* + *`** means "any element that is immediately preceded by another element." In practice, this selects every child *except the first one*.
 
-The result: every child of `.flow` gets top margin, except the first child (which has nothing above it). The default fallback of `1em` means spacing scales with each element's font size, so headings naturally get more breathing room than body text. No collapsing, no double-spacing, no need to cancel margin on the first or last child. If you want truly uniform gaps instead, set `--flow-space` to a fixed `rem` value like `1.5rem`.
+The result: every child of `.flow` gets top margin, except the first child (which has nothing above it). The default fallback of `1em` resolves relative to each element's own font size. Since the margin is on the *following* element (the one after the `+`), a heading that follows another element gets a larger gap because the heading's own font size is larger. Body text gets a smaller gap because its font size is smaller. No collapsing, no double-spacing, no need to cancel margin on the first or last child. If you want truly uniform gaps instead, set `--flow-space` to a fixed `rem` value like `1.5rem`.
 
 This pairs naturally with the CSS reset I introduced in the previous chapter. The reset strips browser default margins (which vary by element and collapse unpredictably), and `.flow` adds controlled spacing back in a single direction.
 

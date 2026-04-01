@@ -9,7 +9,7 @@
         Page scaffolding only, not part of the demo.
       */
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, sans-serif;
         max-width: 40rem;
         margin: 2rem auto;
         padding: 0 1rem;
@@ -54,7 +54,7 @@
           transition: opacity 200ms ease;
         }
       }
-      .code-output {
+      .code {
         background: #1a1a2e;
         color: #e0e0e0;
         padding: 1.25rem;
@@ -107,7 +107,7 @@
       <div class="card" style="background: #e9e9eb; padding: 1rem; border-radius: 0.5rem;">A card component</div>
     </div>
 
-    <div class="code-output" id="codeOutput">
+    <div class="code" id="code">
 <span class="selector">h1</span> {
   <span class="property">color</span>: <span class="value">darkslateblue</span>;
   <span class="property">font-size</span>: <span class="value">2rem</span>;
@@ -115,7 +115,7 @@
 
     <script>
       const previewArea = document.querySelector('.preview-area');
-      const codeOutput = document.getElementById('codeOutput');
+      const code = document.getElementById('code');
       const selectorEl = document.getElementById('selector');
       const colorEl = document.getElementById('colorVal');
       const sizeEl = document.getElementById('sizeVal');
@@ -141,13 +141,13 @@
         target.style.color = colorEl.value;
         target.style.fontSize = sizeEl.value;
 
-        codeOutput.textContent = '';
+        code.textContent = '';
         const frag = document.createDocumentFragment();
         const span = (cls, text) => { const s = document.createElement('span'); s.className = cls; s.textContent = text; return s; };
         frag.append(span('selector', sel), document.createTextNode(' {\n  '));
         frag.append(span('property', 'color'), document.createTextNode(': '), span('value', colorEl.value), document.createTextNode(';\n  '));
         frag.append(span('property', 'font-size'), document.createTextNode(': '), span('value', sizeEl.value), document.createTextNode(';\n}'));
-        codeOutput.appendChild(frag);
+        code.appendChild(frag);
       }
 
       selectorEl.addEventListener('change', update);

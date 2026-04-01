@@ -9,7 +9,7 @@
         Page scaffolding only, not part of the demo.
       */
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, sans-serif;
         max-width: 50rem;
         margin: 2rem auto;
         padding: 0 1rem;
@@ -81,6 +81,6 @@
 
     <p>The font size smoothly interpolates between the minimum (1.25rem) and maximum (3rem) as the container changes width. No breakpoints, no jumps.</p>
 
-    <p class="demo-note">This demo uses <code>cqw</code> (container query width) units so the text responds to the resizable box. In real projects, you'd typically use <code>vw</code> (viewport width) so the text responds to the browser window instead.</p>
+    <p class="demo-note">This demo uses <code>cqw</code> (container query width) units so the text responds to the resizable box. In real projects, you'll choose between <code>vw</code> (viewport-relative) and <code>cqw</code> (container-relative) depending on whether the text should scale with the browser window or its parent component.</p>
   </body>
 </html>

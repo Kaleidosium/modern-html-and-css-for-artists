@@ -74,7 +74,7 @@ These helper functions are useful companions to `clamp()`:
 }
 ```
 
-`clamp(min, preferred, max)` is actually equivalent to `max(min, min(preferred, max))`, but `clamp()` is easier to read.
+`clamp(MIN, VAL, MAX)` is actually equivalent to `max(MIN, min(VAL, MAX))`, but `clamp()` is easier to read.
 
 ## The Utopia approach
 

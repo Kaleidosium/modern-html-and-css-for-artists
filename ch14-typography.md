@@ -29,7 +29,7 @@ h1 {
 }
 ```
 
-`rem` stands for "root em" and is relative to the `<html>` element's font size (usually 16px by default). This means `1rem = 16px`, `2rem = 32px`, and so on. Using `rem` means your entire type system scales if the user changes their default font size in their browser settings, which is an important accessibility consideration.
+`rem` stands for "root em" and is relative to the `<html>` element's font size (16px in most browsers by default, but users can change this). So at the default setting, `1rem = 16px`, `2rem = 32px`, and so on. Using `rem` means your entire type system scales if the user changes their default font size in their browser settings, which is an important accessibility consideration.
 
 **`line-height`** controls the spacing between lines of text. Use unitless values:
 

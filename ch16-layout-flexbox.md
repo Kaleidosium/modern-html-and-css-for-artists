@@ -93,6 +93,15 @@ Common `justify-content` values:
 - `center`: center items
 - `space-between`: spread items with space between them (no space at edges)
 - `space-around`: spread items with space around each one
+- `space-evenly`: spread items with equal space between and at the edges
+
+Common `align-items` values:
+
+- `stretch` (default): items stretch to fill the container's cross axis
+- `flex-start`: align items to the start of the cross axis
+- `flex-end`: align items to the end of the cross axis
+- `center`: center items along the cross axis
+- `baseline`: align items so their text baselines line up (useful when items have different font sizes)
 
 ## Flex sizing
 

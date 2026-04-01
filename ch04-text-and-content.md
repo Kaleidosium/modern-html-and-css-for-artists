@@ -69,7 +69,7 @@ This tells the browser (and screen readers) that "March 15th" has strong importa
 
 Emphasis changes the meaning of a sentence, similar to how stressing a word when speaking changes its meaning. It happens to be italic by default.
 
-**`<b>` and `<i>`: Visual without semantic weight**
+**`<b>` and `<i>`: Stylistic offset without importance or emphasis**
 
 HTML also has `<b>` (bold) and `<i>` (italic). These look the same as `<strong>` and `<em>` by default, but they carry different meaning. `<strong>` means "this is important." `<b>` means "draw attention to this text" without implying importance. `<em>` means "this word is stressed." `<i>` means "this text is set apart" from the surrounding prose, like a technical term, a phrase in another language, or a ship name:
 
@@ -184,11 +184,11 @@ For quoting text from another source:
 ```html
 <blockquote cite="https://en.wikiquote.org/wiki/Claude_Monet">
   <p>Color is my day-long obsession, joy and torment.</p>
-  <footer>—Claude Monet</footer>
+  <footer>&mdash;Claude Monet</footer>
 </blockquote>
 ```
 
-`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. (Note: the WHATWG spec technically says content inside a `<blockquote>` should only be quoted content. An alternative approach is to wrap the whole thing in a `<figure>` and use `<figcaption>` for attribution. The `<footer>` inside `<blockquote>` pattern is a widespread convention, and you'll see it used often.)
+`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. This pattern is shown in the WHATWG spec's own examples and is widely used. An alternative approach is to wrap the whole thing in a `<figure>` and use `<figcaption>` for attribution; either pattern is valid.
 
 See blockquotes rendered with default browser indentation and styling.
 
@@ -201,7 +201,7 @@ If you're attributing a quote to a specific work, use the `<cite>` element for t
 ```html
 <blockquote cite="https://en.wikiquote.org/wiki/Salvador_Dalí">
   <p>Don't be afraid of perfection. You will never attain it!</p>
-  <footer>—Salvador Dalí, <cite>Diary of a Genius</cite></footer>
+  <footer>&mdash;Salvador Dalí, <cite>Diary of a Genius</cite></footer>
 </blockquote>
 ```
 

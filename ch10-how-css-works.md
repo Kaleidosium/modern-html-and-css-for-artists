@@ -148,7 +148,7 @@ article h4 {
 }
 
 /* You can write this */
-:is(article) :is(h2, h3, h4) {
+article :is(h2, h3, h4) {
   line-height: 1.2;
 }
 ```
@@ -233,7 +233,7 @@ graph TD
 
 ### 1. Layers (most powerful)
 
-CSS `@layer` lets you define explicit ordering for groups of styles. Styles in a later layer always beat styles in an earlier layer, regardless of specificity. In [Chapter 18](/css/cube-css/), I'll introduce a methodology called CUBE CSS that gives each layer a specific role (reset, global styles, layout, components, utilities, exceptions). For now, here's what the syntax looks like:
+CSS `@layer` lets you define explicit ordering for groups of styles. Within the same origin and importance level, styles in a later layer beat styles in an earlier layer, regardless of specificity. In [Chapter 18](/css/cube-css/), I'll introduce a methodology called CUBE CSS that gives each layer a specific role (reset, global styles, layout, components, utilities, exceptions). For now, here's what the syntax looks like:
 
 ```css
 @layer reset, global, composition, block, utility, exception;

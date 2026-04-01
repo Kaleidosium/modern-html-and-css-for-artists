@@ -9,7 +9,7 @@
         Page scaffolding only, not part of the demo.
       */
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: system-ui, sans-serif;
         max-width: 50rem;
         margin: 2rem auto;
         padding: 0 1rem;
@@ -55,7 +55,7 @@
         font-size: 0.9rem;
         white-space: nowrap;
       }
-      .code-display {
+      .code {
         background: #1a1a2e;
         color: #e0e0e0;
         padding: 0.75rem 1rem;
@@ -109,7 +109,7 @@
 
     <h2>justify-content values</h2>
     <div class="controls">
-      <label>justify-content:</label>
+      <label for="justifySelect">justify-content:</label>
       <select id="justifySelect" onchange="updateJustify()">
         <option value="flex-start">flex-start</option>
         <option value="center">center</option>
@@ -124,16 +124,34 @@
       <div class="item">About</div>
       <div class="item">Contact</div>
     </div>
-    <div class="code-display" id="justifyCode">justify-content: flex-start;</div>
+    <div class="code" id="justifyCode">justify-content: flex-start;</div>
+
+    <h2>align-items values</h2>
+    <div class="controls">
+      <label for="alignSelect">align-items:</label>
+      <select id="alignSelect" onchange="updateAlign()">
+        <option value="stretch">stretch</option>
+        <option value="flex-start">flex-start</option>
+        <option value="flex-end">flex-end</option>
+        <option value="center">center</option>
+        <option value="baseline">baseline</option>
+      </select>
+    </div>
+    <div class="flex-demo" id="alignDemo" style="min-height: 8rem; align-items: stretch;">
+      <div class="item">Short</div>
+      <div class="item">Taller<br>item</div>
+      <div class="item">Tallest<br>item<br>here</div>
+    </div>
+    <div class="code" id="alignCode">align-items: stretch;</div>
 
     <h2>flex-direction + flex-wrap</h2>
     <div class="controls">
-      <label>flex-direction:</label>
+      <label for="dirSelect">flex-direction:</label>
       <select id="dirSelect" onchange="updateDir()">
         <option value="row">row</option>
         <option value="column">column</option>
       </select>
-      <label>flex-wrap:</label>
+      <label for="wrapSelect">flex-wrap:</label>
       <select id="wrapSelect" onchange="updateDir()">
         <option value="nowrap">nowrap</option>
         <option value="wrap">wrap</option>
@@ -146,7 +164,7 @@
       <div class="item">Charcoal</div>
       <div class="item">Mixed</div>
     </div>
-    <div class="code-display" id="dirCode">flex-direction: row; flex-wrap: nowrap;</div>
+    <div class="code" id="dirCode">flex-direction: row; flex-wrap: nowrap;</div>
 
     <h2>The sidebar layout</h2>
     <p>Drag the bottom-right corner to resize. When there isn't enough room, the main content wraps below the sidebar:</p>
@@ -160,18 +178,33 @@
     </div>
 
     <script>
+      const alignSelect = document.getElementById('alignSelect');
+      const alignDemo = document.getElementById('alignDemo');
+      const alignCode = document.getElementById('alignCode');
+      const justifySelect = document.getElementById('justifySelect');
+      const justifyDemo = document.getElementById('justifyDemo');
+      const justifyCode = document.getElementById('justifyCode');
+      const dirSelect = document.getElementById('dirSelect');
+      const wrapSelect = document.getElementById('wrapSelect');
+      const dirDemo = document.getElementById('dirDemo');
+      const dirCode = document.getElementById('dirCode');
+
+      function updateAlign() {
+        const val = alignSelect.value;
+        alignDemo.style.alignItems = val;
+        alignCode.textContent = 'align-items: ' + val + ';';
+      }
       function updateJustify() {
-        const val = document.getElementById('justifySelect').value;
-        document.getElementById('justifyDemo').style.justifyContent = val;
-        document.getElementById('justifyCode').textContent = 'justify-content: ' + val + ';';
+        const val = justifySelect.value;
+        justifyDemo.style.justifyContent = val;
+        justifyCode.textContent = 'justify-content: ' + val + ';';
       }
       function updateDir() {
-        const dir = document.getElementById('dirSelect').value;
-        const wrap = document.getElementById('wrapSelect').value;
-        const demo = document.getElementById('dirDemo');
-        demo.style.flexDirection = dir;
-        demo.style.flexWrap = wrap;
-        document.getElementById('dirCode').textContent = 'flex-direction: ' + dir + '; flex-wrap: ' + wrap + ';';
+        const dir = dirSelect.value;
+        const wrap = wrapSelect.value;
+        dirDemo.style.flexDirection = dir;
+        dirDemo.style.flexWrap = wrap;
+        dirCode.textContent = 'flex-direction: ' + dir + '; flex-wrap: ' + wrap + ';';
       }
     </script>
 
