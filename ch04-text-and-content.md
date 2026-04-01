@@ -125,6 +125,10 @@ See all the inline text elements rendered side by side, so you can compare how `
 
 The `<time>` element marks up a date or time. The `datetime` attribute provides a machine-readable version, while the text inside is whatever human-friendly phrasing you prefer. The most common format is `YYYY-MM-DD`, but `datetime` also accepts year only (`2025`), year-month (`2025-03`), date with time (`2025-03-15T10:00`), time only (`10:00`), and durations (`PT2H30M`). This helps search engines, screen readers, and browser tools understand that "March 15, 2025" is an actual date, not just three words. You'll find it especially useful for exhibition dates, artwork years, and event listings. You can combine `<time>` with other inline elements: `<strong><time datetime="2025-03-15">March 15</time></strong>` if a date is both important and needs to be machine-readable.
 
+## Character references
+
+Some symbols can't be typed directly or have special meaning in HTML. For these, you can use **character references** like `&copy;` (&copy;), `&reg;` (&reg;), and `&trade;` (&trade;). You'll see `&copy;` used in footer copyright notices throughout this guide. For a full list, see the [MDN glossary entry on character references](https://developer.mozilla.org/en-US/docs/Glossary/Character_reference).
+
 ## Lists
 
 **Unordered list (`<ul>`):** for items where the order doesn't matter.
@@ -184,11 +188,11 @@ For quoting text from another source:
 ```html
 <blockquote cite="https://en.wikiquote.org/wiki/Claude_Monet">
   <p>Color is my day-long obsession, joy and torment.</p>
-  <footer>&mdash;Claude Monet</footer>
+  <footer>&mdash; Claude Monet</footer>
 </blockquote>
 ```
 
-`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. This pattern is shown in the WHATWG spec's own examples and is widely used. An alternative approach is to wrap the whole thing in a `<figure>` and use `<figcaption>` for attribution; either pattern is valid.
+`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. Make sure your page is wrapped in `<main>` as this is representative of where most blockquotes occur. Without that, the `<footer>` would be considered a page landmark by Chromium browsers. Screen readers also announce this nested pattern gracefully.
 
 See blockquotes rendered with default browser indentation and styling.
 
@@ -196,15 +200,13 @@ See blockquotes rendered with default browser indentation and styling.
 {% assign title = "Blockquote demo" %}
 {% include "sandbox" %}
 
-If you're attributing a quote to a specific work, use the `<cite>` element for the work's title:
+If you're attributing a quote to a specific work, use the `<cite>` element for the work's title, and optionally include a link:
 
 ```html
 <blockquote cite="https://en.wikiquote.org/wiki/Salvador_Dalí">
   <p>Don't be afraid of perfection. You will never attain it!</p>
-  <footer>&mdash;Salvador Dalí, <cite>Diary of a Genius</cite></footer>
+  <footer>
+    &mdash; <cite>Salvador Dalí, <a href="https://archive.org/details/diaryofgenius0000dali">Diary of a Genius</a></cite>
+  </footer>
 </blockquote>
 ```
-
-## Character references
-
-Some symbols can't be typed directly or have special meaning in HTML. For these, you can use **character references** like `&copy;` (&copy;), `&reg;` (&reg;), and `&trade;` (&trade;). You'll see `&copy;` used in footer copyright notices throughout this guide. For a full list, see the [MDN glossary entry on character references](https://developer.mozilla.org/en-US/docs/Glossary/Character_reference).

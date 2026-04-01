@@ -75,6 +75,7 @@
     </style>
   </head>
   <body>
+    <main>
     <h1>The .flow Utility</h1>
     <p>Browser default margins go in both directions and collapse into each other unpredictably. A CSS reset strips them all. The <code>.flow</code> class then uses the "lobotomized owl" selector (<code>* + *</code>) to add vertical spacing back in a single direction of margin. The default value of <code>1em</code> resolves relative to each element's own font size, so a heading following another element gets a larger gap than a paragraph would.</p>
 
@@ -118,5 +119,6 @@
         <span class="step-label">Controlled spacing, single direction of margin</span>
       </div>
     </div>
+    </main>
   </body>
 </html>

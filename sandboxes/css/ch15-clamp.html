@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>clamp() in Action Demo</title>
-    <style>
-      /*
-        Page scaffolding only, not part of the demo.
-      */
-      body {
-        font-family: system-ui, sans-serif;
-        max-width: 50rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        color: #1a1a2e;
-        line-height: 1.6;
-      }
 
-      .resize-container {
-        container-type: inline-size;
-        resize: horizontal;
-        overflow: auto;
-        border: 2px dashed #6c5ce7;
-        border-radius: 0.5rem;
-        padding: 2rem;
-        min-width: 200px;
-        max-width: 100%;
-        margin: 1.5rem 0;
-        background: #f8f9fa;
-      }
-      .resize-container h2 {
-        font-size: clamp(1.25rem, 4cqw + 0.5rem, 3rem);
-        margin: 0 0 0.5rem;
-        color: #120A8F;
-        font-family: Georgia, serif;
-      }
-      .resize-container p {
-        font-size: clamp(0.875rem, 1.5cqw + 0.5rem, 1.25rem);
-        margin: 0;
-        max-width: 65ch;
-      }
-      .code {
-        background: #1a1a2e;
-        color: #e0e0e0;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        font-family: monospace;
-        font-size: 0.85rem;
-        overflow-x: auto;
-      }
-      .instruction {
-        text-align: center;
-        font-size: 0.9rem;
-        color: #6c5ce7;
-        font-weight: 600;
-        margin: 0.5rem 0;
-      }
-      .demo-note {
-        font-size: 0.875rem;
-        color: #6c757d;
-        font-style: italic;
-        padding: 1rem;
-        background: #f8f9fa;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clamp() in Action Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 50rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .resize-container {
+      container-type: inline-size;
+      resize: horizontal;
+      overflow: auto;
+      border: 2px dashed #6c5ce7;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      min-width: 200px;
+      max-width: 100%;
+      margin: 1.5rem 0;
+      background: #f8f9fa;
+    }
+
+    .resize-container h2 {
+      font-size: clamp(1.25rem, 4cqw + 0.5rem, 3rem);
+      margin: 0 0 0.5rem;
+      color: #120A8F;
+      font-family: Georgia, serif;
+    }
+
+    .resize-container p {
+      font-size: clamp(0.875rem, 1.5cqw + 0.5rem, 1.25rem);
+      margin: 0;
+      max-width: 65ch;
+    }
+
+    .code {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+    }
+
+    .instruction {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6c5ce7;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    .demo-note {
+      font-size: 0.875rem;
+      color: #6c757d;
+      font-style: italic;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
     <h1>clamp() in Action</h1>
-    <p>The heading and text below use <code>clamp()</code> for fluid font sizing. Drag the bottom-right corner of the box to resize it and watch the text scale smoothly:</p>
+    <p>The heading and text below use <code>clamp()</code> for fluid font sizing. Drag the bottom-right corner of the
+      box to resize it and watch the text scale smoothly:</p>
 
     <p class="instruction">Drag the handle to resize &rarr;</p>
     <div class="resize-container">
       <h2>Harbor Study No. 3</h2>
-      <p>This series explores the tension between natural forms and digital artifacts. Each piece began as a plein air sketch before being reinterpreted over several weeks.</p>
+      <p>This series explores the tension between natural forms and digital artifacts. Each piece began as a plein air
+        sketch before being reinterpreted over several weeks.</p>
     </div>
 
     <div class="code">font-size: clamp(1.25rem, 4cqw + 0.5rem, 3rem);</div>
 
-    <p>The font size smoothly interpolates between the minimum (1.25rem) and maximum (3rem) as the container changes width. No breakpoints, no jumps.</p>
+    <p>The font size smoothly interpolates between the minimum (1.25rem) and maximum (3rem) as the container changes
+      width. No breakpoints, no jumps.</p>
 
-    <p class="demo-note">This demo uses <code>cqw</code> (container query width) units so the text responds to the resizable box. In real projects, you'll choose between <code>vw</code> (viewport-relative) and <code>cqw</code> (container-relative) depending on whether the text should scale with the browser window or its parent component.</p>
-  </body>
+  </main>
+  <p class="demo-note">This demo uses <code>cqw</code> (container query width) units so the text responds to the
+    resizable box. In real projects, you'll choose between <code>vw</code> (viewport-relative) and <code>cqw</code>
+    (container-relative) depending on whether the text should scale with the browser window or its parent component.</p>
+</body>
+
 </html>

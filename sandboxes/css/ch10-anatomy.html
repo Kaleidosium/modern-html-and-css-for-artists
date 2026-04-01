@@ -1,84 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anatomy of a CSS Rule - Interactive Demo</title>
-    <style>
-      /*
-        Page scaffolding only, not part of the demo.
-      */
-      body {
-        font-family: system-ui, sans-serif;
-        max-width: 40rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        color: #1a1a2e;
-        line-height: 1.6;
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anatomy of a CSS Rule - Interactive Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 40rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .controls {
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-block: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    label {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    label span {
+      font-family: monospace;
+    }
+
+    input[type="text"],
+    select {
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 0.25rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+
+    .preview-area {
+      border: 2px dashed #ddd;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin-block: 1rem;
+    }
+
+    .preview-area>.dimmed {
+      opacity: 0.25;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .preview-area>* {
+        transition: opacity 200ms ease;
       }
-      .controls {
-        background: #f8f9fa;
-        border-radius: 0.5rem;
-        padding: 1.25rem;
-        margin-block: 1.5rem;
-        display: grid;
-        gap: 0.75rem;
-      }
-      label {
-        display: grid;
-        grid-template-columns: 8rem 1fr;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.875rem;
-        font-weight: 600;
-      }
-      label span { font-family: monospace; }
-      input[type="text"], select {
-        padding: 0.4rem 0.6rem;
-        border: 1px solid #ccc;
-        border-radius: 0.25rem;
-        font-family: monospace;
-        font-size: 0.9rem;
-      }
-      .preview-area {
-        border: 2px dashed #ddd;
-        border-radius: 0.5rem;
-        padding: 2rem;
-        margin-block: 1rem;
-      }
-      .preview-area > .dimmed {
-        opacity: 0.25;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        .preview-area > * {
-          transition: opacity 200ms ease;
-        }
-      }
-      .code {
-        background: #1a1a2e;
-        color: #e0e0e0;
-        padding: 1.25rem;
-        border-radius: 0.5rem;
-        font-family: monospace;
-        font-size: 0.9rem;
-        line-height: 1.8;
-        white-space: pre;
-      }
-      .selector { color: #6c5ce7; }
-      .property { color: #00cec9; }
-      .value { color: #fdcb6e; }
-      .demo-note {
-        font-size: 0.875rem;
-        color: #6c757d;
-        font-style: italic;
-        padding: 1rem;
-        background: #f8f9fa;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-      }
-    </style>
-  </head>
-  <body>
+    }
+
+    .code {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 1.25rem;
+      border-radius: 0.5rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      white-space: pre;
+    }
+
+    .selector {
+      color: #6c5ce7;
+    }
+
+    .property {
+      color: #00cec9;
+    }
+
+    .value {
+      color: #fdcb6e;
+    }
+
+    .demo-note {
+      font-size: 0.875rem;
+      color: #6c757d;
+      font-style: italic;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
     <h1>Anatomy of a CSS Rule</h1>
     <p>Change the values below and watch the preview and code update in real time:</p>
 
@@ -108,10 +132,11 @@
     </div>
 
     <div class="code" id="code">
-<span class="selector">h1</span> {
-  <span class="property">color</span>: <span class="value">darkslateblue</span>;
-  <span class="property">font-size</span>: <span class="value">2rem</span>;
-}</div>
+      <span class="selector">h1</span> {
+      <span class="property">color</span>: <span class="value">darkslateblue</span>;
+      <span class="property">font-size</span>: <span class="value">2rem</span>;
+      }
+    </div>
 
     <script>
       const previewArea = document.querySelector('.preview-area');
@@ -158,6 +183,9 @@
       update();
     </script>
 
-    <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't require JavaScript.</p>
-  </body>
+  </main>
+  <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't
+    require JavaScript.</p>
+</body>
+
 </html>

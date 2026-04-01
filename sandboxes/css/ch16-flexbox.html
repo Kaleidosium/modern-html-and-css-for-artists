@@ -1,110 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Interactive Demo</title>
-    <style>
-      /*
-        Page scaffolding only, not part of the demo.
-      */
-      body {
-        font-family: system-ui, sans-serif;
-        max-width: 50rem;
-        margin: 2rem auto;
-        padding: 0 1rem;
-        color: #1a1a2e;
-        line-height: 1.6;
-      }
-      .controls {
-        background: #f0f0f0;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-      }
-      .controls label {
-        font-size: 0.8rem;
-        font-weight: 600;
-        font-family: monospace;
-      }
-      .controls select {
-        padding: 0.3rem 0.5rem;
-        border-radius: 0.25rem;
-        border: 1px solid #ccc;
-        font-family: monospace;
-      }
-      .flex-demo {
-        display: flex;
-        gap: 0.5rem;
-        padding: 1rem;
-        border: 2px dashed #6c5ce7;
-        border-radius: 0.5rem;
-        margin: 0.75rem 0;
-        min-height: 6rem;
-      }
-      .flex-demo .item {
-        background: #a29bfe;
-        color: white;
-        padding: 0.75rem 1.25rem;
-        border-radius: 0.25rem;
-        font-weight: 600;
-        font-size: 0.9rem;
-        white-space: nowrap;
-      }
-      .code {
-        background: #1a1a2e;
-        color: #e0e0e0;
-        padding: 0.75rem 1rem;
-        border-radius: 0.5rem;
-        font-family: monospace;
-        font-size: 0.8rem;
-        margin: 0.5rem 0;
-      }
-      h2 { font-size: 1.1rem; margin-block-start: 2rem; }
 
-      .sidebar-demo {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        resize: horizontal;
-        overflow: auto;
-        border: 2px dashed #00b894;
-        border-radius: 0.5rem;
-        padding: 1rem;
-        min-width: 200px;
-        margin: 0.75rem 0;
-      }
-      .sidebar-demo .sidebar {
-        flex-basis: 15rem;
-        flex-grow: 1;
-        background: #dfe6e9;
-        padding: 1rem;
-        border-radius: 0.25rem;
-      }
-      .sidebar-demo .main {
-        flex-basis: 0;
-        flex-grow: 999;
-        min-width: 60%;
-        background: #d5f5e3;
-        padding: 1rem;
-        border-radius: 0.25rem;
-      }
-      .demo-note {
-        font-size: 0.875rem;
-        color: #6c757d;
-        font-style: italic;
-        padding: 1rem;
-        background: #f8f9fa;
-        border-radius: 0.5rem;
-        margin: 1rem 0;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Interactive Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 50rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .controls {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .controls label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      font-family: monospace;
+    }
+
+    .controls select {
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid #ccc;
+      font-family: monospace;
+    }
+
+    .flex-demo {
+      display: flex;
+      gap: 0.5rem;
+      padding: 1rem;
+      border: 2px dashed #6c5ce7;
+      border-radius: 0.5rem;
+      margin: 0.75rem 0;
+      min-height: 6rem;
+    }
+
+    .flex-demo .item {
+      background: #a29bfe;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 0.25rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .code {
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+      font-family: monospace;
+      font-size: 0.8rem;
+      margin: 0.5rem 0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      margin-block-start: 2rem;
+    }
+
+    .sidebar-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      resize: horizontal;
+      overflow: auto;
+      border: 2px dashed #00b894;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      min-width: 200px;
+      margin: 0.75rem 0;
+    }
+
+    .sidebar-demo .sidebar {
+      flex-basis: 15rem;
+      flex-grow: 1;
+      background: #dfe6e9;
+      padding: 1rem;
+      border-radius: 0.25rem;
+    }
+
+    .sidebar-demo .main {
+      flex-basis: 0;
+      flex-grow: 999;
+      min-width: 60%;
+      background: #d5f5e3;
+      padding: 1rem;
+      border-radius: 0.25rem;
+    }
+
+    .demo-note {
+      font-size: 0.875rem;
+      color: #6c757d;
+      font-style: italic;
+      padding: 1rem;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
     <h1>Flexbox Interactive</h1>
 
     <h2>justify-content values</h2>
@@ -167,7 +183,8 @@
     <div class="code" id="dirCode">flex-direction: row; flex-wrap: nowrap;</div>
 
     <h2>The sidebar layout</h2>
-    <p>Drag the bottom-right corner to resize. When there isn't enough room, the main content wraps below the sidebar:</p>
+    <p>Drag the bottom-right corner to resize. When there isn't enough room, the main content wraps below the sidebar:
+    </p>
     <div class="sidebar-demo">
       <div class="sidebar">
         <strong>Sidebar</strong><br>flex-basis: 15rem<br>flex-grow: 1
@@ -208,6 +225,9 @@
       }
     </script>
 
-    <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't require JavaScript.</p>
-  </body>
+  </main>
+  <p class="demo-note">This demo uses JavaScript for the interactive controls. The CSS concepts being demonstrated don't
+    require JavaScript.</p>
+</body>
+
 </html>
