@@ -60,75 +60,71 @@ Before we move on to CSS, take a step back and look at a small but complete page
 ```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane Doe - Artist</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <header>
-      <h1><a href="/">Jane Doe</a></h1>
-      <nav aria-label="Primary">
-        <a href="/work">Work</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
 
-    <main>
-      <section id="selected-works" aria-label="Selected Works">
-        <h2>Selected Works</h2>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane Doe - Artist</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <article>
-          <figure>
-            <img
-              src="harbor-study.jpg"
-              alt="Oil study of fishing boats at dawn, warm light on calm water"
-              width="1200"
-              height="800"
-            >
-            <figcaption>Harbor Study No. 3 - Oil on panel, 30 × 40 cm, <time datetime="2025">2025</time></figcaption>
-          </figure>
-        </article>
+<body>
+  <header>
+    <h1><a href="/">Jane Doe</a></h1>
+    <nav aria-label="Primary">
+      <a href="/work">Work</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
 
-        <article>
-          <figure>
-            <img
-              src="night-garden.jpg"
-              alt="Dense garden foliage rendered in deep blues and violets with specks of white"
-              width="1200"
-              height="900"
-            >
-            <figcaption>Night Garden - Acrylic on canvas, 100 × 75 cm, <time datetime="2024">2024</time></figcaption>
-          </figure>
-        </article>
-      </section>
+  <main>
+    <section id="selected-works" aria-label="Selected Works">
+      <h2>Selected Works</h2>
 
-      <section id="about" aria-label="About">
-        <h2>About</h2>
-        <p>I'm a painter based in Stockholm, working primarily in oil and acrylic. My work explores the boundary between observation and memory.</p>
+      <article>
+        <figure>
+          <img src="harbor-study.jpg" alt="Oil study of fishing boats at dawn, warm light on calm water" width="1200"
+            height="800">
+          <figcaption>Harbor Study No. 3 - Oil on panel, 30 × 40 cm, <time datetime="2025">2025</time></figcaption>
+        </figure>
+      </article>
 
-        <details>
-          <summary>Exhibition history</summary>
-          <dl>
-            <dt><time datetime="2025">2025</time></dt>
-            <dd>Galleri Nord, Stockholm - Solo show</dd>
+      <article>
+        <figure>
+          <img src="night-garden.jpg" alt="Dense garden foliage rendered in deep blues and violets with specks of white"
+            width="1200" height="900">
+          <figcaption>Night Garden - Acrylic on canvas, 100 × 75 cm, <time datetime="2024">2024</time></figcaption>
+        </figure>
+      </article>
+    </section>
 
-            <dt><time datetime="2024">2024</time></dt>
-            <dd>Open Studio, Malmö - Group exhibition</dd>
-          </dl>
-        </details>
-      </section>
-    </main>
+    <section id="about" aria-label="About">
+      <h2>About</h2>
+      <p>I'm a painter based in Stockholm, working primarily in oil and acrylic. My work explores the boundary between
+        observation and memory.</p>
 
-    <footer>
-      <p>&copy; 2025 Jane Doe</p>
-      <nav aria-label="Social media links">
-        <a href="https://instagram.com/janedoe">Instagram</a>
-      </nav>
-    </footer>
-  </body>
+      <details>
+        <summary>Exhibition history</summary>
+        <dl>
+          <dt><time datetime="2025">2025</time></dt>
+          <dd>Galleri Nord, Stockholm - Solo show</dd>
+
+          <dt><time datetime="2024">2024</time></dt>
+          <dd>Open Studio, Malmö - Group exhibition</dd>
+        </dl>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jane Doe</p>
+    <nav aria-label="Social media links">
+      <a href="https://instagram.com/janedoe">Instagram</a>
+    </nav>
+  </footer>
+</body>
+
 </html>
 ```
 

@@ -192,7 +192,7 @@ For quoting text from another source:
 </blockquote>
 ```
 
-`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. Make sure your page is wrapped in `<main>` as this is representative of where most blockquotes occur. Without that, the `<footer>` would be considered a page landmark by Chromium browsers. Screen readers also announce this nested pattern gracefully.
+`<blockquote>` indicates an extended quotation. The `cite` attribute can provide a URL for the source. The `<footer>` inside the blockquote holds the attribution. Screen readers announce this nested pattern gracefully, understanding that this footer belongs to the quote rather than to the entire page.
 
 See blockquotes rendered with default browser indentation and styling.
 
