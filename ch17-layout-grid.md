@@ -54,15 +54,15 @@ The fluid gallery pattern with placeholder artwork cards. Resize your browser wi
 ```html
 <div class="gallery">
   <figure>
-    <img src="piece-1.jpg" alt="..." width="800" height="600">
+    <img src="piece-1.jpg" alt="Oil study of fishing boats at dawn" width="800" height="600">
     <figcaption>Harbor Study No. 1</figcaption>
   </figure>
   <figure>
-    <img src="piece-2.jpg" alt="..." width="800" height="600">
+    <img src="piece-2.jpg" alt="Dense garden foliage in deep blues and violets" width="800" height="600">
     <figcaption>Night Garden</figcaption>
   </figure>
   <figure>
-    <img src="piece-3.jpg" alt="..." width="800" height="600">
+    <img src="piece-3.jpg" alt="Soft golden light filtering through curtains" width="800" height="600">
     <figcaption>Morning Light</figcaption>
   </figure>
   <!-- as many items as you like -->

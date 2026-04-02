@@ -17,13 +17,13 @@ A transition animates the change between two states of a CSS property. You defin
 
 ```css
 .button {
-  background: var(--color-primary);
+  background-color: var(--color-primary);
   color: var(--color-paper);
   transition: background-color 200ms ease;
 }
 
 .button:hover {
-  background: var(--color-accent);
+  background-color: var(--color-accent);
 }
 ```
 

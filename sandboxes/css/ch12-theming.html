@@ -106,7 +106,7 @@
     </p>
 
     <div class="toggle-bar">
-      <button type="button" onclick="toggleTheme()">Toggle dark theme on second section</button>
+      <button type="button" id="themeToggle">Toggle dark theme on second section</button>
     </div>
 
     <section>
@@ -127,14 +127,14 @@
     </section>
 
     <script>
-      function toggleTheme() {
+      document.getElementById('themeToggle').addEventListener('click', () => {
         const section = document.getElementById('darkSection');
         if (section.dataset.theme === 'dark') {
           delete section.dataset.theme;
         } else {
           section.dataset.theme = 'dark';
         }
-      }
+      });
     </script>
 
   </main>

@@ -25,7 +25,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : An accessibility attribute that provides a screen-readable name or description when visual context alone isn't enough.
 
 **Article** <small>HTML · Chapter 5</small>
-: A self-contained piece of content that could stand alone, shared, reposted, or displayed in a feed independently.
+: A self-contained piece of content that could stand alone, be shared, be reposted, or be displayed in a feed independently.
 
 **Aside** <small>HTML · Chapter 5</small>
 : Content related to the main content but that could be considered separate, like sidebars, pull quotes, or supplementary information.
@@ -83,7 +83,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A unit of measurement based on the width of the "0" character in the current font, useful for controlling line length.
 
 **Character References** <small>HTML · Chapter 4</small>
-: Special codes like `&copy;`, `&reg;`, `&trade;` used to represent symbols and special characters that can't be typed directly.
+: Special codes like `&copy;`, `&reg;`, `&trade;` used to represent characters that have special meaning in HTML (like `<`, `>`, `&`) or symbols that may not be available on all keyboards.
 
 **Chroma** <small>CSS · Chapter 13</small>
 : In OKLCH, the color intensity (0 = gray, higher = more vivid). Similar to saturation but perceptually uniform.
@@ -125,7 +125,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A modern CSS feature allowing related styles to be written in a grouped, hierarchical way within a parent selector.
 
 **CSS Reset** <small>CSS · Chapter 10</small>
-: A set of CSS rules that normalize browser default styles to start from a consistent baseline.
+: A set of CSS rules that removes or normalizes browser default styles to start from a consistent baseline.
 
 **CSS Rule** <small>CSS · Chapter 10</small>
 : A complete CSS statement consisting of a selector and a declaration block containing properties and values.
@@ -168,7 +168,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A CSS selector targeting HTML elements directly by tag name (e.g., `p`, `h1`, `img`).
 
 **Emphasis** <small>HTML · Chapter 4</small>
-: The `<em>` element that stresses a word or phrase, changing its meaning. It is the semantic alternative to italic.
+: The `<em>` element that stresses a word or phrase, changing its meaning. Browsers render it in italics by default, but its purpose is conveying stress emphasis, not visual styling.
 
 **Exception Layer** <small>CSS · Chapter 18</small>
 : In CUBE CSS, state variations applied with `data-*` attributes that represent deviations from defaults.
@@ -326,7 +326,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The `loading="lazy"` attribute that tells the browser to defer loading an image until the user scrolls near it.
 
 **Lightness** <small>CSS · Chapter 13</small>
-: How bright a color is: 0% is black, 50% is the pure color, 100% is white.
+: How bright a color is. In HSL, 0% is black, 50% is the pure color, and 100% is white. In OKLCH, lightness is perceptually uniform, ranging from 0 (black) to 1 (white).
 
 **`line-height`** <small>CSS · Chapter 14</small>
 : The vertical spacing between lines of text, typically expressed as a unitless multiplier (e.g., 1.6 means 1.6× the font size).
@@ -338,7 +338,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : An adjacent sibling selector pattern that targets all elements except the first child. It is the underlying selector for the `.flow` utility.
 
 **Logical Properties** <small>CSS · Chapter 11</small>
-: CSS properties that adapt to writing direction using `block` (vertical) and `inline` (horizontal) instead of `top`, `right`, `bottom`, `left`.
+: CSS properties that adapt to writing direction using `block` and `inline` axes instead of `top`, `right`, `bottom`, `left`. In horizontal languages like English, block is vertical and inline is horizontal.
 
 ## M
 

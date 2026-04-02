@@ -95,7 +95,6 @@ img:not([alt]),
 img:not([src]),
 input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
 input:not([type]),
-input:not([type]),
 input[type="checkbox"] + label,
 input[type="radio"] + label,
 input[type="radio"]:not([name]),
@@ -396,7 +395,7 @@ Invalid `legend` position in `fieldset`.
 
 fieldset > :not(legend):first-child::after {
   content:
-    "Invalid :first-child of <legend>"
+    "First child of <fieldset> should be <legend>"
   ;
 }
 

@@ -113,7 +113,7 @@
 
     <div class="demo-area">
       <h2>Toggle display to see the switch:</h2>
-      <button type="button" onclick="toggleDisplay()">Toggle display: block / inline</button>
+      <button type="button" id="toggleBtn">Toggle display: block / inline</button>
       <div id="switchable" style="margin-top: 1rem;">
         <span>Item 1</span>
         <span>Item 2</span>
@@ -125,7 +125,7 @@
 
     <script>
       let isBlock = false;
-      function toggleDisplay() {
+      document.getElementById('toggleBtn').addEventListener('click', () => {
         isBlock = !isBlock;
         const items = document.querySelectorAll('#switchable span');
         items.forEach(item => {
@@ -133,7 +133,7 @@
         });
         document.getElementById('displayLabel').textContent =
           'Current: display: ' + (isBlock ? 'block' : 'inline');
-      }
+      });
     </script>
 
   </main>

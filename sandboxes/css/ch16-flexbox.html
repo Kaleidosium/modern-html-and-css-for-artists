@@ -126,7 +126,7 @@
     <h2>justify-content values</h2>
     <div class="controls">
       <label for="justifySelect">justify-content:</label>
-      <select id="justifySelect" onchange="updateJustify()">
+      <select id="justifySelect">
         <option value="flex-start">flex-start</option>
         <option value="center">center</option>
         <option value="flex-end">flex-end</option>
@@ -145,7 +145,7 @@
     <h2>align-items values</h2>
     <div class="controls">
       <label for="alignSelect">align-items:</label>
-      <select id="alignSelect" onchange="updateAlign()">
+      <select id="alignSelect">
         <option value="stretch">stretch</option>
         <option value="flex-start">flex-start</option>
         <option value="flex-end">flex-end</option>
@@ -163,12 +163,12 @@
     <h2>flex-direction + flex-wrap</h2>
     <div class="controls">
       <label for="dirSelect">flex-direction:</label>
-      <select id="dirSelect" onchange="updateDir()">
+      <select id="dirSelect">
         <option value="row">row</option>
         <option value="column">column</option>
       </select>
       <label for="wrapSelect">flex-wrap:</label>
-      <select id="wrapSelect" onchange="updateDir()">
+      <select id="wrapSelect">
         <option value="nowrap">nowrap</option>
         <option value="wrap">wrap</option>
       </select>
@@ -206,16 +206,18 @@
       const dirDemo = document.getElementById('dirDemo');
       const dirCode = document.getElementById('dirCode');
 
-      function updateAlign() {
-        const val = alignSelect.value;
-        alignDemo.style.alignItems = val;
-        alignCode.textContent = 'align-items: ' + val + ';';
-      }
-      function updateJustify() {
+      justifySelect.addEventListener('change', () => {
         const val = justifySelect.value;
         justifyDemo.style.justifyContent = val;
         justifyCode.textContent = 'justify-content: ' + val + ';';
-      }
+      });
+      alignSelect.addEventListener('change', () => {
+        const val = alignSelect.value;
+        alignDemo.style.alignItems = val;
+        alignCode.textContent = 'align-items: ' + val + ';';
+      });
+      dirSelect.addEventListener('change', updateDir);
+      wrapSelect.addEventListener('change', updateDir);
       function updateDir() {
         const dir = dirSelect.value;
         const wrap = wrapSelect.value;

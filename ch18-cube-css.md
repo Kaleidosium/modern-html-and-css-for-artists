@@ -392,7 +392,7 @@ Exceptions are small variations to a block, applied with `data-*` attributes. Th
 
 ```html
 <article class="card" data-layout="featured">
-  <!-- A card that spans two grid columns -->
+  <!-- A card that spans the full width of the grid -->
 </article>
 
 <section data-theme="dark">
