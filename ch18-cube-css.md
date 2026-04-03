@@ -159,7 +159,6 @@ Global styles set your design tokens and apply them at the highest level. This i
     font-size: var(--step-0);
     color: var(--color-text);
     background: var(--color-bg);
-    line-height: 1.6;
   }
 
   h1, h2, h3, h4 {

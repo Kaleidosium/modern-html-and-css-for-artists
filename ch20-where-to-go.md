@@ -108,4 +108,4 @@ Go build.
 
 If you found this guide to be useful, please consider supporting me financially through Ko-fi:
 
-<a href="https://ko-fi.com/kaleidosium" target="_blank"><img src="/assets/support_me_on_kofi_blue.png" alt="Support me on Ko-fi" style="max-width: 200px; height: auto;"></a>
+<a href="https://ko-fi.com/kaleidosium" target="_blank"><img src="/assets/support_me_on_kofi_blue.png" alt="Support me on Ko-fi" width="980" height="198" style="max-width: 200px; height: auto;"></a>

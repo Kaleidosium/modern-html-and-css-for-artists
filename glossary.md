@@ -83,7 +83,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A unit of measurement based on the width of the "0" character in the current font, useful for controlling line length.
 
 **Character References** <small>HTML · Chapter 4</small>
-: Special codes like `&copy;`, `&reg;`, `&trade;` used to represent characters that have special meaning in HTML (like `<`, `>`, `&`) or symbols that may not be available on all keyboards.
+: Special codes used to represent reserved HTML characters (`&lt;` for `<`, `&gt;` for `>`, `&amp;` for `&`) or symbols that may not be available on all keyboards (`&copy;`, `&reg;`, `&trade;`).
 
 **Chroma** <small>CSS · Chapter 13</small>
 : In OKLCH, the color intensity (0 = gray, higher = more vivid). Similar to saturation but perceptually uniform.
@@ -316,7 +316,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 **`@layer` (CSS Layer)** <small>CSS · Chapter 10</small>
 : An explicit ordering mechanism in CSS that ensures styles in later-declared layers always beat styles in earlier layers.
 
-**`lang` Attribute** <small>HTML · Chapter 8</small>
+**`lang` Attribute** <small>HTML · Chapter 3</small>
 : The attribute on the `<html>` element declaring the page's language (e.g., `lang="en"` for English).
 
 **Landmark** <small>HTML · Chapter 5</small>
@@ -335,7 +335,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : An element that navigates to another URL, marked with the `<a>` tag and `href` attribute.
 
 **Lobotomized Owl (`* + *`)** <small>CSS · Chapter 11</small>
-: An adjacent sibling selector pattern that targets all elements except the first child. It is the underlying selector for the `.flow` utility.
+: An adjacent sibling selector pattern that targets every element immediately preceded by a sibling element. It is the underlying selector for the `.flow` utility.
 
 **Logical Properties** <small>CSS · Chapter 11</small>
 : CSS properties that adapt to writing direction using `block` and `inline` axes instead of `top`, `right`, `bottom`, `left`. In horizontal languages like English, block is vertical and inline is horizontal.
@@ -349,7 +349,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : Space outside the border that pushes other elements away and creates separation between boxes.
 
 **Margin Collapse** <small>CSS · Chapter 11</small>
-: A behavior where adjacent vertical margins merge into one instead of adding together.
+: A behavior where adjacent block-direction margins merge into one instead of adding together.
 
 **Markup** <small>HTML · Chapter 1</small>
 : The process of adding HTML tags and structure to content to give it meaning.
@@ -464,7 +464,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The ranking system CSS uses to determine which rule wins when multiple rules target the same element.
 
 **Strong Importance** <small>HTML · Chapter 4</small>
-: The `<strong>` element that marks text as having strong importance. It is the semantic alternative to bold.
+: The `<strong>` element that marks text as having strong importance. Browsers render it in bold by default, but its purpose is conveying importance, not visual styling.
 
 **Syntax Highlighting** <small>HTML/CSS · Chapter 2</small>
 : Different parts of code appearing in different colors in a text editor, making code easier to read and mistakes easier to spot.
@@ -506,7 +506,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 **Unordered List** <small>HTML · Chapter 4</small>
 : A list where order doesn't matter, using the `<ul>` element. Items appear as bullet points.
 
-**UTF-8 Encoding** <small>HTML/CSS · Chapter 2</small>
+**UTF-8 Encoding** <small>HTML · Chapter 2</small>
 : A character encoding standard that ensures special characters, accented letters, emoji, and symbols display correctly across browsers and systems.
 
 **Utility Layer** <small>CSS · Chapter 18</small>

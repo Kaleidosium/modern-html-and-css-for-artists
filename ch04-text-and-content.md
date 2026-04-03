@@ -127,7 +127,7 @@ The `<time>` element marks up a date or time. The `datetime` attribute provides 
 
 ## Character references
 
-Some symbols can't be typed directly or have special meaning in HTML. For these, you can use **character references** like `&copy;` (&copy;), `&reg;` (&reg;), and `&trade;` (&trade;). You'll see `&copy;` used in footer copyright notices throughout this guide. For a full list, see the [MDN glossary entry on character references](https://developer.mozilla.org/en-US/docs/Glossary/Character_reference).
+Some characters have special meaning in HTML (`<`, `>`, `&`), so you can't type them directly into your content without confusing the browser. **Character references** let you display them safely: `&lt;` for <, `&gt;` for >, and `&amp;` for &. They're also useful for symbols that may not be on your keyboard, like `&copy;` (&copy;), `&reg;` (&reg;), and `&trade;` (&trade;). You'll see `&copy;` used in footer copyright notices throughout this guide. For a full list, see the [MDN glossary entry on character references](https://developer.mozilla.org/en-US/docs/Glossary/Character_reference).
 
 ## Lists
 

@@ -22,7 +22,7 @@ This might feel like losing control. It's actually the opposite.
 There's an illustration by Stéphanie Walter (originally based on a quote adapted by Josh Clark from Bruce Lee): "You put water into a cup, it becomes the cup. You put water into a bottle, it becomes the bottle. You put it in a teapot, it becomes the teapot."
 
 <figure>
-  <img src="./assets/Content-is-like-water.svg" alt="Illustration of how content should flow in responsive design">
+  <img src="./assets/Content-is-like-water.svg" alt="Illustration of how content should flow in responsive design" width="1240" height="930">
   <figcaption>Illustration by <a href="https://stephaniewalter.design/">Stéphanie Walter</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=68705623">CC BY-SA 3.0</a></figcaption>
 </figure>
 

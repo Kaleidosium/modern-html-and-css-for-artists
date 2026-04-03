@@ -59,7 +59,7 @@ You can transition multiple properties at once:
 }
 ```
 
-A few guidelines. Keep transitions short: 150 to 300 milliseconds for most interactions. Anything longer starts to feel sluggish. Avoid transitioning `all` unless you genuinely want every property to animate, because it can cause unexpected performance issues or visual glitches. And avoid transitioning layout properties like `width`, `height`, or `margin`, as these force the browser to recalculate the layout of the entire page on every frame. Stick to `transform` and `opacity` where possible, since the browser can animate these without triggering layout recalculations.
+A few guidelines. Keep transitions short: 150 to 300 milliseconds for most interactions. Anything longer starts to feel sluggish. Avoid transitioning `all` unless you genuinely want every property to animate, because it can cause unexpected performance issues or visual glitches. And avoid transitioning layout properties like `width`, `height`, or `margin`, as these force the browser to recalculate layout on every frame. Stick to `transform` and `opacity` where possible, since the browser can animate these without triggering layout recalculations.
 
 ## Transforms
 

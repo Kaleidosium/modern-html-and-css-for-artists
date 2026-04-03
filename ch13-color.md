@@ -30,7 +30,7 @@ color: oklch(30% 0.19 268);
 ```
 
 - **Lightness** from 0% (black) to 100% (white)
-- **Chroma** is the color intensity (0 = gray, higher = more vivid). The maximum depends on the hue and your display's color gamut; in sRGB it tops out around 0.3-0.37 depending on the hue
+- **Chroma** is the color intensity (0 = gray, higher = more vivid). The maximum depends on the hue and your display's color gamut; in sRGB it tops out around 0.2-0.33 depending on the hue
 - **Hue** is the angle on the color wheel, similar to HSL
 
 The advantage of OKLCH over HSL is that it's **perceptually uniform**. In HSL, two colors at the same "lightness" can look dramatically different in brightness to the human eye. In OKLCH, if two colors have the same lightness value, they look much closer in perceived brightness than they would in HSL. This makes it much easier to create harmonious, consistent palettes.

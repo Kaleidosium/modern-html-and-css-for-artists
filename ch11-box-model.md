@@ -117,7 +117,7 @@ a {
 
 There's one quirk of normal flow worth knowing: **vertical margins collapse**. If a heading has `margin-block-end: 2rem` and the following paragraph has `margin-block-start: 1rem`, the space between them won't be 3rem. It will be 2rem (the larger of the two).
 
-This is actually helpful behavior most of the time. It prevents double-spacing between elements. But it can be confusing if you don't know it's happening.
+This is actually helpful behavior most of the time. It prevents double-spacing between elements. But it can be confusing if you don't know it's happening. Josh Comeau's [Rules of Margin Collapse](https://www.joshwcomeau.com/css/rules-of-margin-collapse/) is an excellent deep dive if you want to understand all the edge cases.
 
 A better approach to vertical spacing is the "flow" utility. The `* + *` selector pattern is sometimes called the "lobotomized owl" (a name coined by Heydon Pickering). The `.flow` utility builds on this idea with a scoped version and a custom property for the spacing value:
 
