@@ -103,3 +103,9 @@ Build things. Read the source code of websites you admire (right-click, "View Pa
 The web is one of the most accessible creative mediums ever invented. You don't need a gallery, a publisher, or a distributor. You write some HTML and CSS, put it on a self-hosted server or use [Neocities](https://neocities.org/) or [Nekoweb](https://nekoweb.org/), and anyone in the world can see it.
 
 Go build.
+
+---
+
+If you found this guide to be useful, please consider supporting me financially through Ko-fi:
+
+<a href="https://ko-fi.com/kaleidosium" target="_blank"><img src="/assets/support_me_on_kofi_blue.png" alt="Support me on Ko-fi" style="max-width: 200px; height: auto;"></a>

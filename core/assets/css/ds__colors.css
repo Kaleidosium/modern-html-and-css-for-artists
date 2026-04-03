@@ -4,34 +4,15 @@ html {
 body {
     background-color: var(--ita-colors-primary-100);
     background-image:
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 3px,
-            rgba(0, 0, 0, 0.03) 3px,
-            rgba(0, 0, 0, 0.03) 4px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 3px,
-            rgba(0, 0, 0, 0.03) 3px,
-            rgba(0, 0, 0, 0.03) 4px
-        ),
-        repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 7px,
-            rgba(0, 0, 0, 0.02) 7px,
-            rgba(0, 0, 0, 0.02) 8px
-        ),
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 11px,
-            rgba(0, 0, 0, 0.015) 11px,
-            rgba(0, 0, 0, 0.015) 12px
-        );
+        linear-gradient(0deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+    background-size:
+        100% 4px,
+        4px 100%,
+        100% 8px,
+        12px 100%;
 }
 html,
 .o-auto {

@@ -5,10 +5,5 @@
     "faviconUrl": "/favicon.png",
     "author": "Dania Rifki",
     "authorAvatarUrl": "https://github.com/kaleidosium.png?size=80",
-    "customLinks": [
-        {
-            "url": "https://kaleidosium.my.id",
-            "text": "Author's Website"
-        }
-    ]
+    "customLinks": []
 }
