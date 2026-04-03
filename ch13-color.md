@@ -30,7 +30,15 @@ color: oklch(30% 0.19 268);
 ```
 
 - **Lightness** from 0% (black) to 100% (white)
-- **Chroma** is the color intensity (0 = gray, higher = more vivid). The maximum depends on the hue and your display's color gamut; in sRGB it tops out around 0.2-0.33 depending on the hue
+- **Chroma** is the color intensity (0 = gray, higher = more vivid). Unlike saturation in HSL, chroma has no fixed upper bound. What limits it in practice is your display's color gamut. In sRGB, the maximum safe chroma depends on the hue and lightness:
+  - **C up to ~0.1** is pastel territory, safe at any hue
+  - **C around 0.15** is safe for most hues
+  - **C above 0.2** starts clipping at some hues (yellows, cyans have lower ceilings around 0.17-0.18)
+  - **C around 0.28-0.32** is near the sRGB edge, only reachable at certain hues like greens, blues, and purples
+  - The absolute sRGB maximum is roughly **C of 0.37**, at a very specific vivid orange-red
+
+  Lightness also matters: very dark or very light colors have much less available chroma. Peak chroma is highest around 50-65% lightness. You can see the sRGB boundary visually at each hue slice using the [OKLCH color picker](https://oklch.com).
+
 - **Hue** is the angle on the color wheel, similar to HSL
 
 The advantage of OKLCH over HSL is that it's **perceptually uniform**. In HSL, two colors at the same "lightness" can look dramatically different in brightness to the human eye. In OKLCH, if two colors have the same lightness value, they look much closer in perceived brightness than they would in HSL. This makes it much easier to create harmonious, consistent palettes.
