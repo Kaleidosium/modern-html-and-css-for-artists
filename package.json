@@ -1,6 +1,6 @@
 {
   "name": "eleventy-libdoc",
-  "version": "0.14.8",
+  "version": "0.14.9",
   "description": "An Eleventy starter project to craft slick and responsive documentation",
   "main": "index.js",
   "scripts": {
@@ -12,11 +12,11 @@
   "type": "module",
   "dependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@11ty/eleventy-plugin-rss": "^3.0.0",
     "@mermaid-js/mermaid-cli": "^11.12.0",
-    "puppeteer": "^23.11.1",
-    "sharp": "^0.34.5"
+    "puppeteer": "^25.7.0",
+    "sharp": "^0.35.3"
   }
 }
