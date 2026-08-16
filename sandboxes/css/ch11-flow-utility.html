@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The .flow Utility Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 64rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+      line-height: 1.6;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .column-heading {
+      font-size: 0.9rem;
+      font-family: monospace;
+      margin: 0 0 0.75rem;
+      color: #6c5ce7;
+    }
+
+    /* All three containers: colored background so margin gaps are visible */
+    .browser-defaults,
+    .reset-only,
+    .reset-flow {
+      background: #c8c8d4;
+      padding-block: 1px;
+      /* prevents margin collapse with container */
+    }
+
+    /* All three sides: same visual treatment on children */
+    .browser-defaults>*,
+    .reset-only>*,
+    .reset-flow>* {
+      background: #f8f9fa;
+      padding: 0.75rem 1rem;
+    }
+
+    /* Left: browser default margins (both directions, collapsing) */
+    /* No overrides, so h2/h3/p keep their built-in margins */
+
+    /*
+        Middle + Right: the reset strips all default margins.
+        This is what Josh Comeau's CSS reset does: *:not(dialog) { margin: 0; }
+      */
+    .reset-only>*,
+    .reset-flow>* {
+      margin: 0;
+    }
+
+    /*
+        Right only: the .flow utility adds spacing back.
+        This is the actual lesson.
+      */
+    .reset-flow>*+* {
+      margin-block-start: var(--flow-space, 1em);
+    }
+
+    .step-label {
+      display: block;
+      font-size: 0.75rem;
+      color: #6c757d;
+      margin-block-start: 0.5rem;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>The .flow Utility</h1>
+    <p>Browser default margins go in both directions and collapse into each other unpredictably. A CSS reset strips them
+      all. The <code>.flow</code> class then uses the "lobotomized owl" selector (<code>* + *</code>) to add vertical
+      spacing back in a single direction of margin. The default value of <code>1em</code> resolves relative to each
+      element's own font size, so a heading following another element gets a larger gap than a paragraph would.</p>
+
+    <div class="comparison">
+      <div>
+        <div class="column-heading">Browser defaults</div>
+        <div class="browser-defaults">
+          <h2>Harbor Study</h2>
+          <h3>Oil and acrylic series</h3>
+          <p>Oil on panel, 30 x 40 cm</p>
+          <p>This series began during a residency in Marseille.</p>
+          <h3>Exhibition history</h3>
+          <p>Available for purchase.</p>
+        </div>
+        <span class="step-label">Margins in both directions, collapsing unpredictably</span>
+      </div>
+
+      <div>
+        <div class="column-heading">After reset</div>
+        <div class="reset-only">
+          <h2>Harbor Study</h2>
+          <h3>Oil and acrylic series</h3>
+          <p>Oil on panel, 30 x 40 cm</p>
+          <p>This series began during a residency in Marseille.</p>
+          <h3>Exhibition history</h3>
+          <p>Available for purchase.</p>
+        </div>
+        <span class="step-label">All margins stripped, everything collapses</span>
+      </div>
+
+      <div>
+        <div class="column-heading">Reset + .flow</div>
+        <div class="reset-flow">
+          <h2>Harbor Study</h2>
+          <h3>Oil and acrylic series</h3>
+          <p>Oil on panel, 30 x 40 cm</p>
+          <p>This series began during a residency in Marseille.</p>
+          <h3>Exhibition history</h3>
+          <p>Available for purchase.</p>
+        </div>
+        <span class="step-label">Controlled spacing, single direction of margin</span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

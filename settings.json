@@ -1,0 +1,10 @@
+{
+    "siteTitle": "Modern HTML & CSS Guide for Artists",
+    "siteLogoUrl": "/assets/Modern HTML&CSS for artists logo.svg",
+    "siteDescription": "A craft-focused, two-part guide covering modern HTML and CSS fundamentals for artists and other creatives.",
+    "faviconUrl": "/favicon.png",
+    "author": "Dania Rifki",
+    "authorAvatarUrl": "https://github.com/kaleidosium.png?size=80",
+    "ogImageUrl": "https://raw.githubusercontent.com/Kaleidosium/modern-html-and-css-for-artists/refs/heads/main/assets/Modern%20HTML%26CSS%20for%20artists%20logo.png",
+    "customLinks": []
+}

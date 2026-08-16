@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figure and Figcaption Demo</title>
+  <style>
+    /*
+      Only .demo-note is styled.
+      The figure, figcaption, and img use pure browser defaults.
+    */
+    .demo-note {
+      font: italic 0.875rem/1.4 system-ui, sans-serif;
+      color: #6c757d;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <p class="demo-note">The figure and caption below use pure browser default styling. No CSS has been applied to them.
+      Notice how the browser indents the figure and groups the image with its caption.</p>
+
+    <figure>
+      <img src="https://placehold.co/1200x800/3a506b/ffffff?text=Harbor+Study+No.+3"
+        alt="Oil study of fishing boats in a harbor at dawn" width="1200" height="800" loading="lazy" decoding="async">
+      <figcaption>Harbor Study No. 3 - Oil on panel, 30 x 40 cm, 2025</figcaption>
+    </figure>
+
+    <p>The browser adds left and right margins to <code>&lt;figure&gt;</code> by default, visually indenting it. The
+      <code>&lt;figcaption&gt;</code> is semantically linked to the image even without any CSS.
+    </p>
+  </main>
+</body>
+
+</html>

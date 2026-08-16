@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Line Height Comparison Demo</title>
+  <style>
+    /*
+      Page scaffolding only, not part of the demo.
+    */
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 56rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      color: #1a1a2e;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .sample {
+      background: #f8f9fa;
+      padding: 1.25rem;
+      border-radius: 0.5rem;
+    }
+
+    .sample h2 {
+      font-size: 0.85rem;
+      font-family: monospace;
+      color: #6c5ce7;
+      margin: 0 0 0.75rem;
+    }
+
+    .sample p {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .demo-note {
+      font-size: 0.875rem;
+      color: #6c757d;
+      font-style: italic;
+      margin-block-start: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Line Height Comparison</h1>
+    <p>The same paragraph text at three different <code>line-height</code> values:</p>
+
+    <div class="grid">
+      <div class="sample">
+        <h2>line-height: 1.2</h2>
+        <p style="line-height: 1.2;">This series explores the tension between natural forms and digital artifacts. Each
+          piece began as a plein air sketch before being reinterpreted in Procreate over several weeks.</p>
+      </div>
+      <div class="sample">
+        <h2>line-height: 1.5</h2>
+        <p style="line-height: 1.5;">This series explores the tension between natural forms and digital artifacts. Each
+          piece began as a plein air sketch before being reinterpreted in Procreate over several weeks.</p>
+      </div>
+      <div class="sample">
+        <h2>line-height: 1.8</h2>
+        <p style="line-height: 1.8;">This series explores the tension between natural forms and digital artifacts. Each
+          piece began as a plein air sketch before being reinterpreted in Procreate over several weeks.</p>
+      </div>
+    </div>
+
+    <p class="demo-note">Accessibility guidelines suggest a line height of at least 1.5 for body text, and typographic
+      practice often places comfortable reading in that range or slightly above. Because headings are larger and shorter,
+      they are typically set with tighter line height (around 1.1-1.4) to preserve visual unity.</p>
+  </main>
+</body>
+
+</html>
