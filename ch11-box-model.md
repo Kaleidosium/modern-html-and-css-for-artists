@@ -4,9 +4,9 @@ description: "How every element is a box, and how boxes arrange themselves on th
 layout: libdoc_page.liquid
 permalink: css/box-model/index.html
 eleventyNavigation:
-    key: "Chapter 11: The Box Model and Normal Flow"
-    parent: CSS
-    order: 3
+  key: "Chapter 11: The Box Model and Normal Flow"
+  parent: CSS
+  order: 3
 ---
 
 Every element on a web page is a box. Whether it's a heading, a paragraph, an image, or a `<div>`, the browser treats it as a rectangular box. Understanding how these boxes are sized and how they relate to each other is the foundation of CSS layout.
@@ -23,13 +23,13 @@ An interactive diagram showing the four box model layers, plus a side-by-side co
 
 ```css
 .card {
-  padding: 1.5rem;      /* space inside the box */
+  padding: 1.5rem; /* space inside the box */
   border: 1px solid #ddd; /* the border itself */
-  margin-block-end: 2rem;  /* space below the box */
+  margin-block-end: 2rem; /* space below the box */
 }
 ```
 
-By default, CSS calculates an element's width as just the content area. Padding and border get *added on top*. So if you set `width: 300px` and add `padding: 20px`, the actual box becomes 340px wide. This is confusing, and almost everyone changes it.
+By default, CSS calculates an element's width as just the content area. Padding and border get _added on top_. So if you set `width: 300px` and add `padding: 20px`, the actual box becomes 340px wide. This is confusing, and almost everyone changes it.
 
 That's why virtually every modern reset includes this rule:
 
@@ -43,7 +43,7 @@ That's why virtually every modern reset includes this rule:
 
 (`*::before` and `*::after` are **pseudo-elements**, virtual elements that CSS can insert before or after an element's content. You don't need to understand them yet; they're included here so the reset covers everything.)
 
-With `border-box`, the width you set *includes* padding and border. `width: 300px` means the box is 300px, period. Much more intuitive.
+With `border-box`, the width you set _includes_ padding and border. `width: 300px` means the box is 300px, period. Much more intuitive.
 
 ## Logical properties
 
@@ -56,8 +56,8 @@ Traditional CSS uses physical directions: `top`, `right`, `bottom`, `left`. But 
 
 ```css
 .wrapper {
-  margin-inline: auto;   /* centers horizontally */
-  padding-inline: 1rem;  /* left and right padding */
+  margin-inline: auto; /* centers horizontally */
+  padding-inline: 1rem; /* left and right padding */
 }
 
 section {
@@ -77,17 +77,17 @@ There are two fundamental display types:
 
 ```txt
 ┌──────────────────────────────┐
-│ <header>                     │
+│ <header>                            │
 └──────────────────────────────┘
 ┌──────────────────────────────┐
-│ <h1>                         │
+│ <h1>                                │
 └──────────────────────────────┘
 ┌──────────────────────────────┐
-│ <p>                          │
+│ <p>                                 │
 └──────────────────────────────┘
 ```
 
-**Inline elements** sit side by side on the same line, like words in a sentence. They only take up as much width as their content needs. Examples: `<a>`, `<strong>`, `<em>`, `<span>`. (`<img>` is technically inline by default but is a *replaced element*, meaning it respects width and height properties unlike other inline elements. However, it still sits on the text baseline, which causes a small gap below the image. Most resets set images to `display: block` to eliminate this gap.)
+**Inline elements** sit side by side on the same line, like words in a sentence. They only take up as much width as their content needs. Examples: `<a>`, `<strong>`, `<em>`, `<span>`. (`<img>` is technically inline by default but is a _replaced element_, meaning it respects width and height properties unlike other inline elements. However, it still sits on the text baseline, which causes a small gap below the image. Most resets set images to `display: block` to eliminate this gap.)
 
 ```txt
 This is a paragraph with a [link] and some [bold text] inline.
@@ -135,9 +135,9 @@ This selector is dense, so let's unpack it piece by piece:
 - **`>`** means "direct children only" (not deeper descendants).
 - **`*`** matches any element.
 - **`+`** is the **adjacent sibling combinator**: it selects an element that immediately follows another element.
-- So **`* + *`** means "any element that is immediately preceded by another element." In practice, this selects every child *except the first one*.
+- So **`* + *`** means "any element that is immediately preceded by another element." In practice, this selects every child _except the first one_.
 
-The result: every child of `.flow` gets top margin, except the first child (which has nothing above it). The default fallback of `1em` resolves relative to each element's own font size. Since the margin is on the *following* element (the one after the `+`), a heading that follows another element gets a larger gap because the heading's own font size is larger. Body text gets a smaller gap because its font size is smaller. No collapsing, no double-spacing, no need to cancel margin on the first or last child. If you want truly uniform gaps instead, set `--flow-space` to a fixed `rem` value like `1.5rem`.
+The result: every child of `.flow` gets top margin, except the first child (which has nothing above it). The default fallback of `1em` resolves relative to each element's own font size. Since the margin is on the _following_ element (the one after the `+`), a heading that follows another element gets a larger gap because the heading's own font size is larger. Body text gets a smaller gap because its font size is smaller. No collapsing, no double-spacing, no need to cancel margin on the first or last child. If you want truly uniform gaps instead, set `--flow-space` to a fixed `rem` value like `1.5rem`.
 
 This pairs naturally with the CSS reset I introduced in the previous chapter. The reset strips browser default margins (which vary by element and collapse unpredictably), and `.flow` adds controlled spacing back in a single direction.
 
