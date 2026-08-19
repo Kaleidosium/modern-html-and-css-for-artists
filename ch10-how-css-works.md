@@ -4,19 +4,19 @@ description: "Selectors, the cascade, specificity, inheritance, and CSS resets"
 layout: libdoc_page.liquid
 permalink: css/how-css-works/index.html
 eleventyNavigation:
-    key: "Chapter 10: How CSS Works"
-    parent: CSS
-    order: 2
+  key: "Chapter 10: How CSS Works"
+  parent: CSS
+  order: 2
 ---
 
-CSS (Cascading Style Sheets) is the language that controls how your HTML looks. Color, typography, spacing, layout, animation: it's all CSS. But before you start writing style rules, it helps to understand how the language *thinks*. CSS has a few core mechanisms that determine which styles get applied and why.
+CSS (Cascading Style Sheets) is the language that controls how your HTML looks. Color, typography, spacing, layout, animation: it's all CSS. But before you start writing style rules, it helps to understand how the language _thinks_. CSS has a few core mechanisms that determine which styles get applied and why.
 
 ## Linking CSS to HTML
 
 You can write CSS in a separate file and link it to your HTML (this is the most common approach):
 
 ```html
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 ```
 
 Or you can write CSS directly in your HTML file within a `<style>` element:
@@ -58,7 +58,7 @@ An interactive playground where you can change the selector, property, and value
 
 ## Selectors
 
-Selectors are how you tell CSS *what* to style. Here are the ones you'll use most often:
+Selectors are how you tell CSS _what_ to style. Here are the ones you'll use most often:
 
 **Element selectors** target HTML elements directly:
 
@@ -153,7 +153,7 @@ article :is(h2, h3, h4) {
 }
 ```
 
-**`:has()`** is sometimes called the "parent selector" because it lets you style an element based on what it *contains*:
+**`:has()`** is sometimes called the "parent selector" because it lets you style an element based on what it _contains_:
 
 ```css
 /* A figure that contains a figcaption gets extra padding */
@@ -241,6 +241,8 @@ CSS `@layer` lets you define explicit ordering for groups of styles. Within the 
 
 Any style in the `exception` layer will beat any style in the `utility` layer, no matter how specific the utility selector is. This is the most powerful tool for managing your cascade.
 
+If you'd like to explore cascade layers further, Miriam Suzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) on CSS-Tricks is the definitive resource. And for a visual breakdown of how layers, specificity, and the cascade interact, check out [The Cascade](https://cascade.arpit.codes/) by Arpit Agrawal.
+
 ### 2. Specificity
 
 Within the same layer (or when you're not using layers), specificity determines which rule wins. Here's the ranking from lowest to highest:
@@ -277,7 +279,7 @@ If two rules have the same layer and the same specificity, the one written later
 
 That's it. Layers > Specificity > Source order. You don't need to memorize a point system. If your styles are organized into layers (which CUBE will help you do), specificity conflicts become rare.
 
-A quick note on `!important`: it exists, and it overrides normal specificity. But if you find yourself using it, it's almost always a sign that something in your cascade is disorganized. One nuance worth knowing: `!important` declarations *reverse* the layer order. An `!important` rule in the `reset` layer beats an `!important` rule in the `exception` layer. This is by design: it lets low-priority layers enforce critical overrides (like the `prefers-reduced-motion` reset we'll see in [Chapter 19](/css/transitions/)). Outside of that kind of use case, avoid `!important`.
+A quick note on `!important`: it exists, and it overrides normal specificity. But if you find yourself using it, it's almost always a sign that something in your cascade is disorganized. One nuance worth knowing: `!important` declarations _reverse_ the layer order. An `!important` rule in the `reset` layer beats an `!important` rule in the `exception` layer. This is by design: it lets low-priority layers enforce critical overrides (like the `prefers-reduced-motion` reset we'll see in [Chapter 19](/css/transitions/)). Outside of that kind of use case, avoid `!important`.
 
 ## Inheritance
 
@@ -293,9 +295,9 @@ body {
 }
 ```
 
-Every paragraph, heading, list item, and link inside `<body>` will inherit these values unless you explicitly override them. This is the cascade *working for you*.
+Every paragraph, heading, list item, and link inside `<body>` will inherit these values unless you explicitly override them. This is the cascade _working for you_.
 
-Layout properties like `padding`, `margin`, `border`, `display`, and `background` are *not* inherited, because it would be chaos if every child had the same padding as its parent.
+Layout properties like `padding`, `margin`, `border`, `display`, and `background` are _not_ inherited, because it would be chaos if every child had the same padding as its parent.
 
 ## CSS resets
 
@@ -303,7 +305,7 @@ Before you start writing your own styles, it helps to start from a consistent ba
 
 Here are three approaches I think are worth knowing about:
 
-**Josh Comeau's Custom CSS Reset** is thorough and well-explained. Every rule comes with a detailed writeup of *why* it exists, making it an excellent learning resource. Josh's advice is that you should own your reset and evolve it over time.
+**Josh Comeau's Custom CSS Reset** is thorough and well-explained. Every rule comes with a detailed writeup of _why_ it exists, making it an excellent learning resource. Josh's advice is that you should own your reset and evolve it over time.
 
 Read and copy it from: [joshwcomeau.com/css/custom-css-reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 
