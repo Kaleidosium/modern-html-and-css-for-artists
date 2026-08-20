@@ -8,4 +8,5 @@ Websites are living documents rather than static canvases. This guide approaches
 
 - **Guide Author**: [Dania Rifki](https://github.com/kaleidosium)
 - **Original Template**: [ita-design-system/eleventy-libdoc](https://github.com/ita-design-system/eleventy-libdoc)
-- **License**: [MIT](LICENSE)
+- **License (Code)**: [MIT](LICENSE-MIT)
+- **License (Content)**: [CC BY-SA](LICENSE-CC-BY-SA)

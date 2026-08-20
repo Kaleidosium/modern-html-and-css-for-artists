@@ -107,6 +107,6 @@ Go build.
 
 ---
 
-_Modern HTML & CSS Guide for Artists_ is open source. You can view the source code, suggest improvements, or star the project on [GitHub](https://github.com/Kaleidosium/modern-html-and-css-for-artists).
+_Modern HTML & CSS Guide for Artists_ is open source. You can view the source code, suggest improvements, or star the project on [GitHub](https://github.com/Kaleidosium/modern-html-and-css-for-artists). Please respect the MIT and CC BY-SA 4.0 licenses.
 
 To see more of my work or get in touch, visit [my website](https://kaleidosium.my.id). If you found this guide helpful, please consider [supporting me on Ko-fi](https://ko-fi.com/kaleidosium).
