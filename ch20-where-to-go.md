@@ -54,7 +54,7 @@ This guide is not gospel. It's one perspective, hopefully a useful one, but one 
 - **[Josh W. Comeau's blog](https://www.joshwcomeau.com/)**: Deep, interactive explorations of CSS. His articles on the CSS reset, custom properties, and layout are referenced throughout this guide, and there's much more on his site worth reading.
 - **[Kevin Powell's YouTube channel](https://www.youtube.com/@KevinPowell)**: Consistent, high-quality, practical CSS tutorials. One of the best educators in the space.
 - **[CSS-Tricks](https://css-tricks.com/)**: A long-running web development blog with an excellent CSS almanac and a huge archive of practical articles (such as Miriam Suzanne's **[Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/)**).
-- **[The Cascade](https://cascade.arpit.codes/)** by Arpit Agrawal: A visual breakdown demonstrating how origins, cascade layers, specificity, and source order resolve.
+- **[CSS Cascade](https://cascade.arpit.codes/)** by Arpit Agrawal: A visual breakdown demonstrating how origins, cascade layers, specificity, and source order resolve.
 - **[Smashing Magazine](https://www.smashingmagazine.com/)**: Long-form articles on CSS, design, accessibility, and the web in general.
 - **[MDN Web Docs](https://developer.mozilla.org/)**: The definitive reference for HTML, CSS, and JavaScript. When you need to know exactly how a property works, MDN is where you go.
 

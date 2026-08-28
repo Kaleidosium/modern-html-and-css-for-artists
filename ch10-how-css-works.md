@@ -216,20 +216,7 @@ Nesting keeps related styles together and reduces repetition. Both versions abov
 
 ## The cascade
 
-The "C" in CSS stands for "Cascading." The cascade is the set of rules CSS uses to decide which styles win when multiple rules target the same element. There are three levels to think about, from most powerful to least:
-
-```mermaid
-graph TD
-    L["Layers<br/>(most powerful)"]
-    S["Specificity"]
-    O["Source Order<br/>(least powerful)"]
-
-    L --> S --> O
-
-    style L fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
-    style S fill:#fef3e2,stroke:#e67e22,stroke-width:2px
-    style O fill:#f0f0f0,stroke:#999,stroke-width:2px
-```
+The "C" in CSS stands for "Cascading." The cascade is the set of rules CSS uses to decide which styles win when multiple rules target the same element. There are three levels to think about, from most powerful to least.
 
 ### 1. Layers (most powerful)
 
@@ -241,7 +228,7 @@ CSS `@layer` lets you define explicit ordering for groups of styles. Within the 
 
 Any style in the `exception` layer will beat any style in the `utility` layer, no matter how specific the utility selector is. This is the most powerful tool for managing your cascade.
 
-If you'd like to explore cascade layers further, Miriam Suzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) on CSS-Tricks is the definitive resource. And for a visual breakdown of how layers, specificity, and the cascade interact, check out [The Cascade](https://cascade.arpit.codes/) by Arpit Agrawal.
+If you'd like to explore cascade layers further, Miriam Suzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) on CSS-Tricks is the definitive resource. And for a visual breakdown of how layers, specificity, and the cascade interact, check out [CSS Cascade](https://cascade.arpit.codes/) by Arpit Agrawal.
 
 ### 2. Specificity
 
