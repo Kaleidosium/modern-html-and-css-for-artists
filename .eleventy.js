@@ -73,6 +73,10 @@ export default function(eleventyConfig) {
         for (const match of matches) {
             const { data } = await renderMermaid(mermaidBrowser, match[1], "svg", {
                 backgroundColor: "transparent",
+                mermaidConfig: {
+                    htmlLabels: false,
+                    flowchart: { htmlLabels: false },
+                },
             });
             const svg = new TextDecoder().decode(data);
             content = content.replace(match[0], svg);
