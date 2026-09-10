@@ -51,6 +51,7 @@ This guide is not gospel. It's one perspective, hopefully a useful one, but one 
 - **[Every Layout](https://every-layout.dev/)** by Andy Bell and Heydon Pickering: The composable layout primitives we used in the composition layer were inspired by this project. It goes much deeper.
 - **[web.dev Learn CSS](https://web.dev/learn/css/)**: Google's comprehensive CSS course, co-authored by Andy Bell.
 - **[Modern CSS Solutions](https://moderncss.dev/)** by Stephanie Eckles: In-depth tutorials on modern CSS techniques, covering layout, custom form styling, accessibility, and more. A great next step after this guide.
+- **[SmolCSS](https://smolcss.dev/)** also by Stephanie Eckles: Minimal, copy-paste snippets for modern layouts and components. Useful as quick reference once you understand the underlying patterns.
 - **[Josh W. Comeau's blog](https://www.joshwcomeau.com/)**: Deep, interactive explorations of CSS. His articles on the CSS reset, custom properties, and layout are referenced throughout this guide, and there's much more on his site worth reading.
 - **[Kevin Powell's YouTube channel](https://www.youtube.com/@KevinPowell)**: Consistent, high-quality, practical CSS tutorials. One of the best educators in the space.
 - **[CSS-Tricks](https://css-tricks.com/)**: A long-running web development blog with an excellent CSS almanac and a huge archive of practical articles and guides.
