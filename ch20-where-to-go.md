@@ -95,6 +95,9 @@ Building websites can feel solitary. Finding a community helps. A few good ones:
 
 - **[Frontend Horse](https://frontend.horse/)**: A community and newsletter celebrating creative web development.
 - **[Kevin Powell's Discord](https://www.kevinpowell.co/discord/)**: Active community focused on CSS, with forums for help and project feedback.
+- **[Playful Programming](https://playfulprogramming.com/)**: Beginner friendly development tutorials (Not just HTML and CSS!) and articles from a community of volunteers.
+- **[Web Dev and Design Discord](https://discord.com/invite/web)**: Large Discord server for frontend help, feedback, and showing work.
+- **[r/webdev](https://www.reddit.com/r/webdev/)** and **[r/web_design](https://www.reddit.com/r/web_design/)**: Active Reddit communities for questions, feedback, and staying current.
 - **[The Practical Dev (dev.to)](https://dev.to/)**: A broad developer community with a welcoming culture.
 
 ## The most important thing
