@@ -4,9 +4,9 @@ description: "How the web's fluid nature differs from fixed canvases, and why th
 layout: libdoc_page.liquid
 permalink: css/fluid-canvas/index.html
 eleventyNavigation:
-    key: "Chapter 9: CSS and the Fluid Canvas"
-    parent: CSS
-    order: 1
+  key: "Chapter 9: CSS and the Fluid Canvas"
+  parent: CSS
+  order: 1
 ---
 
 As an artist, you're used to working on a fixed canvas. A sheet of watercolor paper is 22 x 30 inches. A digital canvas in Procreate can be 4096 × 4096 pixels. You control every millimeter, every pixel. Nothing moves unless you move it.
@@ -30,7 +30,7 @@ This is how content on the web works. Your text, your images, your layout: they 
 
 The old approach to web design fought against this. Designers would pick three or four screen sizes (phone, tablet, desktop) and build a separate layout for each, snapping between them at fixed breakpoints. This meant you were really designing three separate fixed-canvas layouts and stitching them together.
 
-The modern approach embraces the fluid nature of the web. Instead of designing for specific sizes, you establish *relationships* and *proportions*, then let the browser figure out the details. Your font sizes scale smoothly between a minimum and maximum. Your spacing breathes. Your layouts reflow when they need to, based on their content and available space, not because a breakpoint told them to.
+The modern approach embraces the fluid nature of the web. Instead of designing for specific sizes, you establish _relationships_ and _proportions_, then let the browser figure out the details. Your font sizes scale smoothly between a minimum and maximum. Your spacing breathes. Your layouts reflow when they need to, based on their content and available space, not because a breakpoint told them to.
 
 ## Be the browser's mentor, not its micromanager
 
@@ -38,7 +38,7 @@ This phrase comes from Andy Bell, and it captures the philosophy perfectly. The 
 
 Think of it this way: you're not painting the final piece. You're setting up a system of rules, proportions, and relationships. The browser then renders the final piece, differently for every person, but always following your system.
 
-This is a different kind of creative control. Not less control. Different control. And for many artists, once the shift clicks, it actually feels more natural than the fixed-canvas approach. You're designing a *system*, not a *snapshot*.
+This is a different kind of creative control. Not less control. Different control. And for many artists, once the shift clicks, it actually feels more natural than the fixed-canvas approach. You're designing a _system_, not a _snapshot_.
 
 ## There is no "correct" size
 

@@ -4,9 +4,9 @@ description: "How to present images, figures with captions, video, audio, and re
 layout: libdoc_page.liquid
 permalink: html/images-figures-media/index.html
 eleventyNavigation:
-    key: "Chapter 6: Images, Figures, and Media"
-    parent: HTML
-    order: 6
+  key: "Chapter 6: Images, Figures, and Media"
+  parent: HTML
+  order: 6
 ---
 
 As an artist, this chapter is arguably the most relevant to you. How you present your visual work matters.
@@ -14,7 +14,14 @@ As an artist, this chapter is arguably the most relevant to you. How you present
 ## Basic images
 
 ```html
-<img src="harbor-study.jpg" alt="Oil study of fishing boats in a harbor at dawn" width="1200" height="800" loading="lazy" decoding="async">
+<img
+  src="harbor-study.jpg"
+  alt="Oil study of fishing boats in a harbor at dawn"
+  width="1200"
+  height="800"
+  loading="lazy"
+  decoding="async"
+/>
 ```
 
 A few things to note:
@@ -31,13 +38,16 @@ This deserves special attention. The alt text should help someone who can't see 
 
 ```html
 <!-- Too vague -->
-<img src="piece-14.jpg" alt="Painting">
+<img src="piece-14.jpg" alt="Painting" />
 
 <!-- Just a title, not descriptive -->
-<img src="piece-14.jpg" alt="Untitled No. 14">
+<img src="piece-14.jpg" alt="Untitled No. 14" />
 
 <!-- Descriptive -->
-<img src="piece-14.jpg" alt="Abstract composition with overlapping geometric shapes in deep blue and ochre, with visible brushwork and dripped paint at the lower edge">
+<img
+  src="piece-14.jpg"
+  alt="Abstract composition with overlapping geometric shapes in deep blue and ochre, with visible brushwork and dripped paint at the lower edge"
+/>
 ```
 
 If the image is purely decorative (a background pattern, a visual divider), use an empty alt: `alt=""`. This tells screen readers to skip it entirely.
@@ -48,10 +58,13 @@ When an image (or any content) is referenced from the main text and needs a capt
 
 ```html
 <figure>
-  <img src="harbor-study.jpg" alt="Oil study of fishing boats in a harbor at dawn" width="1200" height="800">
-  <figcaption>
-    Harbor Study No. 3 - Oil on panel, 30 × 40 cm, 2025
-  </figcaption>
+  <img
+    src="harbor-study.jpg"
+    alt="Oil study of fishing boats in a harbor at dawn"
+    width="1200"
+    height="800"
+  />
+  <figcaption>Harbor Study No. 3 - Oil on panel, 30 × 40 cm, 2025</figcaption>
 </figure>
 ```
 
@@ -96,9 +109,14 @@ Sometimes you want to serve different image files depending on the context. Perh
 
 ```html
 <picture>
-  <source srcset="harbor-study.avif" type="image/avif">
-  <source srcset="harbor-study.webp" type="image/webp">
-  <img src="harbor-study.jpg" alt="Oil study of fishing boats in a harbor at dawn" width="1200" height="800">
+  <source srcset="harbor-study.avif" type="image/avif" />
+  <source srcset="harbor-study.webp" type="image/webp" />
+  <img
+    src="harbor-study.jpg"
+    alt="Oil study of fishing boats in a harbor at dawn"
+    width="1200"
+    height="800"
+  />
 </picture>
 ```
 
@@ -108,9 +126,14 @@ You can also combine `<source>` with media conditions for **art direction**: sho
 
 ```html
 <picture>
-  <source media="(min-width: 800px)" srcset="harbor-wide.jpg">
-  <source media="(min-width: 400px)" srcset="harbor-medium.jpg">
-  <img src="harbor-square.jpg" alt="Oil study of fishing boats in a harbor at dawn" width="800" height="800">
+  <source media="(min-width: 800px)" srcset="harbor-wide.jpg" />
+  <source media="(min-width: 400px)" srcset="harbor-medium.jpg" />
+  <img
+    src="harbor-square.jpg"
+    alt="Oil study of fishing boats in a harbor at dawn"
+    width="800"
+    height="800"
+  />
 </picture>
 ```
 

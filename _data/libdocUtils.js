@@ -15,65 +15,76 @@ const libdocPackage = require("../package.json");
 import libdocConfig from "./libdocConfig.js";
 
 export default {
-    version: function() {
-        return libdocPackage.version
-    },
-    // environment: process.env.MY_ENVIRONMENT || "development",
-    HTMLEncode: function(str) {
-        // https://stackoverflow.com/a/784765
-        str = [...str];
-        //    ^ es20XX spread to Array: keeps surrogate pairs
-        let i = str.length, aRet = [];
-        
-        while (i--) {
-            var iC = str[i].codePointAt(0);
-            if (iC < 65 || iC > 127 || (iC>90 && iC<97)) {
-                aRet[i] = '&#'+iC+';';
-            } else {
-                aRet[i] = str[i];
-            }
+  version: function () {
+    return libdocPackage.version;
+  },
+  // environment: process.env.MY_ENVIRONMENT || "development",
+  HTMLEncode: function (str) {
+    // https://stackoverflow.com/a/784765
+    str = [...str];
+    //    ^ es20XX spread to Array: keeps surrogate pairs
+    let i = str.length,
+      aRet = [];
+
+    while (i--) {
+      var iC = str[i].codePointAt(0);
+      if (iC < 65 || iC > 127 || (iC > 90 && iC < 97)) {
+        aRet[i] = "&#" + iC + ";";
+      } else {
+        aRet[i] = str[i];
+      }
+    }
+    return aRet.join("");
+  },
+  slugify: function (str) {
+    // https://jasonwatmore.com/vanilla-js-slugify-a-string-in-javascript
+    // make lower case and trim
+    let slug = str.toLowerCase().trim();
+    // remove accents from charaters
+    slug = slug.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    // replace invalid chars with spaces
+    slug = slug.replace(/[^a-z0-9\s-]/g, " ").trim();
+    // replace multiple spaces or hyphens with a single hyphen
+    slug = slug.replace(/[\s-]+/g, "-");
+    return slug;
+  },
+  extractHtmlTagsFromString: function (string, htmlTagsListArray) {
+    // https://stackoverflow.com/a/65725198
+    const htmlTagsFound = [];
+    string.replace(
+      /<([a-zA-Z][a-zA-Z0-9_-]*)\b[^>]*>(.*?)<\/\1>/g,
+      function (m, m1, m2) {
+        if (htmlTagsListArray.includes(m1)) {
+          // write data to result object
+          htmlTagsFound.push({
+            tagName: m1,
+            value: m2,
+          });
         }
-        return aRet.join('');
-    },
-    slugify: function(str) {
-        // https://jasonwatmore.com/vanilla-js-slugify-a-string-in-javascript
-        // make lower case and trim
-        let slug = str.toLowerCase().trim();
-        // remove accents from charaters
-        slug = slug.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        // replace invalid chars with spaces
-        slug = slug.replace(/[^a-z0-9\s-]/g, ' ').trim();
-        // replace multiple spaces or hyphens with a single hyphen
-        slug = slug.replace(/[\s-]+/g, '-');
-        return slug;
-    },
-    extractHtmlTagsFromString: function(string, htmlTagsListArray) {
-        // https://stackoverflow.com/a/65725198
-        const htmlTagsFound = [];
-        string.replace(/<([a-zA-Z][a-zA-Z0-9_-]*)\b[^>]*>(.*?)<\/\1>/g, function(m,m1,m2) {
-            if (htmlTagsListArray.includes(m1)) {
-                // write data to result object
-                htmlTagsFound.push({
-                    tagName: m1,
-                    value: m2
-                });
-            }
-        });
-        return htmlTagsFound
-    },
-    generateRandomId: function(length) {
-        const charactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        let id = '';
-        if (typeof length != 'number') length = 8;
-        for (let index = 0; index < length; index++) {
-            const randomIndex = Math.floor(Math.random() * charactersList.length);
-            id += charactersList[randomIndex];
-        }
-        return id;
-    },
-    templates: {
-        sandbox: function({iframeAttribute, iframeCommands, title, code, enableSwitchId}) {
-            return `
+      },
+    );
+    return htmlTagsFound;
+  },
+  generateRandomId: function (length) {
+    const charactersList =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let id = "";
+    if (typeof length != "number") length = 8;
+    for (let index = 0; index < length; index++) {
+      const randomIndex = Math.floor(Math.random() * charactersList.length);
+      id += charactersList[randomIndex];
+    }
+    return id;
+  },
+  templates: {
+    sandbox: function ({
+      iframeAttribute,
+      iframeCommands,
+      title,
+      code,
+      enableSwitchId,
+    }) {
+      return `
                 <aside class="d-flex | sandbox"
                     fd-column="xs,sm"
                     gap-2="xs,sm"
@@ -170,32 +181,44 @@ export default {
                         </ul>
                     </div>
                 </aside>`;
-        }
     },
-    isRawLink: function(text, href) {
-        if (!text || typeof text !== 'string') return false;
-        const trimmed = text.trim();
-        if (!trimmed || /\s/.test(trimmed)) return false;
+  },
+  isRawLink: function (text, href) {
+    if (!text || typeof text !== "string") return false;
+    const trimmed = text.trim();
+    if (!trimmed || /\s/.test(trimmed)) return false;
 
-        // Matches http://..., https://..., ftp://..., mailto:..., www....
-        if (/^(?:https?:\/\/|ftp:\/\/|mailto:|www\.)/i.test(trimmed)) {
-            return true;
-        }
-
-        // Matches domain names and URL paths (e.g. webaim.org/resources/contrastchecker, cube.fyi, piccalil.li/blog)
-        if (/^[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?::\d+)?(?:\/[^\s]*)?$/i.test(trimmed)) {
-            return true;
-        }
-
-        // Matches URL path snippets or repo paths if it matches href
-        if (href && typeof href === 'string') {
-            const cleanHref = href.trim().replace(/^https?:\/\//i, '').replace(/\/+$/, '');
-            const cleanText = trimmed.replace(/^https?:\/\//i, '').replace(/\/+$/, '');
-            if (cleanHref && cleanText && (cleanHref.toLowerCase() === cleanText.toLowerCase() || cleanHref.toLowerCase().endsWith(cleanText.toLowerCase()))) {
-                return true;
-            }
-        }
-
-        return false;
+    // Matches http://..., https://..., ftp://..., mailto:..., www....
+    if (/^(?:https?:\/\/|ftp:\/\/|mailto:|www\.)/i.test(trimmed)) {
+      return true;
     }
+
+    // Matches domain names and URL paths (e.g. webaim.org/resources/contrastchecker, cube.fyi, piccalil.li/blog)
+    if (
+      /^[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?::\d+)?(?:\/[^\s]*)?$/i.test(trimmed)
+    ) {
+      return true;
+    }
+
+    // Matches URL path snippets or repo paths if it matches href
+    if (href && typeof href === "string") {
+      const cleanHref = href
+        .trim()
+        .replace(/^https?:\/\//i, "")
+        .replace(/\/+$/, "");
+      const cleanText = trimmed
+        .replace(/^https?:\/\//i, "")
+        .replace(/\/+$/, "");
+      if (
+        cleanHref &&
+        cleanText &&
+        (cleanHref.toLowerCase() === cleanText.toLowerCase() ||
+          cleanHref.toLowerCase().endsWith(cleanText.toLowerCase()))
+      ) {
+        return true;
+      }
+    }
+
+    return false;
+  },
 };

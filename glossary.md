@@ -4,8 +4,8 @@ description: A reference of HTML and CSS terms used throughout the guide
 layout: libdoc_page.liquid
 permalink: glossary/index.html
 eleventyNavigation:
-    key: Glossary
-    order: 3
+  key: Glossary
+  order: 3
 ---
 
 A reference of key terms used throughout this guide, organized alphabetically. Each entry notes whether it relates to **HTML**, **CSS**, or both, and which chapter introduces it.
@@ -273,7 +273,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : A color model where hue is position on the color wheel (0–360°), saturation is vividness (0–100%), and lightness is brightness (0–100%).
 
 **HTML (HyperText Markup Language)** <small>HTML · Chapter 1</small>
-: The language that gives web pages structure and meaning. It describes what content *is* (heading, paragraph, image) rather than how it looks.
+: The language that gives web pages structure and meaning. It describes what content _is_ (heading, paragraph, image) rather than how it looks.
 
 **Hue** <small>CSS · Chapter 13</small>
 : The position on the color wheel (red ≈ 0°, green ≈ 120°, blue ≈ 240°), the aspect that makes a color feel "blue" or "red."
@@ -361,7 +361,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The number of characters per line. The ideal reading measure is roughly 60–80 characters wide.
 
 **Metadata** <small>HTML · Chapter 3</small>
-: Information *about* a page that doesn't appear on the page itself, stored in the `<head>` element.
+: Information _about_ a page that doesn't appear on the page itself, stored in the `<head>` element.
 
 **`min()` Function** <small>CSS · Chapter 15</small>
 : A CSS function that returns the smallest of its arguments (e.g., `min(100%, 60rem)`).
@@ -452,7 +452,7 @@ A reference of key terms used throughout this guide, organized alphabetically. E
 : The part of a CSS rule that targets which HTML elements to style.
 
 **Semantic HTML** <small>HTML · Chapter 1</small>
-: Choosing HTML elements based on what the content *means* rather than what you want it to *look like*. Helps with accessibility, search engines, and code maintenance.
+: Choosing HTML elements based on what the content _means_ rather than what you want it to _look like_. Helps with accessibility, search engines, and code maintenance.
 
 **Source Order** <small>CSS · Chapter 10</small>
 : When two CSS rules have equal specificity and layer, the one written later in the stylesheet wins.

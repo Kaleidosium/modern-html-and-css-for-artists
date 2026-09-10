@@ -4,9 +4,9 @@ description: "An introduction to HTML as the structural layer of the web, and wh
 layout: libdoc_page.liquid
 permalink: html/what-is-html/index.html
 eleventyNavigation:
-    key: "Chapter 1: What is HTML?"
-    parent: HTML
-    order: 1
+  key: "Chapter 1: What is HTML?"
+  parent: HTML
+  order: 1
 ---
 
 HTML (HyperText Markup Language) is the language that gives a web page its **structure and meaning**. It doesn't control how things look (that's CSS's job) and it doesn't control how things behave (that's JavaScript's job). HTML simply says: "this is a heading," "this is a paragraph," "this is an image of a painting."
@@ -38,7 +38,7 @@ Want to know what "good structure without any styling" actually looks like? Here
 
 ## Why "semantic" HTML matters
 
-The word **semantic** means "relating to meaning." When we talk about semantic HTML, we mean choosing elements based on what the content *is*, not what we want it to *look like*.
+The word **semantic** means "relating to meaning." When we talk about semantic HTML, we mean choosing elements based on what the content _is_, not what we want it to _look like_.
 
 For example, you might want some text to appear big and bold. You could wrap it in a generic element and style it with CSS. But if that text is actually a heading, you should use a heading element. Why?
 

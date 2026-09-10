@@ -75,7 +75,14 @@ a[target]:not([rel*="noreferrer"]),
 abbr div,
 abbr:not([title]),
 b div,
-body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr),
+body
+  :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(
+    embed
+  ):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(
+    output
+  ):not(param):not(script):not(source):not(style):not(textarea):not(track):not(
+    wbr
+  ),
 button:not([type]),
 cite div,
 code div,
@@ -86,14 +93,18 @@ dl > div > dd:first-child,
 em div,
 fieldset > :not(legend):first-child,
 fieldset > legend:not(:first-child),
-figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption),
+figure
+  > figcaption:not(:first-child):not(:last-child)
+  ~ :last-child:not(figcaption),
 figure > figcaption:not(:first-child):not(:last-child),
 figure > figcaption:not(:first-of-type),
 i div,
 iframe:not([title]),
 img:not([alt]),
 img:not([src]),
-input:not([type="button"]):not([type="reset"]):not([type="submit"]):not([id]):not([aria-label]):not([aria-labelledby]):not([title]),
+input:not([type="button"]):not([type="reset"]):not([type="submit"]):not(
+    [id]
+  ):not([aria-label]):not([aria-labelledby]):not([title]),
 input:not([type]),
 input[type="checkbox"] + label,
 input[type="radio"] + label,
@@ -142,7 +153,14 @@ a[target]:not([rel*="noreferrer"])::after,
 abbr div::after,
 abbr:not([title])::after,
 b div::after,
-body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after,
+body
+  :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(
+    embed
+  ):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(
+    output
+  ):not(param):not(script):not(source):not(style):not(textarea):not(track):not(
+    wbr
+  )::after,
 body link::after,
 body style::after,
 body[style]::before,
@@ -157,7 +175,9 @@ dl > div > dd:first-child::after,
 em div::after,
 fieldset > :not(legend):first-child::after,
 fieldset > legend:not(:first-child)::after,
-figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after,
+figure
+  > figcaption:not(:first-child):not(:last-child)
+  ~ :last-child:not(figcaption)::after,
 figure > figcaption:not(:first-child):not(:last-child)::after,
 figure > figcaption:not(:first-of-type)::after,
 head > :first-child:not([charset="utf-8"])::after,
@@ -232,25 +252,19 @@ Inline `style`.
 */
 
 [style]:not(body):not(html):not(textarea)::after {
-  content:
-    'Inline [style="…"] detected'
-  ;
+  content: 'Inline [style="…"] detected';
 }
 
 [style*="display:none"]:not([hidden])::after,
 [style*="display: none"]:not([hidden])::after {
-  content:
-    'Use [hidden] instead of [style="display: none"]'
-  ;
+  content: 'Use [hidden] instead of [style="display: none"]';
 }
 
 body[style]:not([style=""])::before {
   position: static;
   margin-bottom: var(--spacing);
 
-  content:
-    '<body> has inline [style="…"]'
-  ;
+  content: '<body> has inline [style="…"]';
 }
 
 /*
@@ -259,16 +273,12 @@ Risky links.
 */
 
 a[href^="http:"]::after {
-  content:
-    'Link to "http:" site. Does "https:" equivalent exist?'
-  ;
+  content: 'Link to "http:" site. Does "https:" equivalent exist?';
 }
 
 a[target]:not([rel*="noopener"])::after,
 a[target]:not([rel*="noreferrer"])::after {
-  content:
-    '[target="…"] also needs [rel="noopener noreferrer"]'
-  ;
+  content: '[target="…"] also needs [rel="noopener noreferrer"]';
 }
 
 /*
@@ -277,15 +287,11 @@ Table: Incorrect `scope` values.
 */
 
 thead th[scope]:not([scope="col"])::after {
-  content:
-    'Expected: [scope="col"]. Actual: [scope="' attr(scope) '"]'
-  ;
+  content: 'Expected: [scope="col"]. Actual: [scope="' attr(scope) '"]';
 }
 
 tbody th[scope]:not([scope="row"])::after {
-  content:
-    'Expected: [scope="row"]. Actual: [scope="' attr(scope) '"]'
-  ;
+  content: 'Expected: [scope="row"]. Actual: [scope="' attr(scope) '"]';
 }
 
 /*
@@ -294,21 +300,18 @@ Invalid `figcaption` nesting.
 */
 
 :not(figure) > figcaption::after {
-  content:
-    "<figcaption> must be a child of <figure>"
-  ;
+  content: "<figcaption> must be a child of <figure>";
 }
 
 figure > figcaption:not(:first-child):not(:last-child)::after,
-figure > figcaption:not(:first-child):not(:last-child) ~ :last-child:not(figcaption)::after {
-  content:
-    "<figcaption> must be first/last child of <figure>"
-  ;
+figure
+  > figcaption:not(:first-child):not(:last-child)
+  ~ :last-child:not(figcaption)::after {
+  content: "<figcaption> must be first/last child of <figure>";
 }
 
 figure > figcaption:not(:first-of-type)::after {
-  content:
-    "<figure> should only contain one <figcaption>" !important
+  content: "<figure> should only contain one <figcaption>" !important
   ;
 }
 
@@ -318,21 +321,15 @@ Invalid `li` nesting.
 */
 
 :not(ul):not(ol) > li::after {
-  content:
-    "<li> is missing a parent <ul> or <ol>"
-  ;
+  content: "<li> is missing a parent <ul> or <ol>";
 }
 
 ol > :not(li)::after {
-  content:
-    "Immediate child of <ol> must be <li>"
-  ;
+  content: "Immediate child of <ol> must be <li>";
 }
 
 ul > :not(li)::after {
-  content:
-    "Immediate child of <ul> must be <li>"
-  ;
+  content: "Immediate child of <ul> must be <li>";
 }
 
 /*
@@ -341,51 +338,35 @@ Invalid `dd` nesting.
 */
 
 :not(dl):not(div) > dd::after {
-  content:
-    "<dd> is missing a parent <dl> or <div>"
-  ;
+  content: "<dd> is missing a parent <dl> or <div>";
 }
 
 :not(dl):not(div) > dt::after {
-  content:
-    "<dt> is missing a parent <dl> or <div>"
-  ;
+  content: "<dt> is missing a parent <dl> or <div>";
 }
 
 :not(dl) > div > dd::after {
-  content:
-    "<dd> with parent <div> is missing <dl> grandparent"
-  ;
+  content: "<dd> with parent <div> is missing <dl> grandparent";
 }
 
 :not(dl) > div > dt::after {
-  content:
-    "<dt> with parent <div> is missing <dl> grandparent"
-  ;
+  content: "<dt> with parent <div> is missing <dl> grandparent";
 }
 
 dl > :not(dt):not(dd):not(div)::after {
-  content:
-    "Immediate child of <dl> must be <dt>, <dd>, or <div>"
-  ;
+  content: "Immediate child of <dl> must be <dt>, <dd>, or <div>";
 }
 
 dl > dd:first-child::after {
-  content:
-    "<dt> or <div> should be :first-child of <dl>, not <dd>"
-  ;
+  content: "<dt> or <div> should be :first-child of <dl>, not <dd>";
 }
 
 dl > div > dd:first-child::after {
-  content:
-    "<dt> should be :first-child of <div> within <dl>, not <dd>"
-  ;
+  content: "<dt> should be :first-child of <div> within <dl>, not <dd>";
 }
 
 dl > div > :not(dt):not(dd)::after {
-  content:
-    "Immediate child of <div> within <dl> must be <dt> or <dd>."
-  ;
+  content: "Immediate child of <div> within <dl> must be <dt> or <dd>.";
 }
 
 /*
@@ -394,16 +375,12 @@ Invalid `legend` position in `fieldset`.
 */
 
 fieldset > :not(legend):first-child::after {
-  content:
-    "First child of <fieldset> should be <legend>"
-  ;
+  content: "First child of <fieldset> should be <legend>";
 }
 
 :not(fieldset) > legend::after,
 fieldset > legend:not(:first-child)::after {
-  content:
-    "<legend> must be :first-child of <fieldset>"
-  ;
+  content: "<legend> must be :first-child of <fieldset>";
 }
 
 /*
@@ -412,9 +389,7 @@ Missing `for` on `label`.
 */
 
 label:not([for])::after {
-  content:
-    '<label> needs [for="…"] to match <input> [id="…"]'
-  ;
+  content: '<label> needs [for="…"] to match <input> [id="…"]';
 }
 
 /*
@@ -423,9 +398,7 @@ Missing `type` on `button`.
 */
 
 button:not([type])::after {
-  content:
-    '<button> needs [type="…"]'
-  ;
+  content: '<button> needs [type="…"]';
 }
 
 /*
@@ -434,9 +407,7 @@ Missing `src` on `image`.
 */
 
 img:not([src])::after {
-  content:
-    '<img> needs [src="…"]'
-  ;
+  content: '<img> needs [src="…"]';
 }
 
 /*
@@ -445,15 +416,11 @@ Adjacent "checkbox" and "radio" labels.
 */
 
 input[type="checkbox"] + label::after {
-  content:
-    '<input type="checkbox"> should be nested inside <label>'
-  ;
+  content: '<input type="checkbox"> should be nested inside <label>';
 }
 
 input[type="radio"] + label::after {
-  content:
-    '<input type="radio"> should be nested inside <label>'
-  ;
+  content: '<input type="radio"> should be nested inside <label>';
 }
 
 /*
@@ -462,9 +429,7 @@ Missing `title` in `abbr`.
 */
 
 abbr:not([title])::after {
-  content:
-    '<abbr> needs [title="…"]'
-  ;
+  content: '<abbr> needs [title="…"]';
 }
 
 /*
@@ -472,10 +437,15 @@ Empty elements.
 ==================================================
 */
 
-body :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(embed):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(output):not(param):not(script):not(source):not(style):not(textarea):not(track):not(wbr)::after {
-  content:
-    'Empty element: Consider [aria-label="text"] if functional, or [aria-hidden="true"] if decorative'
-  ;
+body
+  :empty:not([aria-hidden]):not([aria-label]):not(area):not(br):not(col):not(
+    embed
+  ):not(hr):not(iframe):not(img):not(input):not(link):not(object):not(
+    output
+  ):not(param):not(script):not(source):not(style):not(textarea):not(track):not(
+    wbr
+  )::after {
+  content: 'Empty element: Consider [aria-label="text"] if functional, or [aria-hidden="true"] if decorative';
 }
 
 /*
@@ -487,9 +457,7 @@ html:not([lang]) head::before {
   position: static;
   margin-top: var(--spacing);
 
-  content:
-    '<html> needs [lang="…"]'
-  ;
+  content: '<html> needs [lang="…"]';
 }
 
 /*
@@ -498,9 +466,7 @@ Flag `<table role="presentation">`.
 */
 
 table[role="presentation"] tr:first-child td:first-child::after {
-  content:
-    '<table> has [role="presentation"] - Use Flexbox instead?'
-  ;
+  content: '<table> has [role="presentation"] - Use Flexbox instead?';
 }
 
 /*
@@ -509,9 +475,7 @@ Flag nested `table`.
 */
 
 table table tr:first-child td:first-child::after {
-  content:
-    "Invalid nested <table> - Use CSS Grid instead?"
-  ;
+  content: "Invalid nested <table> - Use CSS Grid instead?";
 }
 
 /*
@@ -520,9 +484,7 @@ Missing `meta[charset]` tag.
 */
 
 head > :first-child:not([charset="utf-8"])::after {
-  content:
-    '<head> needs <meta charset="utf-8"> as :first-child'
-  ;
+  content: '<head> needs <meta charset="utf-8"> as :first-child';
 }
 
 /*
@@ -531,9 +493,7 @@ Empty `title` tag.
 */
 
 title:empty::after {
-  content:
-    "<title> should not be empty"
-  ;
+  content: "<title> should not be empty";
 }
 
 /*
@@ -542,9 +502,7 @@ Multiple `title` tags.
 */
 
 title:not(:first-of-type)::after {
-  content:
-    "<title> should only exist once per page"
-  ;
+  content: "<title> should only exist once per page";
 }
 
 /*
@@ -553,40 +511,30 @@ Warnings for `script` tags.
 */
 
 script:not([src])::after {
-  content:
-    'Consider moving inline <script> to external *.js file'
-  ;
+  content: "Consider moving inline <script> to external *.js file";
 }
 
 script[src]:not([async])::after {
-  content:
-    'Consider [async] for <script> with [src="' attr(src) '"]'
-  ;
+  content: 'Consider [async] for <script> with [src="' attr(src) '"]';
 }
 
 script[defer][src]:not([async])::after {
-  content:
-    'Instead of [defer], consider moving <script> to before </body>, with [src="' attr(src) '"]'
-  ;
+  content: 'Instead of [defer], consider moving <script> to before </body>, with [src="'
+    attr(src) '"]';
 }
 
 script[defer][async][src]::after {
-  content:
-    'Using [async] supersedes [defer], behaving as [async] for <script> with [src="' attr(src) '"]'
-  ;
+  content: 'Using [async] supersedes [defer], behaving as [async] for <script> with [src="'
+    attr(src) '"]';
 }
 
 script[async]:not([src])::after,
 script[defer]:not([src])::after {
-  content:
-    'Using [async] or [defer] has no effect on <script> without [src]'
-  ;
+  content: "Using [async] or [defer] has no effect on <script> without [src]";
 }
 
 script[src^="http:"]::after {
-  content:
-    'Consider "https:" for <script> with [src="' attr(src) '"]'
-  ;
+  content: 'Consider "https:" for <script> with [src="' attr(src) '"]';
 }
 
 /*
@@ -595,15 +543,11 @@ Warnings for `style` tags.
 */
 
 head > style:not(:first-of-type)::after {
-  content:
-    "Only use one <style> for crucial CSS"
-  ;
+  content: "Only use one <style> for crucial CSS";
 }
 
 body style::after {
-  content:
-    "<body> should not contain <style>"
-  ;
+  content: "<body> should not contain <style>";
 }
 
 /*
@@ -612,21 +556,15 @@ Warnings for `link` tags.
 */
 
 link[href^="http:"]::after {
-  content:
-    'Consider "https:" for <link> with [href="' attr(href) '"]'
-  ;
+  content: 'Consider "https:" for <link> with [href="' attr(href) '"]';
 }
 
 body link::after {
-  content:
-    "<body> should not contain <link>"
-  ;
+  content: "<body> should not contain <link>";
 }
 
 body link[href]:not([href=""])::after {
-  content:
-    '<body> should not contain <link href="' attr(href) '">'
-  ;
+  content: '<body> should not contain <link href="' attr(href) '">';
 }
 
 /*
@@ -635,69 +573,47 @@ Improperly nested `div`.
 */
 
 abbr div::after {
-  content:
-    "<div> is not allowed within <abbr>"
-  ;
+  content: "<div> is not allowed within <abbr>";
 }
 
 b div::after {
-  content:
-    "<div> is not allowed within <b>"
-  ;
+  content: "<div> is not allowed within <b>";
 }
 
 cite div::after {
-  content:
-    "<div> is not allowed within <cite>"
-  ;
+  content: "<div> is not allowed within <cite>";
 }
 
 code div::after {
-  content:
-    "<div> is not allowed within <code>"
-  ;
+  content: "<div> is not allowed within <code>";
 }
 
 i div::after {
-  content:
-    "<div> is not allowed within <i>"
-  ;
+  content: "<div> is not allowed within <i>";
 }
 
 em div::after {
-  content:
-    "<div> is not allowed within <em>"
-  ;
+  content: "<div> is not allowed within <em>";
 }
 
 label div::after {
-  content:
-    "<div> is not allowed within <label>"
-  ;
+  content: "<div> is not allowed within <label>";
 }
 
 q div::after {
-  content:
-    "<div> is not allowed within <q>"
-  ;
+  content: "<div> is not allowed within <q>";
 }
 
 small div::after {
-  content:
-    "<div> is not allowed within <small>"
-  ;
+  content: "<div> is not allowed within <small>";
 }
 
 span div::after {
-  content:
-    "<div> is not allowed within <span>"
-  ;
+  content: "<div> is not allowed within <span>";
 }
 
 strong div::after {
-  content:
-    "<div> is not allowed within <strong>"
-  ;
+  content: "<div> is not allowed within <strong>";
 }
 
 /*
@@ -733,8 +649,7 @@ p + div:not(:empty) + p:empty {
 
 p div::after,
 p + div:not(:empty) + p:empty::after {
-  content:
-    "<div> is not allowed within <p>" !important
+  content: "<div> is not allowed within <p>" !important
   ;
 }
 
@@ -749,63 +664,82 @@ div > div:not([role]):not(:empty):only-child::after {
   margin-left: calc(-1 * var(--offset));
   margin-top: var(--offset);
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (2).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (2).';
 }
 
-div > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 2;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (3).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (3).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 3;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (4).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (4).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 4;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (5).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (5).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 5;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (6).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (6).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 6;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (7).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (7).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 7;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (8).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (8).';
 }
 
-div > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):only-child > div:not([role]):not(:empty):only-child::after {
+div
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):only-child
+  > div:not([role]):not(:empty):only-child::after {
   z-index: 8;
 
-  content:
-    '"Div-itis!" - Needlessly nested <div> tags (9+).'
-  ;
+  content: '"Div-itis!" - Needlessly nested <div> tags (9+).';
 }

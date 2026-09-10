@@ -4,9 +4,9 @@ description: "Headings, paragraphs, inline text, lists, blockquotes, and other c
 layout: libdoc_page.liquid
 permalink: html/text-and-content/index.html
 eleventyNavigation:
-    key: "Chapter 4: Text and Content Elements"
-    parent: HTML
-    order: 4
+  key: "Chapter 4: Text and Content Elements"
+  parent: HTML
+  order: 4
 ---
 
 These are the elements you'll use to mark up the actual content of your page.
@@ -43,15 +43,20 @@ A good test: if you pulled out just the headings, would they read like a sensibl
 The workhorse of text content.
 
 ```html
-<p>This series explores the tension between natural forms and digital artifacts.</p>
-<p>Each piece began as a plein air sketch before being reinterpreted in Procreate.</p>
+<p>
+  This series explores the tension between natural forms and digital artifacts.
+</p>
+<p>
+  Each piece began as a plein air sketch before being reinterpreted in
+  Procreate.
+</p>
 ```
 
 Each `<p>` creates a distinct block of text. Don't use `<br>` (line break) to create spacing between paragraphs. If it's a new thought, it's a new `<p>`.
 
 ## Inline text elements
 
-Some elements are meant to be used *inside* other elements, to mark up specific words or phrases.
+Some elements are meant to be used _inside_ other elements, to mark up specific words or phrases.
 
 **`<strong>`: Strong importance**
 
@@ -76,10 +81,12 @@ HTML also has `<b>` (bold) and `<i>` (italic). These look the same as `<strong>`
 ```html
 <p>The French call it <i lang="fr">plein air</i> painting.</p>
 <p>The <i>HMS Endeavour</i> departed in 1768.</p>
-<p>Key materials: <b>linseed oil</b>, <b>turpentine</b>, <b>damar varnish</b>.</p>
+<p>
+  Key materials: <b>linseed oil</b>, <b>turpentine</b>, <b>damar varnish</b>.
+</p>
 ```
 
-The distinction matters for semantics. Screen readers don't typically change their intonation for any of these elements by default, but `<em>` and `<strong>` carry semantic weight that assistive technologies *can* expose (some screen readers have optional settings to announce emphasis). More importantly, the semantic distinction helps your future self and other developers understand the *intent* of the markup. Choose based on meaning, not appearance.
+The distinction matters for semantics. Screen readers don't typically change their intonation for any of these elements by default, but `<em>` and `<strong>` carry semantic weight that assistive technologies _can_ expose (some screen readers have optional settings to announce emphasis). More importantly, the semantic distinction helps your future self and other developers understand the _intent_ of the markup. Choose based on meaning, not appearance.
 
 **`<del>`: Deleted text**
 
@@ -89,7 +96,7 @@ The distinction matters for semantics. Screen readers don't typically change the
 <p>Price: <del>€500</del> €400</p>
 ```
 
-Some screen readers (like NVDA) can be configured to announce deleted text, though support is inconsistent across assistive technologies. Still, using `<del>` is more accessible than styling a strikethrough with CSS alone, because it provides semantic information that assistive technologies *can* convey.
+Some screen readers (like NVDA) can be configured to announce deleted text, though support is inconsistent across assistive technologies. Still, using `<del>` is more accessible than styling a strikethrough with CSS alone, because it provides semantic information that assistive technologies _can_ convey.
 
 **`<s>`: No longer accurate**
 
@@ -106,7 +113,10 @@ Both render as a strikethrough by default. The distinction is semantic: `<del>` 
 `<u>` renders as an underline by default. It's used for text that needs non-textual annotation, like marking proper nouns in Chinese, or flagging a misspelling:
 
 ```html
-<p>The text contains a <u class="spelling-error">mispeling</u> that was flagged during review.</p>
+<p>
+  The text contains a <u class="spelling-error">mispeling</u> that was flagged
+  during review.
+</p>
 ```
 
 Be careful with `<u>` on the web. Underlined text looks like a link, which can confuse users. If you're reaching for `<u>` purely to underline something visually, use CSS instead.
@@ -120,7 +130,10 @@ See all the inline text elements rendered side by side, so you can compare how `
 **`<time>`: Dates and times**
 
 ```html
-<p>The exhibition opens <time datetime="2025-03-15">March 15, 2025</time> and runs through <time datetime="2025-04-30">April 30th</time>.</p>
+<p>
+  The exhibition opens <time datetime="2025-03-15">March 15, 2025</time> and
+  runs through <time datetime="2025-04-30">April 30th</time>.
+</p>
 ```
 
 The `<time>` element marks up a date or time. The `datetime` attribute provides a machine-readable version, while the text inside is whatever human-friendly phrasing you prefer. The most common format is `YYYY-MM-DD`, but `datetime` also accepts year only (`2025`), year-month (`2025-03`), date with time (`2025-03-15T10:00`), time only (`10:00`), and durations (`PT2H30M`). This helps search engines, screen readers, and browser tools understand that "March 15, 2025" is an actual date, not just three words. You'll find it especially useful for exhibition dates, artwork years, and event listings. You can combine `<time>` with other inline elements: `<strong><time datetime="2025-03-15">March 15</time></strong>` if a date is both important and needs to be machine-readable.
@@ -206,7 +219,13 @@ If you're attributing a quote to a specific work, use the `<cite>` element for t
 <blockquote cite="https://en.wikiquote.org/wiki/Salvador_Dalí">
   <p>Don't be afraid of perfection. You will never attain it!</p>
   <footer>
-    &mdash; <cite>Salvador Dalí, <a href="https://archive.org/details/diaryofgenius0000dali">Diary of a Genius</a></cite>
+    &mdash;
+    <cite
+      >Salvador Dalí,
+      <a href="https://archive.org/details/diaryofgenius0000dali"
+        >Diary of a Genius</a
+      ></cite
+    >
   </footer>
 </blockquote>
 ```

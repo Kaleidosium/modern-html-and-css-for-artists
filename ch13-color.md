@@ -4,9 +4,9 @@ description: "HSL, OKLCH, and building perceptually uniform color palettes"
 layout: libdoc_page.liquid
 permalink: css/color/index.html
 eleventyNavigation:
-    key: "Chapter 13: Color"
-    parent: CSS
-    order: 5
+  key: "Chapter 13: Color"
+  parent: CSS
+  order: 5
 ---
 
 This is where your artistic instincts will be most directly useful. Let's look at how CSS handles color.
@@ -83,6 +83,6 @@ Notice the two layers: raw palette values, then functional tokens that map those
 Both HSL and OKLCH support alpha (transparency) as a fourth value:
 
 ```css
-background: oklch(30% 0.19 268 / 0.5);  /* 50% transparent */
-background: hsl(264 50% 40% / 0.5);     /* same idea in HSL */
+background: oklch(30% 0.19 268 / 0.5); /* 50% transparent */
+background: hsl(264 50% 40% / 0.5); /* same idea in HSL */
 ```

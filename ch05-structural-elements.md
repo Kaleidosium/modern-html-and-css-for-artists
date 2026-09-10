@@ -4,9 +4,9 @@ description: "Landmarks, sections, articles, asides, and the difference between 
 layout: libdoc_page.liquid
 permalink: html/structural-elements/index.html
 eleventyNavigation:
-    key: "Chapter 5: Structural Elements"
-    parent: HTML
-    order: 5
+  key: "Chapter 5: Structural Elements"
+  parent: HTML
+  order: 5
 ---
 
 Structural elements give your page its overall shape. They define the large sections that organize your content. If text elements are the individual brush strokes, structural elements are the composition.
@@ -137,7 +137,11 @@ Every element we've covered so far carries meaning. `<div>` and `<span>` are the
 **`<span>`** is its inline counterpart. It sits within a line of text without breaking it, like a highlighted word. Use it when you need a styling hook around a word or phrase but no semantic inline element (`<strong>`, `<em>`, etc.) fits:
 
 ```html
-<p>Available in <span class="color-swatch" style="--swatch: #120A8F">ultramarine</span> and <span class="color-swatch" style="--swatch: #E97451">burnt sienna</span>.</p>
+<p>
+  Available in
+  <span class="color-swatch" style="--swatch: #120A8F">ultramarine</span> and
+  <span class="color-swatch" style="--swatch: #E97451">burnt sienna</span>.
+</p>
 ```
 
 The rule of thumb for both: if a more specific element fits, use that instead. Reach for `<div>` and `<span>` last.

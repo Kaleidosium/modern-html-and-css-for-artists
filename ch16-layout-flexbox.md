@@ -4,9 +4,9 @@ description: "Flexbox fundamentals: direction, wrapping, alignment, flex sizing,
 layout: libdoc_page.liquid
 permalink: css/layout-flexbox/index.html
 eleventyNavigation:
-    key: "Chapter 16: Layout with Flexbox"
-    parent: CSS
-    order: 8
+  key: "Chapter 16: Layout with Flexbox"
+  parent: CSS
+  order: 8
 ---
 
 Flexbox is a CSS layout system designed for distributing items along a single axis. Think of it as laying items out in a row or a column, with fine control over alignment, spacing, and wrapping.
@@ -44,10 +44,16 @@ An interactive playground where you can toggle `flex-direction`, `flex-wrap`, an
 
 ```css
 /* Row (default): items flow left to right */
-.row { display: flex; flex-direction: row; }
+.row {
+  display: flex;
+  flex-direction: row;
+}
 
 /* Column: items stack top to bottom */
-.column { display: flex; flex-direction: column; }
+.column {
+  display: flex;
+  flex-direction: column;
+}
 ```
 
 ## Wrapping
@@ -81,8 +87,8 @@ Flexbox gives you two axes of alignment:
 ```css
 .centered {
   display: flex;
-  justify-content: center;  /* align along the main axis (horizontal for rows) */
-  align-items: center;      /* align along the cross axis (vertical for rows) */
+  justify-content: center; /* align along the main axis (horizontal for rows) */
+  align-items: center; /* align along the cross axis (vertical for rows) */
 }
 ```
 
@@ -121,14 +127,14 @@ Here's how these properties work together in practice:
 }
 
 .sidebar-layout > :first-child {
-  flex-basis: 15rem;   /* ideal starting width */
-  flex-grow: 1;        /* can grow */
+  flex-basis: 15rem; /* ideal starting width */
+  flex-grow: 1; /* can grow */
 }
 
 .sidebar-layout > :last-child {
   flex-basis: 0;
-  flex-grow: 999;      /* grows much more than the sidebar */
-  min-width: 60%;      /* if it can't get 60%, it wraps to its own line */
+  flex-grow: 999; /* grows much more than the sidebar */
+  min-width: 60%; /* if it can't get 60%, it wraps to its own line */
 }
 ```
 
@@ -145,7 +151,7 @@ This creates a sidebar layout that automatically stacks on narrow screens withou
 }
 ```
 
-It's cleaner than adding margins to individual items, and it only adds space *between* items, not at the edges.
+It's cleaner than adding margins to individual items, and it only adds space _between_ items, not at the edges.
 
 ## A practical pattern: the cluster
 

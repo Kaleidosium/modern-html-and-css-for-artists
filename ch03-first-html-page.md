@@ -4,9 +4,9 @@ description: "Building the basic HTML skeleton: doctype, html, head, and body el
 layout: libdoc_page.liquid
 permalink: html/first-html-page/index.html
 eleventyNavigation:
-    key: "Chapter 3: Your First HTML Page"
-    parent: HTML
-    order: 3
+  key: "Chapter 3: Your First HTML Page"
+  parent: HTML
+  order: 3
 ---
 
 Every HTML page shares the same basic skeleton. Here's the minimum you need:
@@ -14,18 +14,16 @@ Every HTML page shares the same basic skeleton. Here's the minimum you need:
 ```html
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <!-- Your visible content goes here -->
-</body>
-
+  <body>
+    <!-- Your visible content goes here -->
+  </body>
 </html>
 ```
 
@@ -76,7 +74,7 @@ We'll use attributes constantly throughout this guide. Most are self-explanatory
 ## The `<html>` element
 
 ```html
-<html lang="en">
+<html lang="en"></html>
 ```
 
 Everything else goes inside the `<html>` element. It's the root of your document.
@@ -85,14 +83,14 @@ The `lang` attribute declares the language of the page. This helps screen reader
 
 ## The `<head>` element
 
-The `<head>` contains information *about* the page that doesn't appear on the page itself. Think of it as the metadata: the behind-the-scenes setup.
+The `<head>` contains information _about_ the page that doesn't appear on the page itself. Think of it as the metadata: the behind-the-scenes setup.
 
 ```html
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 ```
 
@@ -131,5 +129,5 @@ HTML elements can contain other elements. When they do, we indent the inner elem
 This indentation is purely for readability. The browser doesn't care about it. But you will, two weeks from now when you're trying to figure out where something went wrong.
 
 {% alertAlt 'info', 'A note on link paths' %}
-You'll see paths like `/work` and `/about` throughout this guide. These are *site-relative paths* that point to other pages on a website. They only work when your site is served by a web server (including the Live Preview extension from [Chapter 2](/html/getting-set-up/)). If you're opening your HTML file directly in a browser (with a `file:///` address), these links won't work. That's okay. For now, you can use paths like `work.html` or `about.html` if you want to link to other files in the same folder, or just treat these examples as illustrations of how a finished site would be structured.
+You'll see paths like `/work` and `/about` throughout this guide. These are _site-relative paths_ that point to other pages on a website. They only work when your site is served by a web server (including the Live Preview extension from [Chapter 2](/html/getting-set-up/)). If you're opening your HTML file directly in a browser (with a `file:///` address), these links won't work. That's okay. For now, you can use paths like `work.html` or `about.html` if you want to link to other files in the same folder, or just treat these examples as illustrations of how a finished site would be structured.
 {% endalertAlt %}

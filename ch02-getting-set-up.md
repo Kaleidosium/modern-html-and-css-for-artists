@@ -4,9 +4,9 @@ description: "Setting up your tools: a code editor, live preview, and browser de
 layout: libdoc_page.liquid
 permalink: html/getting-set-up/index.html
 eleventyNavigation:
-    key: "Chapter 2: Getting Set Up"
-    parent: HTML
-    order: 2
+  key: "Chapter 2: Getting Set Up"
+  parent: HTML
+  order: 2
 ---
 
 Before you write any code, you need a few tools. The good news is that everything you need is free, and setup takes about five minutes.

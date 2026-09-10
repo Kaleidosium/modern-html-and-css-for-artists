@@ -56,6 +56,7 @@ This means you no longer need to worry about specificity battles between your la
 
 Your chosen CSS reset goes here. I'm using Josh Comeau's Custom CSS Reset, which strips all default margins and gives us a clean slate for `.flow` to work with. You don't need to understand every line right now, each rule is documented in detail on [Josh's site](https://www.joshwcomeau.com/css/custom-css-reset/), and you can study them as your knowledge grows:
 
+<!-- prettier-ignore -->
 ```css
 @layer reset {
   /* 1. Use a more-intuitive box-sizing model */
@@ -520,8 +521,8 @@ The first line declares the layer order upfront, so the cascade priority is clea
 
 This chapter covered enough of CUBE to build a real project, but the methodology has more depth than I've explored here. Andy Bell's original blog post walks through the thinking behind each layer with additional examples, and the full documentation covers principles, grouping conventions, and edge cases in more detail.
 
-- [piccalil.li/blog/cube-css/](https://piccalil.li/blog/cube-css/) - Andy Bell's original blog post introducing the methodology
-- [cube.fyi](https://cube.fyi/) - the full documentation
+- [piccalil.li/blog/cube-css/](https://piccalil.li/blog/cube-css/): Andy Bell's original blog post introducing the methodology
+- [cube.fyi](https://cube.fyi/): the full documentation
 
 ## The file structure
 

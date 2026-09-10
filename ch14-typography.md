@@ -4,9 +4,9 @@ description: "Font families, sizing with rem, line height, measure, and loading 
 layout: libdoc_page.liquid
 permalink: css/typography/index.html
 eleventyNavigation:
-    key: "Chapter 14: Typography"
-    parent: CSS
-    order: 6
+  key: "Chapter 14: Typography"
+  parent: CSS
+  order: 6
 ---
 
 Typography on the web is where your eye for detail will pay off most directly. Let's look at the core properties.
@@ -38,7 +38,10 @@ body {
   line-height: 1.6; /* 1.6 times the font size */
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   line-height: 1.1;
 }
 ```
@@ -70,7 +73,10 @@ A paragraph at `max-width: 65ch` (comfortable) and another at `max-width: 120ch`
 **`text-wrap`** is a newer property that improves how text wraps:
 
 ```css
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
@@ -129,7 +135,10 @@ body {
   line-height: var(--leading-body);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--color-heading);
   line-height: var(--leading-heading);

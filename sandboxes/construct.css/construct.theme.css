@@ -4,29 +4,13 @@ Variables.
 */
 
 :root {
-  --rough-box-radius-odd:
-    255px 15px 255px 15px
-    /
-    15px 255px 15px 255px
-  ;
+  --rough-box-radius-odd: 255px 15px 255px 15px / 15px 255px 15px 255px;
 
-  --rough-box-radius-even:
-    15px 255px 15px 255px
-    /
-    255px 15px 255px 15px
-  ;
+  --rough-box-radius-even: 15px 255px 15px 255px / 255px 15px 255px 15px;
 
-  --rough-input-radius-odd:
-    15px 30px 15px 30px
-    /
-    30px 15px 30px 15px
-  ;
+  --rough-input-radius-odd: 15px 30px 15px 30px / 30px 15px 30px 15px;
 
-  --rough-input-radius-even:
-    30px 15px 30px 15px
-    /
-    15px 30px 15px 30px
-  ;
+  --rough-input-radius-even: 30px 15px 30px 15px / 15px 30px 15px 30px;
 }
 
 /*
@@ -74,8 +58,7 @@ Code blocks.
 pre {
   border: 2px dotted #fff;
 
-  border-radius:
-    var(--rough-input-radius-odd);
+  border-radius: var(--rough-input-radius-odd);
 
   margin-top: -2px;
   margin-left: -2px;
@@ -86,8 +69,7 @@ pre {
 }
 
 :nth-child(even) > pre {
-  border-radius:
-    var(--rough-input-radius-even);
+  border-radius: var(--rough-input-radius-even);
 }
 
 /*
@@ -109,16 +91,14 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  border-radius:
-    var(--rough-input-radius-odd);
+  border-radius: var(--rough-input-radius-odd);
 }
 
 :nth-child(even) > button,
 :nth-child(even) > input[type="button"],
 :nth-child(even) > input[type="reset"],
 :nth-child(even) > input[type="submit"] {
-  border-radius:
-    var(--rough-input-radius-even);
+  border-radius: var(--rough-input-radius-even);
 }
 
 /*
@@ -143,8 +123,7 @@ textarea {
   border-color: #999;
   border-width: 2px;
 
-  border-radius:
-    var(--rough-input-radius-odd);
+  border-radius: var(--rough-input-radius-odd);
 }
 
 :nth-child(even) > input[type="date"],
@@ -162,8 +141,7 @@ textarea {
 :nth-child(even) > input[type="week"],
 :nth-child(even) > select,
 :nth-child(even) > textarea {
-  border-radius:
-    var(--rough-input-radius-even);
+  border-radius: var(--rough-input-radius-even);
 }
 
 /*
@@ -208,11 +186,9 @@ fieldset {
 }
 
 fieldset {
-  border-radius:
-    var(--rough-box-radius-odd);
+  border-radius: var(--rough-box-radius-odd);
 }
 
 fieldset:nth-child(even) {
-  border-radius:
-    var(--rough-box-radius-even);
+  border-radius: var(--rough-box-radius-even);
 }

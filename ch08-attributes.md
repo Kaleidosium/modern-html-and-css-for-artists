@@ -4,9 +4,9 @@ description: "Common HTML attributes (class, id, data-*, aria-label) and a compl
 layout: libdoc_page.liquid
 permalink: html/attributes/index.html
 eleventyNavigation:
-    key: "Chapter 8: Attributes and the Bigger Picture"
-    parent: HTML
-    order: 8
+  key: "Chapter 8: Attributes and the Bigger Picture"
+  parent: HTML
+  order: 8
 ---
 
 I introduced attributes briefly in [Chapter 3](/html/first-html-page/): extra information inside an element's opening tag, following the pattern `name="value"`. You've been using them throughout this guide. Now let's look at the specific attributes you'll reach for most often.
@@ -47,11 +47,11 @@ I introduced attributes briefly in [Chapter 3](/html/first-html-page/): extra in
 ```html
 <button aria-label="Close gallery overlay">×</button>
 <a href="/work/harbor-study" aria-label="View Harbor Study No. 3">
-  <img src="harbor-thumb.jpg" alt="">
+  <img src="harbor-thumb.jpg" alt="" />
 </a>
 ```
 
-Note that `aria-label` on a link *overrides* the accessible name that would otherwise come from its contents (including any image `alt` text). When using `aria-label` on a link, set the image's `alt` to empty (`alt=""`) to avoid redundancy. If the image's `alt` text is already sufficient as a link description, you can omit the `aria-label` entirely.
+Note that `aria-label` on a link _overrides_ the accessible name that would otherwise come from its contents (including any image `alt` text). When using `aria-label` on a link, set the image's `alt` to empty (`alt=""`) to avoid redundancy. If the image's `alt` text is already sufficient as a link description, you can omit the `aria-label` entirely.
 
 ## The document as a whole
 
@@ -60,71 +60,85 @@ Before we move on to CSS, take a step back and look at a small but complete page
 ```html
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jane Doe - Artist</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jane Doe - Artist</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <header>
+      <h1><a href="/">Jane Doe</a></h1>
+      <nav aria-label="Primary">
+        <a href="/work">Work</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <h1><a href="/">Jane Doe</a></h1>
-    <nav aria-label="Primary">
-      <a href="/work">Work</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
-    </nav>
-  </header>
+    <main>
+      <section id="selected-works" aria-label="Selected Works">
+        <h2>Selected Works</h2>
 
-  <main>
-    <section id="selected-works" aria-label="Selected Works">
-      <h2>Selected Works</h2>
+        <article>
+          <figure>
+            <img
+              src="harbor-study.jpg"
+              alt="Oil study of fishing boats at dawn, warm light on calm water"
+              width="1200"
+              height="800"
+            />
+            <figcaption>
+              Harbor Study No. 3 - Oil on panel, 30 × 40 cm,
+              <time datetime="2025">2025</time>
+            </figcaption>
+          </figure>
+        </article>
 
-      <article>
-        <figure>
-          <img src="harbor-study.jpg" alt="Oil study of fishing boats at dawn, warm light on calm water" width="1200"
-            height="800">
-          <figcaption>Harbor Study No. 3 - Oil on panel, 30 × 40 cm, <time datetime="2025">2025</time></figcaption>
-        </figure>
-      </article>
+        <article>
+          <figure>
+            <img
+              src="night-garden.jpg"
+              alt="Dense garden foliage rendered in deep blues and violets with specks of white"
+              width="1200"
+              height="900"
+            />
+            <figcaption>
+              Night Garden - Acrylic on canvas, 100 × 75 cm,
+              <time datetime="2024">2024</time>
+            </figcaption>
+          </figure>
+        </article>
+      </section>
 
-      <article>
-        <figure>
-          <img src="night-garden.jpg" alt="Dense garden foliage rendered in deep blues and violets with specks of white"
-            width="1200" height="900">
-          <figcaption>Night Garden - Acrylic on canvas, 100 × 75 cm, <time datetime="2024">2024</time></figcaption>
-        </figure>
-      </article>
-    </section>
+      <section id="about" aria-label="About">
+        <h2>About</h2>
+        <p>
+          I'm a painter based in Stockholm, working primarily in oil and
+          acrylic. My work explores the boundary between observation and memory.
+        </p>
 
-    <section id="about" aria-label="About">
-      <h2>About</h2>
-      <p>I'm a painter based in Stockholm, working primarily in oil and acrylic. My work explores the boundary between
-        observation and memory.</p>
+        <details>
+          <summary>Exhibition history</summary>
+          <dl>
+            <dt><time datetime="2025">2025</time></dt>
+            <dd>Galleri Nord, Stockholm - Solo show</dd>
 
-      <details>
-        <summary>Exhibition history</summary>
-        <dl>
-          <dt><time datetime="2025">2025</time></dt>
-          <dd>Galleri Nord, Stockholm - Solo show</dd>
+            <dt><time datetime="2024">2024</time></dt>
+            <dd>Open Studio, Malmö - Group exhibition</dd>
+          </dl>
+        </details>
+      </section>
+    </main>
 
-          <dt><time datetime="2024">2024</time></dt>
-          <dd>Open Studio, Malmö - Group exhibition</dd>
-        </dl>
-      </details>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Jane Doe</p>
-    <nav aria-label="Social media links">
-      <a href="https://instagram.com/janedoe">Instagram</a>
-    </nav>
-  </footer>
-</body>
-
+    <footer>
+      <p>&copy; 2025 Jane Doe</p>
+      <nav aria-label="Social media links">
+        <a href="https://instagram.com/janedoe">Instagram</a>
+      </nav>
+    </footer>
+  </body>
 </html>
 ```
 
@@ -158,7 +172,7 @@ That's the goal of good HTML: a solid, honest foundation for everything that fol
 
 ## What I didn't cover: forms
 
-You may have noticed that this guide doesn't cover HTML forms (contact forms, email sign-ups, and the like). Forms involve a substantial set of elements (`<form>`, `<label>`, `<input>`, `<textarea>`, `<select>`) and their own accessibility considerations. More importantly, a form doesn't actually *do* anything without a server or a third-party service to receive the submission, which is outside the scope of an HTML and CSS guide.
+You may have noticed that this guide doesn't cover HTML forms (contact forms, email sign-ups, and the like). Forms involve a substantial set of elements (`<form>`, `<label>`, `<input>`, `<textarea>`, `<select>`) and their own accessibility considerations. More importantly, a form doesn't actually _do_ anything without a server or a third-party service to receive the submission, which is outside the scope of an HTML and CSS guide.
 
 For a portfolio site, a `mailto:` link or a link to your social profiles will serve you well to start. If you use a `mailto:` link, make the link text descriptive (like "Get in touch" or "Email me") rather than displaying a raw email address, which is harder for screen readers to parse and easier for spam scrapers to harvest. When you're ready to add a contact form, the [MDN Web Forms Guide](https://developer.mozilla.org/en-US/docs/Learn/Forms) is thorough and well-structured, and services like [Formspree](https://formspree.io/) or [Netlify Forms](https://docs.netlify.com/forms/setup/) handle the server side for you.
 
@@ -179,6 +193,6 @@ None of these require testing tools. Just read through your HTML and check. We'l
 
 ## You now have a complete foundation
 
-With what you've learned in these eight chapters, you can build a well-structured, accessible, meaningful web page from scratch. Not a page that *looks* finished (that's CSS's job), but one that *works*: a page a screen reader can navigate, a search engine can understand, and your future self can maintain. That's not a small thing. Most of the web is built on shaky HTML. Yours won't be.
+With what you've learned in these eight chapters, you can build a well-structured, accessible, meaningful web page from scratch. Not a page that _looks_ finished (that's CSS's job), but one that _works_: a page a screen reader can navigate, a search engine can understand, and your future self can maintain. That's not a small thing. Most of the web is built on shaky HTML. Yours won't be.
 
 **Next up:** CSS, where we bring this structure to life.

@@ -4,9 +4,9 @@ description: "Using clamp(), min(), max(), and Utopia scales for fluid typograph
 layout: libdoc_page.liquid
 permalink: css/fluid-type-space/index.html
 eleventyNavigation:
-    key: "Chapter 15: Fluid Type and Space"
-    parent: CSS
-    order: 7
+  key: "Chapter 15: Fluid Type and Space"
+  parent: CSS
+  order: 7
 ---
 
 This is where the "fluid canvas" philosophy becomes practical. Instead of setting fixed font sizes and spacing values, we'll create scales that smoothly adapt to any viewport size.
@@ -34,7 +34,7 @@ h1 {
 }
 ```
 
-This works, but it creates *jumps* at each breakpoint. The font size snaps from one value to another. And you end up writing three rules for every element. For a whole type scale and spacing system, that's a lot of repetitive code.
+This works, but it creates _jumps_ at each breakpoint. The font size snaps from one value to another. And you end up writing three rules for every element. For a whole type scale and spacing system, that's a lot of repetitive code.
 
 ## The `clamp()` function
 
@@ -50,7 +50,7 @@ A quick note on units: `vw` stands for **viewport width**, `1vw` is 1% of the br
 
 This says: "Make the font size `5vw + 1rem` (which scales with the viewport), but never let it go below `2rem` or above `3.5rem`." Think of it like a levels adjustment in Photoshop: the value scales freely in the middle range, but is clamped at both ends.
 
-The result is a font size that *smoothly* scales between the min and max as the viewport changes. No breakpoints. No jumps. Pure fluid scaling.
+The result is a font size that _smoothly_ scales between the min and max as the viewport changes. No breakpoints. No jumps. Pure fluid scaling.
 
 A heading using `clamp()` inside a resizable container. Drag to resize and watch the text scale fluidly between its minimum and maximum. (The demo uses `cqw` units so the text responds to the container rather than the viewport.)
 

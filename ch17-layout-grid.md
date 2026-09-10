@@ -4,12 +4,12 @@ description: "CSS Grid fundamentals: fluid galleries, template areas, alignment,
 layout: libdoc_page.liquid
 permalink: css/layout-grid/index.html
 eleventyNavigation:
-    key: "Chapter 17: Layout with Grid"
-    parent: CSS
-    order: 9
+  key: "Chapter 17: Layout with Grid"
+  parent: CSS
+  order: 9
 ---
 
-CSS Grid is a two-dimensional layout system. While flexbox handles rows *or* columns, Grid handles both at once. It's the most powerful layout tool in CSS, and even learning the basics opens up a wide range of possibilities.
+CSS Grid is a two-dimensional layout system. While flexbox handles rows _or_ columns, Grid handles both at once. It's the most powerful layout tool in CSS, and even learning the basics opens up a wide range of possibilities.
 
 ## A simple grid
 
@@ -43,7 +43,7 @@ Let's break that down:
 
 The result: a grid that smoothly goes from one column on a phone to two, three, four, or more columns as the viewport widens. No breakpoints. The content and available space decide the layout.
 
-Don't worry about memorizing this line. Copy it, adjust the `15rem` to control the minimum item width, and you have a responsive gallery. You can always look up the syntax later, what matters is understanding *what it does*.
+Don't worry about memorizing this line. Copy it, adjust the `15rem` to control the minimum item width, and you have a responsive gallery. You can always look up the syntax later, what matters is understanding _what it does_.
 
 The fluid gallery pattern with placeholder artwork cards. Resize your browser window to watch columns appear and disappear. This is the single most useful Grid pattern for portfolio sites.
 
@@ -54,15 +54,30 @@ The fluid gallery pattern with placeholder artwork cards. Resize your browser wi
 ```html
 <div class="gallery">
   <figure>
-    <img src="piece-1.jpg" alt="Oil study of fishing boats at dawn" width="800" height="600">
+    <img
+      src="piece-1.jpg"
+      alt="Oil study of fishing boats at dawn"
+      width="800"
+      height="600"
+    />
     <figcaption>Harbor Study No. 1</figcaption>
   </figure>
   <figure>
-    <img src="piece-2.jpg" alt="Dense garden foliage in deep blues and violets" width="800" height="600">
+    <img
+      src="piece-2.jpg"
+      alt="Dense garden foliage in deep blues and violets"
+      width="800"
+      height="600"
+    />
     <figcaption>Night Garden</figcaption>
   </figure>
   <figure>
-    <img src="piece-3.jpg" alt="Soft golden light filtering through curtains" width="800" height="600">
+    <img
+      src="piece-3.jpg"
+      alt="Soft golden light filtering through curtains"
+      width="800"
+      height="600"
+    />
     <figcaption>Morning Light</figcaption>
   </figure>
   <!-- as many items as you like -->
@@ -92,13 +107,21 @@ For page-level layout, named grid areas are wonderfully readable:
   }
 }
 
-header { grid-area: header; }
-aside  { grid-area: sidebar; }
-main   { grid-area: main; }
-footer { grid-area: footer; }
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: sidebar;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
+}
 ```
 
-This is one of the few places where a media query makes sense. You're not adjusting a *size* at a breakpoint; you're making a *structural* decision about whether the page has a sidebar or not. That's a qualitative change, not a quantitative one.
+This is one of the few places where a media query makes sense. You're not adjusting a _size_ at a breakpoint; you're making a _structural_ decision about whether the page has a sidebar or not. That's a qualitative change, not a quantitative one.
 
 ## Alignment in Grid
 
@@ -115,7 +138,7 @@ Grid shares many alignment properties with flexbox:
 
 ## A note on container queries
 
-As your layouts grow more complex, you may run into a situation where a component should change based on the size of *its container*, not the viewport. Container queries solve this. Rather than explain them in full here (which would be a chapter in its own right), I'll point you to Josh Comeau's excellent introduction: [A Friendly Introduction to Container Queries](https://www.joshwcomeau.com/css/container-queries-introduction/).
+As your layouts grow more complex, you may run into a situation where a component should change based on the size of _its container_, not the viewport. Container queries solve this. Rather than explain them in full here (which would be a chapter in its own right), I'll point you to Josh Comeau's excellent introduction: [A Friendly Introduction to Container Queries](https://www.joshwcomeau.com/css/container-queries-introduction/).
 
 ## Going deeper with Grid
 

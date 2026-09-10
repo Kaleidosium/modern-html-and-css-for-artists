@@ -4,9 +4,9 @@ description: "Define values once and reuse them everywhere with CSS custom prope
 layout: libdoc_page.liquid
 permalink: css/custom-properties/index.html
 eleventyNavigation:
-    key: "Chapter 12: Custom Properties (CSS Variables)"
-    parent: CSS
-    order: 4
+  key: "Chapter 12: Custom Properties (CSS Variables)"
+  parent: CSS
+  order: 4
 ---
 
 Custom properties (often called CSS variables) are one of the most powerful features in modern CSS. They let you define values once and reuse them everywhere. For artists, they're the equivalent of defining a color palette before you start painting.
@@ -19,8 +19,8 @@ Here's how custom properties work:
 
 ```css
 :root {
-  --color-primary: #120A8F;
-  --color-accent: #E97451;
+  --color-primary: #120a8f;
+  --color-accent: #e97451;
   --font-body: "Georgia", serif;
 }
 
@@ -54,7 +54,11 @@ If `--card-padding` isn't defined, it falls back to `1.5rem`. This is useful for
 Remember the color swatch example from the HTML guide?
 
 ```html
-<p>Available in <span class="color-swatch" style="--swatch: #120A8F">ultramarine</span> and <span class="color-swatch" style="--swatch: #E97451">burnt sienna</span>.</p>
+<p>
+  Available in
+  <span class="color-swatch" style="--swatch: #120A8F">ultramarine</span> and
+  <span class="color-swatch" style="--swatch: #E97451">burnt sienna</span>.
+</p>
 ```
 
 Each `<span>` sets a `--swatch` custom property via an inline `style` attribute. The CSS can then use that value with a fallback:
@@ -105,7 +109,7 @@ Click a button to toggle `data-theme="dark"` on a section and watch the same CSS
 
 ## Building a token system
 
-Custom properties really shine when you use them to build a *system* of values. Rather than picking colors and sizes ad hoc, you define a set of **design tokens**, named values (a color, a size, a font) that you reference by name instead of by their raw value:
+Custom properties really shine when you use them to build a _system_ of values. Rather than picking colors and sizes ad hoc, you define a set of **design tokens**, named values (a color, a size, a font) that you reference by name instead of by their raw value:
 
 ```css
 :root {
@@ -152,6 +156,6 @@ Change custom property values with color pickers and watch the entire page updat
 {% assign title = "Live token system demo" %}
 {% include "sandbox" %}
 
-This has practical benefits (change a color in one place, it updates everywhere) but it also has a *design* benefit: it forces you to work within a system. Every value is intentional. Nothing is arbitrary. Artists who work with limited palettes or strict grid systems will find this idea familiar.
+This has practical benefits (change a color in one place, it updates everywhere) but it also has a _design_ benefit: it forces you to work within a system. Every value is intentional. Nothing is arbitrary. Artists who work with limited palettes or strict grid systems will find this idea familiar.
 
 We'll flesh out these tokens properly in [Chapter 15](/css/fluid-type-space/) when I introduce fluid scales from Utopia. For now, the important thing is the pattern: define your system as custom properties, then reference those properties everywhere.

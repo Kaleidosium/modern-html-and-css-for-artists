@@ -4,9 +4,9 @@ description: "CSS transitions, transforms, keyframe animations, and respecting p
 layout: libdoc_page.liquid
 permalink: css/transitions/index.html
 eleventyNavigation:
-    key: "Chapter 19: Transitions and Animation"
-    parent: CSS
-    order: 11
+  key: "Chapter 19: Transitions and Animation"
+  parent: CSS
+  order: 11
 ---
 
 CSS can make things move, fade, and transform. For artists, this is where the medium starts to feel truly alive. But restraint matters here as much as technique. The best web animations are the ones you barely notice: a link color that fades smoothly instead of snapping, a card that lifts gently on hover, a section that eases into view as you scroll.
@@ -50,7 +50,9 @@ You can transition multiple properties at once:
 
 ```css
 .card {
-  transition: transform 200ms ease, box-shadow 200ms ease;
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .card:hover {
@@ -69,10 +71,10 @@ The `transform` property lets you move, scale, rotate, and skew elements without
 /* Move an element */
 transform: translateX(10px);
 transform: translateY(-2px);
-transform: translate(10px, -2px);  /* both axes at once */
+transform: translate(10px, -2px); /* both axes at once */
 
 /* Scale an element */
-transform: scale(1.05);  /* 5% larger */
+transform: scale(1.05); /* 5% larger */
 
 /* Rotate an element */
 transform: rotate(3deg);
@@ -86,7 +88,9 @@ A subtle lift on hover is one of the most common and effective patterns for inte
 ```css
 @layer block {
   .card {
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
   }
 
   .card:hover {
@@ -137,9 +141,15 @@ For more complex sequences, use percentage keyframes:
 
 ```css
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.6; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .loading-indicator {
@@ -174,7 +184,9 @@ An alternative approach is to write your CSS "reduced motion first" and only add
 
 @media (prefers-reduced-motion: no-preference) {
   .card {
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    transition:
+      transform 200ms ease,
+      box-shadow 200ms ease;
   }
 }
 ```

@@ -4,9 +4,9 @@ description: "Links, buttons, details/summary, and the distinction between navig
 layout: libdoc_page.liquid
 permalink: html/links-buttons-interactive/index.html
 eleventyNavigation:
-    key: "Chapter 7: Links, Buttons, and Interactive Elements"
-    parent: HTML
-    order: 7
+  key: "Chapter 7: Links, Buttons, and Interactive Elements"
+  parent: HTML
+  order: 7
 ---
 
 ## Links: `<a>`
@@ -36,8 +36,7 @@ Write link text that makes sense on its own. Screen readers often present links 
 Buttons perform actions. They don't navigate anywhere.
 
 ```html
-<button>Open gallery</button>
-<button>Toggle dark mode</button>
+<button>Open gallery</button> <button>Toggle dark mode</button>
 ```
 
 See a link and a button rendered side by side with no custom CSS, so you can see how the browser treats them differently by default.
@@ -51,7 +50,7 @@ The distinction matters:
 - **Link**: "Take me somewhere" (navigates to a URL).
 - **Button**: "Do something" (triggers an action on the current page).
 
-If you're ever tempted to style a link to look like a button or use a `<div>` with a click handler, step back and ask: does this navigate or act? Then use the right element. Use CSS classes to make a link *look* like a button if needed (we'll cover this in the CSS guide), but keep the underlying HTML honest.
+If you're ever tempted to style a link to look like a button or use a `<div>` with a click handler, step back and ask: does this navigate or act? Then use the right element. Use CSS classes to make a link _look_ like a button if needed (we'll cover this in the CSS guide), but keep the underlying HTML honest.
 
 **Never nest links inside buttons or buttons inside links.** This is a common mistake, and it creates confusing, broken behavior for both browsers and screen readers:
 
@@ -64,12 +63,17 @@ If you're ever tempted to style a link to look like a button or use a `<div>` wi
 
 If something navigates, it's a link. If it triggers an action, it's a button. It can't be both.
 
-One thing that *is* allowed in modern HTML: links can wrap around block-level content like headings, paragraphs, and images. This is useful for making entire card-like regions clickable:
+One thing that _is_ allowed in modern HTML: links can wrap around block-level content like headings, paragraphs, and images. This is useful for making entire card-like regions clickable:
 
 ```html
 <a href="/work/harbor-study">
   <figure>
-    <img src="harbor-thumb.jpg" alt="Harbor Study No. 3" width="400" height="300">
+    <img
+      src="harbor-thumb.jpg"
+      alt="Harbor Study No. 3"
+      width="400"
+      height="300"
+    />
     <figcaption>Harbor Study No. 3</figcaption>
   </figure>
 </a>
