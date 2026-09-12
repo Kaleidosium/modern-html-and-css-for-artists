@@ -1,6 +1,6 @@
 ---
 title: "Chapter 18: Bringing It Together with CUBE CSS"
-description: "The CUBE CSS methodology: @layer, reset, global, composition, block, utility, and exception layers"
+description: "The CUBE CSS methodology: @layer, reset, global, composition, block, exception, and utility layers"
 layout: libdoc_page.liquid
 permalink: css/cube-css/index.html
 eleventyNavigation:
@@ -29,26 +29,26 @@ graph TD
     G["Global<br/>tokens + base element styles"]
     C["Composition<br/>layout primitives"]
     B["Block<br/>component styles"]
-    U["Utility<br/>single-purpose overrides"]
     E["Exception<br/>state variations"]
+    U["Utility<br/>single-purpose overrides"]
 
-    R --> G --> C --> B --> U --> E
+    R --> G --> C --> B --> E --> U
 
     style R fill:#f0f0f0,stroke:#999
     style G fill:#e8f4f8,stroke:#2980b9
     style C fill:#d5f5e3,stroke:#27ae60
     style B fill:#fef3e2,stroke:#e67e22
-    style U fill:#fdf2f8,stroke:#9b59b6
     style E fill:#fee,stroke:#e74c3c
+    style U fill:#fdf2f8,stroke:#9b59b6
 ```
 
 `@layer` gives the CUBE system a native enforcement mechanism in the cascade. Declare your layers at the top of your stylesheet:
 
 ```css
-@layer reset, global, composition, block, utility, exception;
+@layer reset, global, composition, block, exception, utility;
 ```
 
-This single line establishes the order. Styles in `reset` have the lowest priority. Styles in `exception` have the highest. Within each layer, normal specificity rules apply. But a class in the `exception` layer will always override a class in the `utility` layer, regardless of selector complexity.
+This single line establishes the order. Styles in `reset` have the lowest priority. Styles in `utility` have the highest. Within each layer, normal specificity rules apply. But a class in the `utility` layer will always override a class in the `exception` layer, regardless of selector complexity.
 
 This means you no longer need to worry about specificity battles between your layout utilities and your component styles. The layers handle it.
 
@@ -344,9 +344,50 @@ Notice how little CSS each block needs. The `.card` doesn't set font sizes, colo
 </article>
 ```
 
-## Layer 5: Utility
+## Layer 5: Exception
 
-Utility classes do one thing well. They're small, reusable, and apply a single style or a tightly related group of styles. Utilities sit _above_ blocks in the layer order because their purpose is to override block styles when needed. If you add `.bg-dark` to a `.card`, you want the utility to win decisively.
+Exceptions are small variations to a block, applied with `data-*` attributes. They represent _states_ or _deviations_ from the default.
+
+```css
+@layer exception {
+  .card[data-layout="featured"] {
+    grid-column: 1 / -1;
+  }
+
+  .card[data-layout="reversed"] {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .button[data-variant="outline"] {
+    background: transparent;
+    color: var(--color-primary);
+    border: 2px solid currentColor;
+  }
+
+  [data-theme="dark"] {
+    --color-bg: var(--color-ink);
+    --color-text: var(--color-paper);
+    --color-heading: var(--color-paper);
+  }
+}
+```
+
+```html
+<article class="card" data-layout="featured">
+  <!-- A card that spans the full width of the grid -->
+</article>
+
+<section data-theme="dark">
+  <!-- This section and everything inside it uses the dark palette -->
+</section>
+```
+
+Using `data-*` attributes (instead of modifier classes) makes exceptions visually distinct in the HTML. When you scan the markup, you can immediately see: "This is a `.card`, but it has an exception." The separation between the component identity (class) and its state (data attribute) is clear.
+
+## Layer 6: Utility
+
+Utility classes do one thing well. They're small, reusable, and apply a single style or a tightly related group of styles. Utilities sit _above_ blocks and exceptions in the layer order because their purpose is to override all block styles when needed. If you add `.bg-dark` to a `.card`, you want the utility to win decisively.
 
 ```css
 @layer utility {
@@ -393,47 +434,6 @@ Utility classes do one thing well. They're small, reusable, and apply a single s
 
 Keep your utility classes minimal. You don't need hundreds of them. Create only the ones your project actually uses. Notice how they reference the custom properties you've already defined, which keeps everything connected to your design system.
 
-## Layer 6: Exception
-
-Exceptions are small variations to a block, applied with `data-*` attributes. They represent _states_ or _deviations_ from the default.
-
-```css
-@layer exception {
-  .card[data-layout="featured"] {
-    grid-column: 1 / -1;
-  }
-
-  .card[data-layout="reversed"] {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .button[data-variant="outline"] {
-    background: transparent;
-    color: var(--color-primary);
-    border: 2px solid currentColor;
-  }
-
-  [data-theme="dark"] {
-    --color-bg: var(--color-ink);
-    --color-text: var(--color-paper);
-    --color-heading: var(--color-paper);
-  }
-}
-```
-
-```html
-<article class="card" data-layout="featured">
-  <!-- A card that spans the full width of the grid -->
-</article>
-
-<section data-theme="dark">
-  <!-- This section and everything inside it uses the dark palette -->
-</section>
-```
-
-Using `data-*` attributes (instead of modifier classes) makes exceptions visually distinct in the HTML. When you scan the markup, you can immediately see: "This is a `.card`, but it has an exception." The separation between the component identity (class) and its state (data attribute) is clear.
-
 ## The bracket grouping convention
 
 When an element has multiple classes from different CUBE layers, Andy Bell suggests grouping them with square brackets for clarity:
@@ -442,7 +442,7 @@ When an element has multiple classes from different CUBE layers, Andy Bell sugge
 <article class="[ card ] [ flow ] [ bg-dark ]" data-layout="featured"></article>
 ```
 
-The groups follow this order:
+The important thing is that related classes are grouped together, but I use and recommend this order:
 
 1. Block class(es)
 2. Composition and layout class(es)
@@ -460,7 +460,7 @@ Here's what a full project stylesheet looks like using CUBE CSS and `@layer`:
 
 ```css
 /* === Layer order declaration === */
-@layer reset, global, composition, block, utility, exception;
+@layer reset, global, composition, block, exception, utility;
 
 /* === Reset === */
 @layer reset {
@@ -486,14 +486,14 @@ Here's what a full project stylesheet looks like using CUBE CSS and `@layer`:
   /* Component styles: .card, .button, .site-header, .site-footer */
 }
 
-/* === Utility === */
-@layer utility {
-  /* Single-purpose helpers: .visually-hidden, .text-center, color/bg utilities */
-}
-
 /* === Exception === */
 @layer exception {
   /* State variations: [data-theme], [data-layout], [data-variant] */
+}
+
+/* === Utility === */
+@layer utility {
+  /* Single-purpose helpers: .visually-hidden, .text-center, color/bg utilities */
 }
 ```
 
@@ -504,15 +504,15 @@ That's it. Every rule has a clear home. The cascade is managed for you. And the 
 As your project grows, keeping all your CSS in a single file becomes unwieldy. A practical approach is to split each layer into its own file and use `@import` with `layer()` to pull them together. Your main `styles.css` might look like this:
 
 ```css
-@layer reset, global, composition, block, utility, exception;
+@layer reset, global, composition, block, exception, utility;
 
 @import "reset.css" layer(reset);
 @import "global.css" layer(global);
 @import "composition.css" layer(composition);
 @import "block.css" layer(block);
+@import "exception.css" layer(exception);
 @import "utility.css" layer(utility);
 @import "animation.css" layer(utility);
-@import "exception.css" layer(exception);
 ```
 
 The first line declares the layer order upfront, so the cascade priority is clear regardless of import order. Each file contains only the CSS for its layer, making it easy to find and maintain. You can even import multiple files into the same layer (like `animation.css` into `utility` above).
@@ -537,8 +537,8 @@ portfolio/
 │   ├── global.css      <- tokens, base element styles
 │   ├── composition.css <- .flow, .wrapper, .grid, .cluster
 │   ├── block.css       <- .card, .button, .site-header
-│   ├── utility.css     <- .visually-hidden, .text-center
-│   └── exception.css   <- [data-theme], [data-layout]
+│   ├── exception.css   <- [data-theme], [data-layout]
+│   └── utility.css     <- .visually-hidden, .text-center
 └── images/
 ```
 

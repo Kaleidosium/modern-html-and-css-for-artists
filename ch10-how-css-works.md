@@ -223,10 +223,10 @@ The "C" in CSS stands for "Cascading." The cascade is the set of rules CSS uses 
 CSS `@layer` lets you define explicit ordering for groups of styles. Within the same origin and importance level, styles in a later layer beat styles in an earlier layer, regardless of specificity. In [Chapter 18](/css/cube-css/), I'll introduce a methodology called CUBE CSS that gives each layer a specific role (reset, global styles, layout, components, utilities, exceptions). For now, here's what the syntax looks like:
 
 ```css
-@layer reset, global, composition, block, utility, exception;
+@layer reset, global, composition, block, exception, utility;
 ```
 
-Any style in the `exception` layer will beat any style in the `utility` layer, no matter how specific the utility selector is. This is the most powerful tool for managing your cascade.
+Any style in the `utility` layer will beat any style in the `exception` layer, no matter how specific the exception selector is. This is the most powerful tool for managing your cascade.
 
 If you'd like to explore cascade layers further, Miriam Suzanne's [A Complete Guide to CSS Cascade Layers](https://css-tricks.com/css-cascade-layers/) on CSS-Tricks is the definitive resource. And for a visual breakdown of how layers, specificity, and the cascade interact, check out [CSS Cascade](https://cascade.arpit.codes/) by Arpit Agrawal.
 
