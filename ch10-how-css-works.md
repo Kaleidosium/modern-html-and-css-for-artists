@@ -266,7 +266,7 @@ If two rules have the same layer and the same specificity, the one written later
 
 That's it. Layers > Specificity > Source order. You don't need to memorize a point system. If your styles are organized into layers (which CUBE will help you do), specificity conflicts become rare.
 
-A quick note on `!important`: it exists, and it overrides normal specificity. But if you find yourself using it, it's almost always a sign that something in your cascade is disorganized. One nuance worth knowing: `!important` declarations _reverse_ the layer order. An `!important` rule in the `reset` layer beats an `!important` rule in the `exception` layer. This is by design: it lets low-priority layers enforce critical overrides (like the `prefers-reduced-motion` reset we'll see in [Chapter 19](/css/transitions/)). Outside of that kind of use case, avoid `!important`.
+A quick note on `!important`: it exists, and it overrides normal specificity. But if you find yourself using it, it's almost always a sign that something in your cascade is disorganized. One nuance worth knowing: `!important` declarations _reverse_ the layer order. An `!important` rule in the `reset` layer beats an `!important` rule in the `utility` layer. This is by design: it lets low-priority layers enforce critical overrides (like the `prefers-reduced-motion` reset we'll see in [Chapter 19](/css/transitions/)). Outside of that kind of use case, avoid `!important`.
 
 ## Inheritance
 
