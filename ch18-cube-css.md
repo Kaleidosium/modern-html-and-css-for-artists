@@ -468,7 +468,7 @@ Here's what a full project stylesheet looks like using CUBE CSS and `@layer`:
 
 /* === Reset === */
 @layer reset {
-  /* Your reset here (Andy Bell's, Josh Comeau's, etc.) */
+  /* Your reset here (Josh Comeau's, Andy Bell's, etc.) */
 }
 
 /* === Global === */
@@ -523,7 +523,7 @@ The first line declares the layer order upfront, so the cascade priority is clea
 
 ## Learning more about CUBE CSS
 
-This chapter covered enough of CUBE to build a real project, but the methodology has more depth than I've explored here. Andy Bell's original blog post walks through the thinking behind each layer with additional examples, and the full documentation covers principles, grouping conventions, and edge cases in more detail.
+This chapter covered enough of CUBE to build a real project, but the methodology has more depth than I've explored here. Andy Bell's original blog post and the full documentation go into more depth on composition, utility, block, and exception, along with grouping conventions and edge cases. Neither one uses `@layer`, since CUBE CSS predates the feature; the layer stack in this chapter is one way to enforce CUBE's priorities natively in the cascade, and the one I recommend, but the underlying methodology works the same without it.
 
 - [piccalil.li/blog/cube-css/](https://piccalil.li/blog/cube-css/): Andy Bell's original blog post introducing the methodology
 - [cube.fyi](https://cube.fyi/): the full documentation
