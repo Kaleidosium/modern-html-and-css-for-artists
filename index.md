@@ -5,7 +5,11 @@ layout: libdoc_page.liquid
 permalink: index.html
 ---
 
-A two-part guide covering HTML (Chapters 1-8) and CSS (Chapters 9-20) for artists and other creatives. They're designed to be read in order, but the HTML guide stands on its own if you're not ready for CSS yet.
+A craft-focused, two-part guide covering modern HTML and CSS fundamentals for artists and other creatives. No prior coding experience assumed, no frameworks required. We'll cover only the most important parts, taught so you can design and build your own portfolio site from scratch, using skills that carry over to any other site you build afterward.
+
+## What you'll learn
+
+Across two parts, you'll learn enough HTML (Chapters 1-8) and CSS (Chapters 9-20) to create a simple, durable portfolio site for your work: pages for your art, an about page, navigation, images, typography, color, layout that works on any device, and how to structure your code so it holds up as the site grows. The two guides are designed to be read in order, but the HTML guide stands on its own if you're not ready for CSS yet.
 
 ## The Living Document
 
