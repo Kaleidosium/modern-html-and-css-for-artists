@@ -448,11 +448,15 @@ The important thing is that related classes are grouped together, but I use and 
 2. Composition and layout class(es)
 3. Utility class(es)
 
-The brackets are cosmetic. HTML and CSS ignore them. But they make it instantly clear which classes serve which purpose. If you find the brackets distracting, pipes work too:
+Feel free to add more groupings, such as splitting the utilities into standard utilities and design tokens.
+
+The brackets are cosmetic. HTML and CSS ignore them. But they make it instantly clear which classes serve which purpose. If you find the brackets distracting, you could use something like pipes instead.
 
 ```html
 <article class="card | flow | bg-dark" data-layout="featured"></article>
 ```
+
+Whichever you pick, stay consistent within your project.
 
 ## A complete stylesheet structure
 
