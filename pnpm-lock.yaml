@@ -18,8 +18,8 @@ importers:
         specifier: ^1.0.5
         version: 1.0.5
       '@11ty/eleventy-plugin-rss':
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.1.0
+        version: 3.1.0
       '@mermaid-js/mermaid-cli':
         specifier: ^12.0.0
         version: 12.0.0(puppeteer@25.12.0)(tailwindcss@4.3.3)
@@ -58,8 +58,8 @@ packages:
     resolution: {integrity: sha512-QK1tRFBhQdZASnYU8GMzpTdsMMFLVAkuU0gVVILqNyp09xJJZb81kAS3AFrNrwBCsgLxTdWHJ8N64+OTTsoKkA==}
     engines: {node: '>=18'}
 
-  '@11ty/eleventy-plugin-rss@3.0.0':
-    resolution: {integrity: sha512-kKW4DcR57xAyRx0e8gNhKh56ahHVEaAj8/TuXQDnw+B46ig2bWADJAlyj/GdV37IG5ja9dZ4SgKZrs/CHz6YWQ==}
+  '@11ty/eleventy-plugin-rss@3.1.0':
+    resolution: {integrity: sha512-eby7wIYU3XBTAel8qPzbZSEhzNg/WXcAqNULYRqzMBU+gVlx4SL2mUvWDYxkp72KJqefnMMIo2Zz6w09N6S5XQ==}
 
   '@11ty/eleventy-utils@2.0.7':
     resolution: {integrity: sha512-6QE+duqSQ0GY9rENXYb4iPR4AYGdrFpqnmi59tFp9VrleOl0QSh8VlBr2yd6dlhkdtj7904poZW5PvGr9cMiJQ==}
@@ -1302,6 +1302,10 @@ packages:
     resolution: {integrity: sha512-XrsrhT5sybtKI6wakr2SPOlGZWWYbUXZ7a0jT8/QOeAPau+1X/bSegNe5YR75oJmEZQbKningirmGOEJCIk61Q==}
     engines: {node: '>=12.20.0'}
 
+  obug@3.0.0:
+    resolution: {integrity: sha512-5vvB5+W7ePv+p3uqxi+RcW1XAzLW0/hxt3/4X4Lc4qHudzOhmBiBwOY6DRob4WnanAEGvNcLjF+KNOufrUoEQw==}
+    engines: {node: '>=12.20.0'}
+
   on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
@@ -1663,14 +1667,12 @@ snapshots:
       - posthtml
       - supports-color
 
-  '@11ty/eleventy-plugin-rss@3.0.0':
+  '@11ty/eleventy-plugin-rss@3.1.0':
     dependencies:
       '@11ty/eleventy-utils': 2.0.7
       '@11ty/posthtml-urls': 1.0.3
-      debug: 4.4.3
+      obug: 3.0.0
       posthtml: 0.16.7
-    transitivePeerDependencies:
-      - supports-color
 
   '@11ty/eleventy-utils@2.0.7': {}
 
@@ -2873,6 +2875,8 @@ snapshots:
       chokidar: 3.6.0
 
   obug@2.2.1: {}
+
+  obug@3.0.0: {}
 
   on-finished@2.4.1:
     dependencies:
