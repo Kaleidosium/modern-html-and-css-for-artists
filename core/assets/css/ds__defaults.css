@@ -14,6 +14,27 @@
     22px 24px 38px rgba(26, 18, 68, 0.42), 34px 37px 59px rgba(26, 18, 68, 0.5);
 }
 
+/* MERMAID DIAGRAMS */
+main > .mermaid-diagram {
+  max-width: none;
+  padding: 0;
+}
+.mermaid-diagram {
+  overflow-x: auto;
+}
+.mermaid-diagram svg {
+  display: block;
+  /* Keep default 14px labels above 12px when diagrams shrink. */
+  min-width: calc(var(--libdoc-mermaid-width, 0px) * var(--libdoc-mermaid-min-scale, 0.86));
+  margin-inline: auto;
+}
+.mermaid--dark {
+  /* Dark diagrams render at 16px: prefer 14px, with a 12px floor. */
+  --libdoc-mermaid-preferred-scale: 0.875;
+  --libdoc-mermaid-min-scale: 0.76;
+  display: none;
+}
+
 /* BROWSERS DEFAULTS */
 /* <details> défaut style on iOS */
 details > summary::-webkit-details-marker {
@@ -1132,6 +1153,9 @@ input[type="radio"] ~ label::before {
 
 /* PRINT */
 @media print {
+  .mermaid-diagram svg {
+    min-width: 0;
+  }
   main {
     width: 100% !important;
     padding: 0px 30px;

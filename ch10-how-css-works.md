@@ -235,7 +235,7 @@ If you'd like to explore cascade layers further, Miriam Suzanne's [A Complete Gu
 Within the same layer (or when you're not using layers), specificity determines which rule wins. Here's the ranking from lowest to highest:
 
 ```mermaid
-graph LR
+graph TD
     E["Element<br/>p, h1, img"]
     C["Class / Attribute<br/>.card, [data-*], :hover"]
     I["ID<br/>#main"]
@@ -243,10 +243,10 @@ graph LR
 
     E -->|"overridden by"| C -->|"overridden by"| I -->|"overridden by"| IN
 
-    style E fill:#d5f5e3,stroke:#27ae60
-    style C fill:#fef3e2,stroke:#e67e22
-    style I fill:#fdf2f8,stroke:#9b59b6
-    style IN fill:#fee,stroke:#e74c3c
+    class E libdoc-mermaid-success
+    class C libdoc-mermaid-warning
+    class I libdoc-mermaid-accent
+    class IN libdoc-mermaid-danger
 ```
 
 Here's the simple mental model:

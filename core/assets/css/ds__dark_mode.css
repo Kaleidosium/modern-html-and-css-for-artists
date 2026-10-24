@@ -71,6 +71,13 @@
   main > :not(pre) code {
     background-color: var(--ita-colors-primary-300);
   }
+  /* MERMAID DIAGRAMS */
+  .mermaid--light {
+    display: none;
+  }
+  .mermaid--dark {
+    display: block;
+  }
   /* ALERTS */
   main .alert {
     color: var(--ita-colors-neutral-900);

@@ -36,10 +36,10 @@ graph TD
     SEC1 --> ART1
     SEC1 --> ART2
 
-    style HEADER fill:#e8f4f8,stroke:#2980b9
-    style MAIN fill:#d5f5e3,stroke:#27ae60
-    style FOOTER fill:#fef3e2,stroke:#e67e22
-    style ASIDE fill:#fdf2f8,stroke:#9b59b6
+    class HEADER libdoc-mermaid-info
+    class MAIN libdoc-mermaid-success
+    class FOOTER libdoc-mermaid-warning
+    class ASIDE libdoc-mermaid-accent
 ```
 
 And here's what the code looks like:

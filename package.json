@@ -7,6 +7,7 @@
     "dev": "eleventy --serve",
     "build": "eleventy",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "test:mermaid": "node --test tests/mermaid.test.mjs",
     "postinstall": "pnpm dlx puppeteer browsers install chrome"
   },
   "keywords": [],

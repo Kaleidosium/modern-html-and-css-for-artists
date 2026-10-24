@@ -34,12 +34,12 @@ graph TD
 
     R --> G --> C --> B --> E --> U
 
-    style R fill:#f0f0f0,stroke:#999
-    style G fill:#e8f4f8,stroke:#2980b9
-    style C fill:#d5f5e3,stroke:#27ae60
-    style B fill:#fef3e2,stroke:#e67e22
-    style E fill:#fee,stroke:#e74c3c
-    style U fill:#fdf2f8,stroke:#9b59b6
+    class R libdoc-mermaid-neutral
+    class G libdoc-mermaid-info
+    class C libdoc-mermaid-success
+    class B libdoc-mermaid-warning
+    class E libdoc-mermaid-danger
+    class U libdoc-mermaid-accent
 ```
 
 `@layer` gives the CUBE system a native enforcement mechanism in the cascade. Declare your layers at the top of your stylesheet:

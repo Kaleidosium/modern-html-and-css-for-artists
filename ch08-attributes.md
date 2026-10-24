@@ -161,9 +161,9 @@ graph TD
     H1 --> H2A
     H1 --> H2B
 
-    style H1 fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
-    style H2A fill:#d5f5e3,stroke:#27ae60
-    style H2B fill:#d5f5e3,stroke:#27ae60
+    class H1 libdoc-mermaid-info
+    class H2A,H2B libdoc-mermaid-success
+    style H1 stroke-width:2px
 ```
 
 A sensible, two-level outline. No skipped levels, one clear `<h1>`, logical groupings. If your headings pass this test, your document structure is solid.

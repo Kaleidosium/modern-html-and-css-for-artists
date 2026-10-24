@@ -14,19 +14,22 @@ HTML (HyperText Markup Language) is the language that gives a web page its **str
 Think of it as three layers, each with a distinct job:
 
 ```mermaid
-graph LR
-    HTML["HTML<br/>Structure and Meaning"]
-    CSS["CSS<br/>Presentation and Style"]
-    JS["JavaScript<br/>Behavior and Interaction"]
+graph TD
+    HTML["HTML<br/><br/>Structure and Meaning"]
+    CSS["CSS<br/><br/>Presentation and Style"]
+    JS["JavaScript<br/><br/>Behavior and Interaction"]
 
-    HTML --> CSS --> JS
+    HTML -->|"styled by"| CSS -->|"enhanced by"| JS
 
-    style HTML fill:#fef3e2,stroke:#e67e22,stroke-width:2px
-    style CSS fill:#fdf2f8,stroke:#9b59b6,stroke-width:2px
-    style JS fill:#e8f4f8,stroke:#2980b9,stroke-width:2px
+    class HTML libdoc-mermaid-warning
+    class CSS libdoc-mermaid-accent
+    class JS libdoc-mermaid-info
+    style HTML stroke-width:2px
+    style CSS stroke-width:2px
+    style JS stroke-width:2px
 ```
 
-HTML is the sketch, the wireframe, the composition before any rendering. CSS is the color, the type, the spacing, the visual treatment. JavaScript is the interaction, the dynamic response.
+HTML is the outline, the skeleton, the content and its organization before any styling. CSS is the color, the type, the spacing, the visual treatment. JavaScript is the interaction, the dynamic response.
 
 If you stripped away all the CSS from any website, you'd be left with a plain document of text, images, and links. That document should still make sense on its own. It should still have a clear hierarchy, a logical reading order, and meaningful structure. That is what good HTML gives you.
 

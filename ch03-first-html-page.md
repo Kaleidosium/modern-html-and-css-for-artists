@@ -50,9 +50,9 @@ graph TD
     HEAD --> LINK
     BODY --> CONTENT
 
-    style HEAD fill:#f0f0f0,stroke:#999
-    style BODY fill:#e8f4f8,stroke:#2980b9
-    style CONTENT fill:#d5f5e3,stroke:#27ae60
+    class HEAD libdoc-mermaid-neutral
+    class BODY libdoc-mermaid-info
+    class CONTENT libdoc-mermaid-success
 ```
 
 The `<head>` is invisible to visitors. Everything the user actually sees lives inside `<body>`. Let's walk through each piece.
